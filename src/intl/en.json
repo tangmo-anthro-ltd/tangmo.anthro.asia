@@ -1,6 +1,7 @@
 {
     "meta": {
-        "name": "TangMo"
+        "name": "TangMo",
+        "defaultDesc": "TangMo’s website"
     },
     "about": {
         "title": "About TangMo",
