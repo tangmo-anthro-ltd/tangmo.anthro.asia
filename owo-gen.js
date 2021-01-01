@@ -27,6 +27,7 @@ const recurseOwo = (obj) => {
 }
 recurseOwo(en)
 en['footer']['note'] = ' - Translated by {uwuifier}';
+en['contact']['telegram'] = 'Furrygram';
 console.log(en);
 
 fs.writeFileSync(__dirname + '/src/intl/en-emodeng.json', JSON.stringify(en, null, 4));
