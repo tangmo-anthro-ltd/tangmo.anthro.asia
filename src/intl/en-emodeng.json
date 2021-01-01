@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "name": "TangMo"
+    },
+    "about": {
+        "title": "About TangMo",
+        "aboutMe": {
+            "title": "About TangMo",
+            "imageAlt": "Dwawing of TangMo dog nyibbwing on a watermelon",
+            "para": "Hello! I’m a dog (maybe) fwom Thaiwand, wiving faw fwom home. The nyame, TangMo, witewawwy twanswates to “watewmewon”. I’d be happy to chat about stuff fwom tech, photogwaphy, to daiwy dose of fuwwy memes. Being “wewativewy” nyew to the fandom, it’s nice to meet evewyonye."
+        },
+        "aboutChara": {
+            "title": "About the chawactew",
+            "para": "I… I haven’t stawted wowking on the chawactew yet. The image hewe is just a pwacehowdew, awthough I might use him as the stawting point fow the actuaw chawactew. etc.",
+            "refSheet": "Wefewence Sheet"
+        }
+    },
+    "nav": {
+        "title": "TangMo",
+        "home": "Home",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "contact": {
+        "title": "Tawk to me!",
+        "telegram": "Telegram",
+        "vrchat": "VWChat"
+    },
+    "index": {
+        "imageAlt": "Dwawing of TangMo dog nyibbwing on a watermelon"
+    },
+    "footer": {
+        "note": " - Translated by {uwuifier}"
+    }
+}
