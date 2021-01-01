@@ -13,7 +13,6 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

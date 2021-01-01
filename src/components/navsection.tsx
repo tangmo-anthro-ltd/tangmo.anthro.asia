@@ -16,7 +16,7 @@ const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
   return <Location>
     {({ location }) => (
       <PlainLink
-        to={((urlPrefix + location.pathname.replace('/' + locale, '')).replace(/\/$/, '') || '/') + location.search}
+        to={((urlPrefix + location.pathname.replace('/' + locale, '')) || '/') + location.search}
       >
         {children}
       </PlainLink>
@@ -46,11 +46,11 @@ export function NavSection() {
               <FormattedMessage id="nav.home" />
             </Link>
             {" | "}
-            <Link to="/about">
+            <Link to="/about/">
               <FormattedMessage id="nav.about" />
             </Link>
             {" | "}
-            <Link to="/contact">
+            <Link to="/contact/">
               <FormattedMessage id="nav.contact" />
             </Link>
           </Col>
