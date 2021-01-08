@@ -1,15 +1,6 @@
 'use strict';
 
-const {Uwuifier} = require('Uwuifier');
-const uwuifier = new Uwuifier({
-  spaces: {
-    faces: 0,
-    actions: 0,
-    stutters: 0
-  },
-  words: 0.8,
-  exclamations: 0.8,
-});
+const owo = require('@zuzak/owo');
 const fs = require('fs');
 
 const en = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en.json', 'utf8'));
@@ -18,7 +9,7 @@ console.log('Generating uwu language...')
 
 const recurseOwo = (obj) => {
   if (typeof obj === 'string') {
-    return uwuifier.uwuifySentence(obj);
+    return owo.translate(obj);
   }
   Object.keys(obj).map(function(key, index) {
     obj[key] = recurseOwo(obj[key]);
