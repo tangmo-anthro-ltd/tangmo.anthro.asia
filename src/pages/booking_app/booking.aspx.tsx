@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {Button, Container, Form} from "react-bootstrap"
 import Layout from "../../components/layout"
-import { useIntl } from "gatsby-plugin-intl"
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 import {Link} from "gatsby";
 
 export default ({data}) => {
@@ -16,48 +16,68 @@ export default ({data}) => {
     }, []);
     return <Layout>
         <Container>
-            <Form action="/about">
+            <h1><FormattedMessage id="bookingApp.booking.title"/></h1>
+            <p><FormattedMessage id="bookingApp.booking.intro"/></p>
+            <Form>
                 <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Telegram</label>
+                    <label className="col-sm-2 col-form-label">
+                        <FormattedMessage id="bookingApp.booking.form_telegram"/>
+                    </label>
                     <div className="col-sm-10">
                         <input type="email" className="form-control" placeholder="@SeaSaltTheDog"/>
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Date/Time</label>
+                    <label className="col-sm-2 col-form-label">
+                        <FormattedMessage id="bookingApp.booking.form_date_time"/>
+                    </label>
                     <div className="col-sm-10">
                         <input type="datetime-local" className="form-control" min="2021-01-01T00:00"/>
                         <small className="form-text text-muted">
-                            (Your browser's local time)
+                            <FormattedMessage id="bookingApp.booking.form_date_time_hint"/>
                         </small>
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Duration</label>
+                    <label className="col-sm-2 col-form-label">
+                        <FormattedMessage id="bookingApp.booking.form_duration"/>
+                    </label>
                     <div className="col-sm-10">
                         <select className="form-control">
-                            <option>30 minutes</option>
-                            <option>1 hour</option>
-                            <option>1.5 hour</option>
-                            <option>2 hours</option>
-                            <option>3 hours</option>
-                            <option>4 hours</option>
-                            <option>6 hours</option>
-                            <option>8 hours</option>
+                            {/* I would have used react-intl-formatted-duration, but that require base `react-intl`, not the one via gatsby-plugin-intl*/}
+                            {/* I should also use FormattedMessage's plural, at least. Send me a PR. */}
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_1"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_2"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_3"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_4"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_5"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_6"/></option>
+                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_7"/></option>
                         </select>
                     </div>
                 </div>
                 <div className="form-group row">
-                    <label className="col-sm-2 col-form-label">Coupon code</label>
+                    <label className="col-sm-2 col-form-label">
+                        <FormattedMessage id="bookingApp.booking.form_coupon_code"/>
+                    </label>
                     <div className="col-sm-10">
                         <input type="text" className="form-control" value={coupon} onChange={(e)=>setCoupon(e.target.value)}/>
                         <small className="form-text text-muted">
-                            (optional)
+                            <FormattedMessage id="bookingApp.booking.form_coupon_code_hint"/>
                         </small>
                     </div>
                 </div>
                 <div className="form-group">
-                    <Link to="/booking_app/result.aspx" className="btn btn-primary">Book my body</Link>
+                    <label>
+                        <FormattedMessage id="bookingApp.booking.form_info"/>
+                    </label>
+                    <textarea className="form-control"/>
+                </div>
+                <p><FormattedMessage id="bookingApp.booking.form_notice"/></p>
+                <div className="form-group">
+                    <Link to="/bookingApp/result.aspx" className="btn btn-primary">
+                        <FormattedMessage id="bookingApp.booking.form_submit"/>
+                    </Link>
                 </div>
             </Form>
         </Container>
