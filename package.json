@@ -8,11 +8,11 @@
     "build": "node ./owo-gen.js && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md}\"",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "npm run build && gh-pages -d public -b master"
+    "deploy": "yarn run build && gh-pages -d public -b master"
   },
   "dependencies": {
     "@hapi/code": "^8.0.2",
