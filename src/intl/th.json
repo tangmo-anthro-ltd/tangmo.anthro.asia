@@ -32,5 +32,32 @@
     },
     "footer": {
         "note": " "
+    },
+    "bookingApp":{
+        "booking": {
+            "title": "จองตัวเรา!",
+            "intro": "อยากเล่นกับเราหรอ? ในที่ส่วนตัวด้วย? ขอจองตัวเราได้ที่นี่!",
+            "form_telegram": "เทเลแกรม",
+            "form_date_time": "วัน/เวลา",
+            "form_date_time_hint": "(เวลาท้องถิ่นตามเบราว์เซอร์ของท่าน)",
+            "form_duration": "ระยะเวลา",
+            "form_duration_option_1": "30 นาที",
+            "form_duration_option_2": "1 ชั่วโมง",
+            "form_duration_option_3": "1.5 ชั่วโมง",
+            "form_duration_option_4": "2 ชั่วโมง",
+            "form_duration_option_5": "3 ชั่วโมง",
+            "form_duration_option_6": "4 ชั่วโมง",
+            "form_duration_option_7": "6 ชั่วโมง",
+            "form_coupon_code": "รหัสคูปอง",
+            "form_coupon_code_hint": "(ถ้ามี)",
+            "form_info": "อยากทำอะไรกับเรา uwu",
+            "form_notice": "หลังจากส่งคำขอแล้ว ทางเราจะส่งใบเสนอราคากลับไปทางเทเลแกรม",
+            "form_submit": "จองตัวเราเลย! o//w//o"
+        },
+        "result": {
+            "title": "เอ่อ…",
+            "content": "เราว่า เธออาจจะจริงจังกับมุขมากเกินไปหนะ แต่ว่าถ้าเบื่อจริงๆ {link}ได้นะ",
+            "link_text": "คุยกับเรา"
+        }
     }
 }

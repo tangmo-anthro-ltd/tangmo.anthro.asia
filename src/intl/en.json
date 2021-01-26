@@ -32,5 +32,32 @@
     },
     "footer": {
         "note": " "
+    },
+    "bookingApp":{
+        "booking": {
+            "title": "Book My Body!",
+            "intro": "Want to play with me? Perhaps in private? Request booking here!",
+            "form_telegram": "Telegram",
+            "form_date_time": "Date/Time",
+            "form_date_time_hint": "(Your browser's local time)",
+            "form_duration": "Duration",
+            "form_duration_option_1": "30 minutes",
+            "form_duration_option_2": "1 hour",
+            "form_duration_option_3": "1.5 hour",
+            "form_duration_option_4": "2 hours",
+            "form_duration_option_5": "3 hours",
+            "form_duration_option_6": "4 hours",
+            "form_duration_option_7": "6 hours",
+            "form_coupon_code": "Coupon code",
+            "form_coupon_code_hint": "(optional)",
+            "form_info": "What do you want to do to me uwu?",
+            "form_notice": "Once you submit the form, I will review the request and send you quotation on Telegram.",
+            "form_submit": "Book me now! o//w//o"
+        },
+        "result": {
+            "title": "Err…",
+            "content": "You might have taken the joke too seriously. But if you are really bored, you feel free to come {link}.",
+            "link_text": "talk to me"
+        }
     }
 }

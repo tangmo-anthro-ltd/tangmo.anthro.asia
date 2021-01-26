@@ -7,8 +7,15 @@ const en = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en.json', 'utf8'));
 
 console.log('Generating uwu language...')
 
+const override = {
+    'Telegram': 'Furrygram'
+}
+
 const recurseOwo = (obj) => {
   if (typeof obj === 'string') {
+      if (obj in override) {
+          return override[obj];
+      }
     return owo.translate(obj);
   }
   Object.keys(obj).map(function(key, index) {
@@ -18,7 +25,6 @@ const recurseOwo = (obj) => {
 }
 recurseOwo(en)
 en['footer']['note'] = ' - Translated by {uwuifier}';
-en['contact']['telegram'] = 'Furrygram';
 console.log(en);
 
 fs.writeFileSync(__dirname + '/src/intl/en-emodeng.json', JSON.stringify(en, null, 4));
