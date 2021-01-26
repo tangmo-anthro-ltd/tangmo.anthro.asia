@@ -1,11 +1,9 @@
 import * as React from 'react'
-import {Button, Container, Form} from "react-bootstrap"
+import {Container, Form} from "react-bootstrap"
 import Layout from "../../components/layout"
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
-import {Link} from "gatsby";
+import { FormattedMessage, Link } from "gatsby-plugin-intl"
 
-export default ({data}) => {
-    const {formatMessage} = useIntl();
+export default () => {
     const [coupon, setCoupon] = React.useState('');
     React.useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -75,7 +73,7 @@ export default ({data}) => {
                 </div>
                 <p><FormattedMessage id="bookingApp.booking.form_notice"/></p>
                 <div className="form-group">
-                    <Link to="/bookingApp/result.aspx" className="btn btn-primary">
+                    <Link to="/booking_app/result.aspx/" className="btn btn-primary">
                         <FormattedMessage id="bookingApp.booking.form_submit"/>
                     </Link>
                 </div>

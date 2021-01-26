@@ -53,6 +53,11 @@
             "form_info": "What do you want to do to me uwu?",
             "form_notice": "Once you submit the form, I will review the request and send you quotation on Telegram.",
             "form_submit": "Book me now! o//w//o"
+        },
+        "result": {
+            "title": "Err…",
+            "content": "You might have taken the joke too seriously. But if you are really bored, you feel free to come {link}.",
+            "link_text": "talk to me"
         }
     }
 }
