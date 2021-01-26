@@ -32,5 +32,32 @@
     },
     "footer": {
         "note": " - Translated by {uwuifier}"
+    },
+    "bookingApp": {
+        "booking": {
+            "title": "Book My Body!",
+            "intro": "Want to pway with me? Pewhaps in pwivate? Wequest booking hewe!",
+            "form_telegram": "Furrygram",
+            "form_date_time": "Date/Time",
+            "form_date_time_hint": "(Youw bwowsew's wocaw time)",
+            "form_duration": "Duwation",
+            "form_duration_option_1": "30 minutes",
+            "form_duration_option_2": "1 houw",
+            "form_duration_option_3": "1.5 houw",
+            "form_duration_option_4": "2 houws",
+            "form_duration_option_5": "3 houws",
+            "form_duration_option_6": "4 houws",
+            "form_duration_option_7": "6 houws",
+            "form_coupon_code": "Coupon code",
+            "form_coupon_code_hint": "(optionaw)",
+            "form_info": "What do uu want to do to me uwu?",
+            "form_notice": "Once uu submit da fowm, I wiww weview da wequest and send uu quotation on Tewegwam.",
+            "form_submit": "Book me nuw! o//w//o"
+        },
+        "result": {
+            "title": "Eww…",
+            "content": "You might haz taken da joke too sewiouswy. But if uu awe weawwy bowed, uu feew fwee to come {wink}.",
+            "link_text": "tawk to me"
+        }
     }
 }
