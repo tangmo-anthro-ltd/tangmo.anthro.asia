@@ -44,13 +44,10 @@ export default () => {
                         <select className="form-control">
                             {/* I would have used react-intl-formatted-duration, but that require base `react-intl`, not the one via gatsby-plugin-intl*/}
                             {/* I should also use FormattedMessage's plural, at least. Send me a PR. */}
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_1"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_2"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_3"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_4"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_5"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_6"/></option>
-                            <option><FormattedMessage id="bookingApp.booking.form_duration_option_7"/></option>
+                            {Array(7).fill(0).map((_, i) =>
+                                <FormattedMessage id={'bookingApp.booking.form_duration_option_' + (i+1)}>
+                                    {(message) => <option>{message}</option>}
+                                </FormattedMessage>)}
                         </select>
                     </div>
                 </div>
