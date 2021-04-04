@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-bootstrap-template",
+  "name": "tangmo-anthro-asia",
   "private": true,
-  "description": "A Gatsby starter template with Bootstrap 4 included.",
+  "description": "Source code for tangmo.anthro.asia.",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "scripts": {
@@ -49,9 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/varunagrawal/gatsby-bootstrap-template"
-  },
-  "bugs": {
-    "url": "https://github.com/varunagrawal/gatsby-bootstrap-template/issues"
+    "url": "https://github.com/tangmo-anthro-ltd/tangmo.anthro.asia"
   }
 }
