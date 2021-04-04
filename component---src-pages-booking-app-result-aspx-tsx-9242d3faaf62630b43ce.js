@@ -1,2 +1,2 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[6],{UhsZ:function(e,t,n){"use strict";n.r(t);var l=n("Uu+x"),a=n("nVvM"),r=n("9Dj+"),o=n("Cq/n");t.default=function(){return l.createElement(r.a,null,l.createElement(a.a,null,l.createElement("h1",null,l.createElement(o.FormattedMessage,{id:"bookingApp.result.title"})),l.createElement("p",null,l.createElement(o.FormattedMessage,{id:"bookingApp.result.content",values:{link:l.createElement(o.Link,{to:"/contact/"},l.createElement(o.FormattedMessage,{id:"bookingApp.result.link_text"}))}}))))}}}]);
-//# sourceMappingURL=component---src-pages-booking-app-result-aspx-tsx-fdb1d8c595dcabee171c.js.map
+//# sourceMappingURL=component---src-pages-booking-app-result-aspx-tsx-9242d3faaf62630b43ce.js.map
