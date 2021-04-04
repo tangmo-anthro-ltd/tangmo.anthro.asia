@@ -1,14 +1,8 @@
-const React = require("react")
-const { Helmet } = require("react-helmet")
+const React = require('react')
+const { Helmet } = require('react-helmet')
 
 exports.onRenderBody = (
-  {
-    setHeadComponents,
-    setHtmlAttributes,
-    setBodyAttributes,
-    setPreBodyComponents,
-    setPostBodyComponents,
-  },
+  { setHeadComponents, setHtmlAttributes, setBodyAttributes, setPreBodyComponents, setPostBodyComponents },
   pluginOptions
 ) => {
   const helmet = Helmet.renderStatic()

@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "แตงโม",
+    title: 'แตงโม',
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -23,15 +23,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "แตงโม",
-        short_name: "แตงโม",
-        start_url: "/",
-        background_color: "#6b37bf",
-        theme_color: "#6b37bf",
+        name: 'แตงโม',
+        short_name: 'แตงโม',
+        start_url: '/',
+        background_color: '#6b37bf',
+        theme_color: '#6b37bf',
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: "standalone",
-        icon: "src/images/favicon.png", // This path is relative to the root of the site.
+        display: 'standalone',
+        icon: 'src/images/favicon.png', // This path is relative to the root of the site.
         // An optional attribute which provides support for CORS check.
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
         // Any invalid keyword or empty string defaults to `anonymous`
