@@ -4,7 +4,7 @@ const owo = require('@zuzak/owo')
 const fs = require('fs')
 
 const en = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en.json', 'utf8'))
-const previouslyTranslated = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en.json', 'utf8'))
+const previouslyTranslated = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en-emodeng.json', 'utf8'))
 
 console.log('Generating uwu language...')
 

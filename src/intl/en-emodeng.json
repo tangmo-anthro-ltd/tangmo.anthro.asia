@@ -31,7 +31,8 @@
         "imageAlt": "Dwawing of TangMo dog nibbwing on a watewmewon"
     },
     "footer": {
-        "note": " - Translated by {uwuifier}"
+        "note": " - Translated by {uwuifier}",
+        "source": "Github"
     },
     "bookingApp": {
         "booking": {
