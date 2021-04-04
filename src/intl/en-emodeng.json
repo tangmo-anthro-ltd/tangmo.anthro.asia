@@ -32,7 +32,7 @@
     },
     "footer": {
         "note": " - Translated by {uwuifier}",
-        "source": "Github"
+        "source": "Guthib"
     },
     "bookingApp": {
         "booking": {
@@ -57,7 +57,7 @@
         },
         "result": {
             "title": "Eww…",
-            "content": "You might haz taken da joke too sewiouswy. But if uu awe weawwy bowed, uu feew fwee to come {wink}.",
+            "content": "You might haz taken da joke too sewiouswy. But if uu awe weawwy bowed, uu feew fwee to come {link}.",
             "link_text": "tawk to me"
         }
     }
