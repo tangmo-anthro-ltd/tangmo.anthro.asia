@@ -31,7 +31,8 @@
         "imageAlt": "Drawing of TangMo dog nibbling on a watermelon"
     },
     "footer": {
-        "note": " "
+        "note": " ",
+        "source": "Github"
     },
     "bookingApp":{
         "booking": {

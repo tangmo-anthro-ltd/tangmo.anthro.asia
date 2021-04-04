@@ -31,7 +31,8 @@
         "imageAlt": "ภาพวาดหมาแตงโมแทะแตงโม"
     },
     "footer": {
-        "note": " "
+        "note": " ",
+        "source": "Github"
     },
     "bookingApp":{
         "booking": {
