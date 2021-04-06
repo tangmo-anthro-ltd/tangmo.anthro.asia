@@ -24,8 +24,9 @@
     },
     "contact": {
         "title": "คุยกับเรา!",
-        "telegram": "Telegram (เทเลแกรม)",
-        "vrchat": "VRChat (วีร์อาร์แชท)"
+        "telegram": "เทเลแกรม",
+        "twitter": "ทวิตเตอร์",
+        "vrchat": "วีร์อาร์แชท (VRChat)"
     },
     "index": {
         "imageAlt": "ภาพวาดหมาแตงโมแทะแตงโม"

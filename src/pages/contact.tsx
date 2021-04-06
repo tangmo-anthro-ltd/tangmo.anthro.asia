@@ -19,6 +19,15 @@ export default () => {
                         </a>
                     </li>
                     <li>
+                        <FormattedMessage id="contact.twitter" />:{' '}
+                        <a
+                            href="https://twitter.com/TangMo_fur"
+                            rel="noreferrer noopener"
+                        >
+                            @TangMo_fur
+                        </a>
+                    </li>
+                    <li>
                         <FormattedMessage id="contact.vrchat" />:{' '}
                         <a
                             href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
