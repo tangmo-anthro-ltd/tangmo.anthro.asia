@@ -21,10 +21,10 @@ export default () => {
                     <li>
                         <FormattedMessage id="contact.twitter" />:{' '}
                         <a
-                            href="https://twitter.com/TangMo_fur"
+                            href="https://twitter.com/TangMoEat"
                             rel="noreferrer noopener"
                         >
-                            @TangMo_fur
+                            @TangMoEat
                         </a>
                     </li>
                     <li>
