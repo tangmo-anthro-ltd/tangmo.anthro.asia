@@ -43,11 +43,11 @@ export function NavSection() {
                     </Col>
                     <Col md={4} className="text-center">
                         <Link to="/">
-                            <FormattedMessage id="nav.home" />
+                            <FormattedMessage id="nav.about" />
                         </Link>
                         {' | '}
-                        <Link to="/about/">
-                            <FormattedMessage id="nav.about" />
+                        <Link to="https://tangmo-gal.anthro.asia">
+                            <FormattedMessage id="nav.gallery" />
                         </Link>
                         {' | '}
                         <Link to="/contact/">

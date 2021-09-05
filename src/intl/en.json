@@ -3,7 +3,7 @@
         "name": "TangMo",
         "defaultDesc": "TangMo’s website"
     },
-    "about": {
+    "index": {
         "title": "About TangMo",
         "aboutMe": {
             "title": "About TangMo",
@@ -18,18 +18,15 @@
     },
     "nav": {
         "title": "TangMo",
-        "home": "Home",
         "about": "About",
-        "contact": "Contact"
+        "contact": "Contact",
+        "gallery": "Gallery"
     },
     "contact": {
         "title": "Talk to me!",
         "telegram": "Telegram",
         "twitter": "Twitter",
         "vrchat": "VRChat"
-    },
-    "index": {
-        "imageAlt": "Drawing of TangMo dog nibbling on a watermelon"
     },
     "footer": {
         "note": " ",

@@ -3,7 +3,7 @@
         "name": "แตงโม",
         "defaultDesc": "เว็บของแตงโม"
     },
-    "about": {
+    "index": {
         "title": "เกี่ยวกับแตงโม",
         "aboutMe": {
             "title": "เกี่ยวกับแตงโม",
@@ -18,18 +18,15 @@
     },
     "nav": {
         "title": "แตงโม",
-        "home": "หน้าแรก",
         "about": "เกี่ยวกับ",
-        "contact": "ติดต่อเรา"
+        "contact": "ติดต่อเรา",
+        "gallery": "แกลเลอรี่"
     },
     "contact": {
         "title": "คุยกับเรา!",
         "telegram": "เทเลแกรม",
         "twitter": "ทวิตเตอร์",
         "vrchat": "วีร์อาร์แชท (VRChat)"
-    },
-    "index": {
-        "imageAlt": "ภาพวาดหมาแตงโมแทะแตงโม"
     },
     "footer": {
         "note": " ",
