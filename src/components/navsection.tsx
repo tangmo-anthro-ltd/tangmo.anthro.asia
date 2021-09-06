@@ -46,9 +46,9 @@ export function NavSection() {
                             <FormattedMessage id="nav.about" />
                         </Link>
                         {' | '}
-                        <Link to="https://tangmo-gal.anthro.asia">
+                        <a href="https://tangmo-gal.anthro.asia">
                             <FormattedMessage id="nav.gallery" />
-                        </Link>
+                        </a>
                         {' | '}
                         <Link to="/contact/">
                             <FormattedMessage id="nav.contact" />
