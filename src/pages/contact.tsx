@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container } from 'react-bootstrap'
 import Layout from '../components/layout'
-import { FormattedMessage, useIntl } from 'gatsby-plugin-intl'
+import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl'
 
 export default () => {
     const { formatMessage } = useIntl()
@@ -20,10 +20,7 @@ export default () => {
                     </li>
                     <li>
                         <FormattedMessage id="contact.twitter" />:{' '}
-                        <a
-                            href="https://twitter.com/TangMoEat"
-                            rel="noreferrer noopener"
-                        >
+                        <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">
                             @TangMoEat
                         </a>
                     </li>

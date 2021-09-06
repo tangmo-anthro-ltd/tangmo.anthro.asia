@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { FormattedMessage } from 'gatsby-plugin-intl'
+import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 export function Footer() {
     return (

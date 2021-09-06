@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-intl'
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl'
 import { Link as PlainLink } from 'gatsby'
 import { Location } from '@reach/router'
 import { ReactNode } from 'react'
 
 // This is unnecessarily complicated
-// See https://github.com/wiziple/gatsby-plugin-intl/issues/42
+// See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42
 const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
     const { locale, defaultLocale } = useIntl()
     if (to === locale) {

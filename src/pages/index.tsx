@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import Layout from '../components/layout'
-import { FormattedMessage, useIntl } from 'gatsby-plugin-intl'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl'
+import { StaticImage } from 'gatsby-plugin-image'
 
-export default ({ data }) => {
+export default () => {
     const { formatMessage } = useIntl()
     return (
         <Layout title={formatMessage({ id: 'index.title' })}>
@@ -15,10 +14,7 @@ export default ({ data }) => {
                 </h1>
                 <Row>
                     <Col md={5}>
-                        <Img
-                            fluid={data.image1.childImageSharp.fluid}
-                            alt={formatMessage({ id: 'index.aboutMe.imageAlt' })}
-                        />
+                        <StaticImage src="../images/index.png" alt={formatMessage({ id: 'index.aboutMe.imageAlt' })} />
                     </Col>
                     <Col md={7}>
                         <p>
@@ -44,15 +40,3 @@ export default ({ data }) => {
         </Layout>
     )
 }
-
-export const query = graphql`
-    query {
-        image1: file(relativePath: { eq: "index.png" }) {
-            childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-`

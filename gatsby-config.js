@@ -12,14 +12,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/images`,
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -39,7 +34,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-react-intl`,
       options: {
         // language JSON resource path
         path: `${__dirname}/src/intl`,

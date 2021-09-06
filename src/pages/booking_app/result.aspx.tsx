@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container } from 'react-bootstrap'
 import Layout from '../../components/layout'
-import { FormattedMessage, Link } from 'gatsby-plugin-intl'
+import { FormattedMessage, Link } from 'gatsby-plugin-react-intl'
 
 export default () => {
     return (

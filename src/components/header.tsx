@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
-import { useIntl } from 'gatsby-plugin-intl'
+import { useIntl } from 'gatsby-plugin-react-intl'
 
 export function Header({ title, description, extraMeta = [] }: IProps) {
     const { locale, formatMessage } = useIntl()
