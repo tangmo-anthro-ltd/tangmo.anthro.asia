@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import Layout from '../components/layout'
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl'
 import { StaticImage } from 'gatsby-plugin-image'
+import RefSheet from '../images/refsheet.png'
 
 export default () => {
     const { formatMessage } = useIntl()
@@ -31,7 +32,7 @@ export default () => {
                         <p>
                             <FormattedMessage id="index.aboutChara.para" />
                         </p>
-                        <a href="/refsheet.jpg">
+                        <a href={RefSheet}>
                             <FormattedMessage id="index.aboutChara.refSheet" />
                         </a>
                     </Col>
