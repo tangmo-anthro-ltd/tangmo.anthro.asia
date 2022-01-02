@@ -4,6 +4,7 @@ import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl'
 import { Link as PlainLink } from 'gatsby'
 import { Location } from '@reach/router'
 import { ReactNode } from 'react'
+import styled from "styled-components"
 
 // This is unnecessarily complicated
 // See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42
@@ -33,6 +34,9 @@ export function NavSection() {
     return (
         <Container>
             <nav>
+                <HiddenAccessibleLink href="#main">
+                    <FormattedMessage id="nav.skip_to_content" />
+                </HiddenAccessibleLink>
                 <Row style={{ marginTop: '1rem' }}>
                     <Col md={4} className={['text-center', 'text-md-left']}>
                         <h1 className="h5">
@@ -64,3 +68,18 @@ export function NavSection() {
         </Container>
     )
 }
+
+const HiddenAccessibleLink = styled.a`
+    background: #ffffff;
+    color: #4b11a8;
+    border: 2px solid rgba(0,0,0,.16);
+    border-radius: 2px;
+    padding: 4px;
+    position: absolute;
+    z-index: 9999;
+    transform: translateY(-200%);
+
+    :focus {
+        transform: translateY(0%);
+    }
+`;

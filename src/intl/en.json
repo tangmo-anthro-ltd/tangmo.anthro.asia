@@ -20,7 +20,8 @@
         "title": "TangMo",
         "about": "About",
         "contact": "Contact",
-        "gallery": "Gallery"
+        "gallery": "Gallery",
+        "skip_to_content": "Skip to content"
     },
     "contact": {
         "title": "Talk to me!",

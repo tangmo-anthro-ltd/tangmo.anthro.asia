@@ -8,7 +8,9 @@ export default ({ children, title }: IProps) => (
     <>
         <Header title={title} />
         <NavSection />
-        {children}
+        <main id="main">
+            {children}
+        </main>
         <Footer />
     </>
 )
