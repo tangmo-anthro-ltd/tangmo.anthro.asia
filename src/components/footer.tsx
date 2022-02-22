@@ -4,7 +4,7 @@ import { FormattedMessage } from 'gatsby-plugin-react-intl'
 
 export function Footer() {
     return (
-        <Container>
+        <Container as="footer">
             <hr style={{ marginTop: '4rem' }} />
             <Row>
                 <Col xs={8}>
