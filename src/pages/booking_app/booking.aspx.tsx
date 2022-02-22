@@ -1,17 +1,17 @@
-import * as React from 'react'
-import { Container, Form } from 'react-bootstrap'
-import Layout from '../../components/layout'
-import { FormattedMessage, Link } from 'gatsby-plugin-react-intl'
+import * as React from 'react';
+import { Container, Form } from 'react-bootstrap';
+import Layout from '../../components/layout';
+import { FormattedMessage, Link } from 'gatsby-plugin-react-intl';
 
 export default () => {
-    const [coupon, setCoupon] = React.useState('')
+    const [coupon, setCoupon] = React.useState('');
     React.useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search)
-        const couponParam = urlParams.get('coupon')
+        const urlParams = new URLSearchParams(window.location.search);
+        const couponParam = urlParams.get('coupon');
         if (couponParam) {
-            setCoupon(couponParam)
+            setCoupon(couponParam);
         }
-    }, [])
+    }, []);
     return (
         <Layout>
             <Container>
@@ -92,5 +92,5 @@ export default () => {
                 </Form>
             </Container>
         </Layout>
-    )
-}
+    );
+};

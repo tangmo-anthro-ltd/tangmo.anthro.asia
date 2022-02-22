@@ -1,14 +1,14 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { useIntl } from 'gatsby-plugin-react-intl'
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { useIntl } from 'gatsby-plugin-react-intl';
 
 export function Header({ title, description, extraMeta = [] }: IProps) {
-    const { locale, formatMessage } = useIntl()
-    const name = formatMessage({ id: 'meta.name' })
+    const { locale, formatMessage } = useIntl();
+    const name = formatMessage({ id: 'meta.name' });
 
-    let builtTitle = name
+    let builtTitle = name;
     if (title) {
-        builtTitle = title + ' - ' + name
+        builtTitle = title + ' - ' + name;
     }
 
     const meta = [
@@ -21,7 +21,7 @@ export function Header({ title, description, extraMeta = [] }: IProps) {
             content: name,
         },
         ...extraMeta,
-    ]
+    ];
 
     return (
         <Helmet
@@ -39,16 +39,16 @@ export function Header({ title, description, extraMeta = [] }: IProps) {
         >
             <html lang={locale} />
         </Helmet>
-    )
+    );
 }
 // <script src="https://kit.fontawesome.com/d58dae4cfc.js" crossOrigin="anonymous" />
 
 interface IProps {
-    title?: string
-    description?: string
-    extraMeta?: IMeta[]
+    title?: string;
+    description?: string;
+    extraMeta?: IMeta[];
 }
 interface IMeta {
-    name: string
-    content: string
+    name: string;
+    content: string;
 }
