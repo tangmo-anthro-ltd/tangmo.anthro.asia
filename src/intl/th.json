@@ -30,8 +30,8 @@
         "vrchat": "วีร์อาร์แชท (VRChat)"
     },
     "footer": {
-        "note": " ",
-        "source": "Github"
+        "source": "Github",
+        "last_updated": "อัปเดตล่าสุดเมื่อ {date}"
     },
     "bookingApp": {
         "booking": {

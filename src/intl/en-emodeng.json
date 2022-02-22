@@ -30,8 +30,8 @@
         "vrchat": "VWChat"
     },
     "footer": {
-        "note": " - Translated by {uwuifier}",
-        "source": "Guthib"
+        "source": "Guthib",
+        "last_updated": "Updated on {date}"
     },
     "bookingApp": {
         "booking": {

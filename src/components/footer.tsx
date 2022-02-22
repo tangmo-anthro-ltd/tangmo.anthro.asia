@@ -1,30 +1,34 @@
-import * as React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import { FormattedMessage } from 'gatsby-plugin-react-intl'
+import * as React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { FormattedMessage } from 'gatsby-plugin-react-intl';
+import { graphql, useStaticQuery } from 'gatsby';
+import { NumericDateTime } from './NumericDateTime';
 
 export function Footer() {
+    const query = useStaticQuery(graphql`
+        query {
+            site {
+                buildTime
+            }
+        }
+    `);
     return (
         <Container as="footer">
             <hr style={{ marginTop: '4rem' }} />
             <Row>
-                <Col xs={8}>
+                <Col xs={10}>
                     <p>
                         <small>
-                            ©2021
                             <FormattedMessage
-                                id="footer.note"
+                                id="footer.last_updated"
                                 values={{
-                                    uwuifier: (
-                                        <a href="https://www.npmjs.com/package/@zuzak/owo" rel="noreferrer noopener">
-                                            @zuzak/owo
-                                        </a>
-                                    ),
+                                    date: <NumericDateTime date={new Date(query.site.buildTime)} />,
                                 }}
                             />
                         </small>
                     </p>
                 </Col>
-                <Col xs={4} className={['text-right']}>
+                <Col xs={2} className={['text-right']}>
                     <small>
                         <a href="https://github.com/tangmo-anthro-ltd/tangmo.anthro.asia" rel="noreferrer noopener">
                             <FormattedMessage id="footer.source" />
@@ -33,5 +37,5 @@ export function Footer() {
                 </Col>
             </Row>
         </Container>
-    )
+    );
 }

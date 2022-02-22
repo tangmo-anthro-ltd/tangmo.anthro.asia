@@ -30,8 +30,8 @@
         "vrchat": "VRChat"
     },
     "footer": {
-        "note": " ",
-        "source": "Github"
+        "source": "Github",
+        "last_updated": "Updated on {date}"
     },
     "bookingApp": {
         "booking": {
