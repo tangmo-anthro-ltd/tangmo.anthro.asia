@@ -24,6 +24,7 @@
     "gatsby-plugin-react-intl": "^3.0.2",
     "gatsby-plugin-remove-trailing-slashes": "^3.13.0",
     "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-plugin-styled-components": "^4.13.0",
     "gatsby-plugin-typescript": "^3.13.0",
     "gatsby-transformer-sharp": "^3.13.0",
     "jquery": "^3.5.1",

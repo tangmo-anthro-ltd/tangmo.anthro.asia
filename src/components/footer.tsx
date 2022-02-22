@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { FormattedMessage } from 'gatsby-plugin-react-intl';
 import { graphql, useStaticQuery } from 'gatsby';
-import { NumericDateTime } from './NumericDateTime';
+import { NumericDateTime } from './Atom/NumericDateTime';
 
 export function Footer() {
     const query = useStaticQuery(graphql`
