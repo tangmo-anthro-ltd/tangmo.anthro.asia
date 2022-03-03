@@ -14,9 +14,7 @@ export const ContactSection = () => (
                     <FormattedMessage id="contact.telegram" />
                 </dt>
                 <dd>
-                    <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
-                        @Tang_Mo
-                    </a>
+                    @Tang_Mo
                 </dd>
             </Col>
 
