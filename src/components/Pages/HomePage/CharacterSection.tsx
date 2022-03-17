@@ -1,5 +1,4 @@
 import { Col, Row } from 'react-bootstrap';
-import RefSheet from '../../../images/refsheet.png';
 import styled from 'styled-components';
 import * as React from 'react';
 import { FormattedMessage } from 'gatsby-plugin-react-intl';
@@ -14,7 +13,7 @@ export const CharacterSection = () => (
                 <p>
                     <FormattedMessage id="index.aboutChara.para" />
                 </p>
-                <a href={RefSheet}>
+                <a href="/refsheet.png">
                     <FormattedMessage id="index.aboutChara.refSheet" />
                 </a>
             </Col>
