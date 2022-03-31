@@ -15,7 +15,7 @@ export default () => {
                         id="bookingApp.result.content"
                         values={{
                             link: (
-                                <Link to="/contact/">
+                                <Link to="/#contact">
                                     <FormattedMessage id="bookingApp.result.link_text" />
                                 </Link>
                             ),

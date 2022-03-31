@@ -4,7 +4,7 @@ import { FormattedMessage } from 'gatsby-plugin-react-intl';
 import styled from 'styled-components';
 
 export const ContactSection = () => (
-    <section>
+    <section id="contact">
         <H1 as="h2">
             <FormattedMessage id="contact.title" />
         </H1>
