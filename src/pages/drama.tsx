@@ -78,9 +78,9 @@ export default () => {
                         id="drama.p6"
                         values={{
                             link: (
-                                <Link to="https://tangmo-gal.anthro.asia/whitepaper.pdf">
+                                <a href="https://tangmo-gal.anthro.asia/whitepaper.pdf">
                                     <FormattedMessage id="drama.p6_link" />
-                                </Link>
+                                </a>
                             ),
                         }}
                     />
