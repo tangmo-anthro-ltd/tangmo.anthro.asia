@@ -59,5 +59,30 @@
             "content": "You might have taken the joke too seriously. But if you are really bored, you feel free to come {link}.",
             "link_text": "talk to me"
         }
+    },
+    "drama": {
+        "t1": "“Find dramas from the past to the future”",
+        "t2": "With the power of Deep Learning and Big Data",
+        "t3": "How’d you know if your closest friend will stir up a drama tomorrow?",
+        "p1": "ThaiAnthro proudly presents! ThaiAnthro Drama! With the power of Big Data and our database consisting of over 10 years of collected information, we are leveraging Deep Learning to categorize and extrapolate the data!",
+        "p2": "Thorndike Connectionism Theory states learnings consists of a bond between a stimulus and the responses. By trial and error, we experiment and until we find the most desirable responses. Thorndike also believed that analysis might turn situations into compounds of features, such as the number of sides on a shape, to help the mind grasp and retain the situation, and increase their identifiability.",
+        "p3": "Our team utilizes this concept to develop this system by creating connections and infer from past events and behaviours with the accuracy of up to 85%",
+        "p4": "Just enter the two party’s names (Fursona names), and we will estimate the risk of causing drama! We can also predict other events too! You can gauge friendship compatibility here, for example. (Evaluating relationship possibility is resource-intensive. There may be additional cost per CPU hours.)",
+        "p5": "Our initial testings found that our predictions can reduce Facebook witch-hunting and chat log leaking by up to 99%! We hope that our product can bring peace to the community!",
+        "p6": "For more information, {link}!",
+        "p6_link": "you can checkout the white paper here",
+        "u1_placeholder": "Apple Fox",
+        "u2_placeholder": "Banana Wolf",
+        "and_label": "and",
+        "topic_label": "Topic",
+        "topic_placeholder": "having lunch together",
+        "action_button": "Predict now!",
+        "result": {
+            "r0": "Hold on! We are searching for the possibility of no drama occurring…",
+            "r1": "Almost there! A drama-free community, we will find it soon…",
+            "r2": "哦哇塞! Looks like we found something “interesting”. Give us a moment…",
+            "r3": "mmm, that name… That gets a lot of attention from our Artificial Intelligence…",
+            "r4": "We are using Naive Bay to classify your input association, you can't evaluate it with your naked eye…"
+        }
     }
 }

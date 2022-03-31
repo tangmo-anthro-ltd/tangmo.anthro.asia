@@ -8,7 +8,7 @@ import { HiddenAccessibleLink } from "./Atom/HiddenAccessibleLink"
 
 // This is unnecessarily complicated
 // See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42
-const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
+export const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
     const { locale, defaultLocale } = useIntl();
     if (to === locale) {
         return <span>{children}</span>;
