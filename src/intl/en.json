@@ -61,7 +61,7 @@
         }
     },
     "drama": {
-        "t1": "“Find dramas from the past and the future”",
+        "t1": "“Find dramas from the past for the future”",
         "t2": "With the power of Deep Learning and Big Data",
         "t3": "How’d you know if your closest friend will stir up some drama tomorrow?",
         "p1": "ThaiAnthro proudly presents! ThaiAnthro Drama! With the power of Big Data and our database consisting of over 10 years of collected information, we are leveraging Deep Learning to categorize and extrapolate the data!",
@@ -79,7 +79,7 @@
         "action_button": "Predict now!",
         "result": {
             "r0": "Hold on! We are searching for the possibility of no drama occurring…",
-            "r1": "Almost there! A drama-free community, we will find it soon…",
+            "r1": "Almost there! A drama-free community… we will find it soon…",
             "r2": "哦哇塞! Looks like we found something “interesting”. Give us a moment…",
             "r3": "mmm, that name… That gets a lot of attention from our Artificial Intelligence…",
             "r4": "We are using Naive Bay to classify your input association, you can't evaluate it with your naked eye…"
