@@ -82,7 +82,8 @@
             "r1": "Almost there! A drama-free community… we will find it soon…",
             "r2": "哦哇塞! Looks like we found something “interesting”. Give us a moment…",
             "r3": "mmm, that name… That gets a lot of attention from our Artificial Intelligence…",
-            "r4": "We are using Naive Bay to classify your input association, you can't evaluate it with your naked eye…"
+            "r4": "We are using Naive Bay to classify your input association, you can't evaluate it with your naked eye…",
+            "r_surprise": "Happy April Fools!"
         }
     }
 }
