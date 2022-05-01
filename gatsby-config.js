@@ -10,14 +10,14 @@ module.exports = {
     title: 'แตงโม',
   },
   plugins: [
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-image',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'แตงโม',
         short_name: 'แตงโม',
@@ -30,20 +30,20 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
         // An optional attribute which provides support for CORS check.
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
-        crossOrigin: `use-credentials`,
+        // Any invalid keyword or empty string defaults to 'anonymous'
+        crossOrigin: 'use-credentials',
       },
     },
     {
-      resolve: `gatsby-plugin-react-intl`,
+      resolve: 'gatsby-plugin-react-intl',
       options: {
         // language JSON resource path
         path: `${__dirname}/src/intl`,
         // supported language
-        languages: [`th`, `en`, `en-emodeng`],
+        languages: ['th', 'en', 'en-emodeng'],
         // language file path
-        defaultLanguage: `th`,
-        // option to redirect to `/ko` when connecting `/`
+        defaultLanguage: 'th',
+        // option to redirect to '/ko' when connecting '/'
         redirect: false,
       },
     },

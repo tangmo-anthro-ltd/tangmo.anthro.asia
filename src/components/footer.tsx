@@ -28,7 +28,7 @@ export function Footer() {
                         </small>
                     </p>
                 </Col>
-                <Col xs={2} className={['text-right']}>
+                <Col xs={2} className="text-end">
                     <small>
                         <a href="https://github.com/tangmo-anthro-ltd/tangmo.anthro.asia" rel="noreferrer noopener">
                             <FormattedMessage id="footer.source" />
