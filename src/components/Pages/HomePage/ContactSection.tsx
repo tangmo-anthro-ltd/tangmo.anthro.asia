@@ -10,7 +10,7 @@ export const ContactSection = () => (
         </H1>
         <ContactList as="dl">
             <Col>
-                <dt className="font-weight-normal">
+                <dt className="fw-normal">
                     <FormattedMessage id="contact.telegram" />
                 </dt>
                 <dd>
@@ -19,7 +19,7 @@ export const ContactSection = () => (
             </Col>
 
             <Col>
-                <dt className="font-weight-normal">
+                <dt className="fw-normal">
                     <FormattedMessage id="contact.twitter" />
                 </dt>
                 <dd>
@@ -30,7 +30,7 @@ export const ContactSection = () => (
             </Col>
 
             <Col>
-                <dt className="font-weight-normal">
+                <dt className="fw-normal">
                     <FormattedMessage id="contact.vrchat" />
                 </dt>
                 <dd>
