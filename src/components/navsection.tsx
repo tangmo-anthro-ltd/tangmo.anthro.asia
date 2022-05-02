@@ -38,7 +38,7 @@ export function NavSection() {
                     <FormattedMessage id="nav.skip_to_content" />
                 </HiddenAccessibleLink>
                 <Row style={{ marginTop: '1rem' }}>
-                    <Col md={4} className={['text-center', 'text-md-left']}>
+                    <Col md={4} className={['text-center', 'text-md-start']}>
                         <h1 className="h5">
                             <Link to="/">
                                 <FormattedMessage id="nav.title" />
@@ -54,7 +54,7 @@ export function NavSection() {
                             <FormattedMessage id="nav.gallery" />
                         </a>
                     </Col>
-                    <Col md={4} className={['text-center', 'text-md-right']}>
+                    <Col md={4} className={['text-center', 'text-md-end']}>
                         <LocaleLink to="th">ภาษาไทย</LocaleLink> <LocaleLink to="en">English</LocaleLink>{' '}
                         <LocaleLink to="en-emodeng">UwU</LocaleLink>
                     </Col>
