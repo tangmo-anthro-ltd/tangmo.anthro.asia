@@ -116,6 +116,8 @@ export default () => {
                 </CenterContainer>
 
                 {/*
+                <h3>รู้จักกันทางเดียว</h3>
+
                 <h3>Talk to me directly!</h3>
                 <CenterContainer>
                     <LimitWidth>
