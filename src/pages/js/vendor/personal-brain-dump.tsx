@@ -108,24 +108,23 @@ export default () => {
                     </LimitWidth>
                 </CenterContainer>
 
+                <AnchoredH3 id="knowing-future">“รู้อะไรไม่สู้รู้งี้”</AnchoredH3>
+                <CenterContainer>
+                    <LimitWidth>
+                        <p>ได้ยินพ่อเราพูดอยู่หลายที บ่อยครั้งที่เราไม่สามารถคาดเดาอนาคตได้ เมื่อผลออกมาแล้ว เราก็มักจะนั่งเสียใจ <q>รู้งี้น่าจะ… ไม่งั้นป่านนี้…ไปแล้ว</q></p>
+                        <p>ในตอนนั้น ไม่ว่าเราจะเก่งแค่ไหน หาข้อมูลแค่ไหน เราก็ไม่สามารถ“รู้งี้”ได้ เราเลือกตัวเลือกที่ดีที่สุดแล้วในตอนนั้น ไม่มีประโยชน์จะมานั่งเสียใจทีหลัง</p>
+                    </LimitWidth>
+                </CenterContainer>
+
                 <AnchoredH3 id="todo">TODO</AnchoredH3>
                 <CenterContainer>
                     <LimitWidth>
-                        <p>There are a few more things I wanted to mention about, spoiler: they are comment on this file!</p>
+                        <p>There are a few more things I wanted to mention about, spoiler: they are in the comment on this file!</p>
                     </LimitWidth>
                 </CenterContainer>
 
                 {/*
                 <h3>รู้จักกันทางเดียว</h3>
-
-                <h3>Talk to me directly!</h3>
-                <CenterContainer>
-                    <LimitWidth>
-                        <p>มีอะไรก็คุยกันตรงๆให้เคลียร์ โตๆกันแล้ว มีปัญหาอะไรคาใจ ไม่พอใจอะไรก็บอก! คุยกันด้วยเหตุผลและเสนอทางแก้ บางทีเราก็ไม่รู้หรอกนะว่าเราทำอะไรให้เธอไม่พอใจ</p>
-                        <p>แล้วการที่ฝากคนอื่นมาถาม</p>
-                    </LimitWidth>
-                </CenterContainer>
-
 
                 <h3>Abstractions upon abstractions</h3>
 
