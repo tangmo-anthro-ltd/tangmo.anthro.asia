@@ -45,6 +45,7 @@ module.exports = {
         defaultLanguage: 'th',
         // option to redirect to '/ko' when connecting '/'
         redirect: false,
+        ignoredPaths: ['/js/**'],
       },
     },
   ],
