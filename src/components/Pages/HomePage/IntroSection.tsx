@@ -15,6 +15,7 @@ export const IntroSection = () => {
                     <a href="https://tangmo-gal.anthro.asia/picture/941">
                         <StaticImage
                             src="../../../images/index-anemo.jpg"
+                            sizes="(min-width: 768px) 40vw, 100vw"
                             alt={formatMessage({ id: 'index.aboutMe.imageAlt' })}
                         />
                     </a>

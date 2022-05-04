@@ -23,6 +23,7 @@ export const CharacterSection = () => {
                 <Figure>
                     <StaticImage
                         src="../../../images/index-chara.jpg"
+                        sizes="(min-width: 768px) 35vw, 100vw"
                         alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
                     />
                     <Figure.Caption>
