@@ -12,10 +12,12 @@ export const IntroSection = () => {
             </h1>
             <Row>
                 <Col md={5}>
-                    <StaticImage
-                        src="../../../images/index.png"
-                        alt={formatMessage({ id: 'index.aboutMe.imageAlt' })}
-                    />
+                    <a href="https://tangmo-gal.anthro.asia/picture/941">
+                        <StaticImage
+                            src="../../../images/index-anemo.jpg"
+                            alt={formatMessage({ id: 'index.aboutMe.imageAlt' })}
+                        />
+                    </a>
                 </Col>
                 <Col md={7}>
                     <p>

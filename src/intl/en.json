@@ -7,12 +7,14 @@
         "title": "About TangMo",
         "aboutMe": {
             "title": "About TangMo",
-            "imageAlt": "Placeholder drawing of TangMo dog nibbling on a watermelon",
-            "para": "Hello! I’m a wolf from Thailand, living far from home. The name, TangMo, literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. Being “relatively” new to the fandom, it’s nice to meet everyone."
+            "imageAlt": "Image of “Anemo” dragon from VRChat",
+            "para": "Hello! It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, usually as the default “Anemo” avatar (pictured). Hope to see you around!"
         },
         "aboutChara": {
             "title": "About the character",
-            "para": "I just finished putting colors on a template reference sheet; haven't made a proper one. But you can take a look at this one now! Other images on this site are older placeholder doodle that hasn't been updated.",
+            "imageAlt": "Bust shot painting of TangMo’s character",
+            "imageCredits": "Image Credits: 骑士长",
+            "para": "Blue wolf number 23,547, reporting for duty! I just finished putting colors on a template reference sheet; haven’t made a proper one.",
             "refSheet": "Reference Sheet"
         }
     },
@@ -39,7 +41,7 @@
             "intro": "Want to play with me? Perhaps in private? Request booking here!",
             "form_telegram": "Telegram",
             "form_date_time": "Date/Time",
-            "form_date_time_hint": "(Your browser's local time)",
+            "form_date_time_hint": "(Your browser’s local time)",
             "form_duration": "Duration",
             "form_duration_option_1": "30 minutes",
             "form_duration_option_2": "1 hour",
