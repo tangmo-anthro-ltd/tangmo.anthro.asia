@@ -27,7 +27,10 @@ export const CharacterSection = () => {
                         alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
                     />
                     <Figure.Caption>
-                        <FormattedMessage id="index.aboutChara.imageCredits" />
+                        <FormattedMessage
+                            id="index.aboutChara.imageCredits"
+                            values={{link: <a href="https://www.facebook.com/profile.php?id=100077583383830" rel="noreferrer noopener">骑士长</a>}}
+                        />
                     </Figure.Caption>
                 </Figure>
             </Col>

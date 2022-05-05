@@ -14,7 +14,7 @@
         "aboutChara": {
             "title": "About the character",
             "imageAlt": "Bust shot painting of TangMo’s character",
-            "imageCredits": "Image Credits: 骑士长",
+            "imageCredits": "Image Credits: {link}",
             "para": "Blue wolf number 23,547, reporting for duty! I just finished putting colors on a template reference sheet; haven’t made a proper one.",
             "refSheet": "Reference Sheet"
         }
