@@ -7,11 +7,11 @@ import { StaticImage } from "gatsby-plugin-image"
 export const CharacterSection = () => {
     const { formatMessage } = useIntl();
     return <section>
-        <H1 as="h2">
-            <FormattedMessage id="index.aboutChara.title" />
-        </H1>
         <Row>
             <Col md={8}>
+                <H1 as="h2">
+                    <FormattedMessage id="index.aboutChara.title" />
+                </H1>
                 <p>
                     <FormattedMessage id="index.aboutChara.para" />
                 </p>

@@ -4,19 +4,7 @@
         "defaultDesc": "TangMo’s website"
     },
     "index": {
-        "title": "About TangMo",
-        "aboutMe": {
-            "title": "About TangMo",
-            "imageAlt": "Image of “Anemo” dwagon fwom VWChat",
-            "para": "Hewwo! It’s TangMo fwom Thaiwand, wiving faw fwom home. Da name witewawwy twanswates to “watewmewon”. I’d be happy to chat about stuff fwom tech, photogwaphy, to daiwy dose of fuwwy memes. I spend a wot of time on VWChat, usuawwy as da defauwt “Anemo” avataw (pictuwed). Hope to see uu awound!"
-        },
-        "aboutChara": {
-            "title": "About da chawactew",
-            "imageAlt": "Bust shot painting of TangMo’s chawactew",
-            "imageCredits": "Image Cwedits: 骑士长",
-            "para": "Bwue wowf numbew 23,547, wepowting fow duty! I just finished putting cowows on a tempwate wefewence sheet; hazn’t made a pwopew one.",
-            "refSheet": "Wefewence Sheet"
-        }
+        "title": "About TangMo"
     },
     "nav": {
         "title": "TangMo",

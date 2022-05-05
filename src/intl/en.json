@@ -8,7 +8,8 @@
         "aboutMe": {
             "title": "About TangMo",
             "imageAlt": "Image of “Anemo” dragon from VRChat",
-            "para": "Hello! It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, usually as the default “Anemo” avatar (pictured). Hope to see you around!"
+            "imageCaption": "TangMo often use the default “Anemo” dragon avatar in VRChat",
+            "para": "Hello! It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, usually as the default “Anemo” avatar (pictured). See ya around!"
         },
         "aboutChara": {
             "title": "About the character",
