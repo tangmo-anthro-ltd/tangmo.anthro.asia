@@ -45,7 +45,7 @@ export default () => {
                 </LimitWidth>
                 <AnchoredH3 as="h2" id="you-should-know">You should know</AnchoredH3>
                 <p>
-                    This section is “written in blood” (not literally, but someone has their feeling hurt from this), so I think they deserved to be highlighted.
+                    This section is “written in blood” (not literally, but someone had their feeling hurt from this), so I think they deserved to be highlighted.
                 </p>
                 <CenterContainer className="bg-light">
                     <LimitWidth as="ul">
@@ -62,7 +62,7 @@ export default () => {
                                 “ไปคอมมิชชั่นรูปมาให้ render full-CG สุดอลังเสร็จสรรพ เจ้าตัวดันไม่ชอบ สุดท้ายเป็นได้แค่ wallpaper มือถือของคนที่เคยเป็นเพื่อน ที่ตอนนี้ไม่ใช่เพื่อนแล้ว เพราะอีเรื่องนี่แหละ”
                             </blockquote>
                         </li>
-                        <li><q>เพื่อนกัน ไม่จำเป็นต้องเป็น friend กันทุก platform ก็ได้</q> Being friend doesn’t mean we have to “friend” each other on every platform.</li>
+                        <li><q>เพื่อนกัน ไม่จำเป็นต้องเป็น friend กันทุก platform ก็ได้</q> Being friend doesn’t mean we have to “friend” each other on every social network platform.</li>
                     </LimitWidth>
                 </CenterContainer>
                 <AnchoredH3 as="h2" id="other-random-thoughts">Other random thoughts</AnchoredH3>
