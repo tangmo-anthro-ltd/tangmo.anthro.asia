@@ -49,7 +49,7 @@ export default () => {
                 </p>
                 <CenterContainer className="bg-light">
                     <LimitWidth as="ul">
-                        <li>Don’t <a href="https://smartquotesforsmartpeople.com/" rel="noreferrer noopener">just send me a “Hello” message</a>. If you don’t add the topic in the initial message, I will often deliberately reply later to exacerbate the issue.</li>
+                        <li>Don’t <a href="https://nohello.net/" rel="noreferrer noopener">just send me a “Hello” message</a>. If you don’t add the topic in the initial message, I will often deliberately reply later to exacerbate the issue.</li>
                         <li>I talk very directly. When there’s something I don’t like, I often give feedback if I am familiar with them enough. I have learnt to soften the blow, but prepare for me to be direct.</li>
                         <li>At the same time, if I did something you don’t like, please tell me. Sometimes, I really don’t know if I did something wrong. Don’t expect me to read your mind and know what you want me to do.</li>
                         <li>
