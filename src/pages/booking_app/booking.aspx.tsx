@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Container, Form } from 'react-bootstrap';
 import Layout from '../../components/layout';
-import { FormattedMessage, Link } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
 
 export default () => {
     const [coupon, setCoupon] = React.useState('');
+    const { formatMessage } = useIntl();
     React.useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
         const couponParam = urlParams.get('coupon');
@@ -13,7 +14,7 @@ export default () => {
         }
     }, []);
     return (
-        <Layout>
+        <Layout title={formatMessage({ id: 'bookingApp.booking.title' })}>
             <Container>
                 <h1>
                     <FormattedMessage id="bookingApp.booking.title" />

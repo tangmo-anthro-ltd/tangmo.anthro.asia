@@ -8,7 +8,7 @@ import { ReactChild } from "react"
 // “That’s better!”
 export default () => {
     return (
-        <Layout>
+        <Layout title="Personal Brain Dump">
             <Container>
                 <h1 style={{ marginBottom: "2.5rem" }}>Personal Brain Dump</h1>
 

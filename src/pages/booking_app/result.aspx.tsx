@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import Layout from '../../components/layout';
-import { FormattedMessage, Link } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
 
 export default () => {
+    const { formatMessage } = useIntl();
     return (
-        <Layout>
+        <Layout title={formatMessage({ id: 'index.title' })}>
             <Container>
                 <h1>
                     <FormattedMessage id="bookingApp.result.title" />
