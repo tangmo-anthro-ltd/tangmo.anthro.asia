@@ -4,7 +4,7 @@ import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { Link as PlainLink } from 'gatsby';
 import { Location } from '@reach/router';
 import { ReactNode } from 'react';
-import { HiddenAccessibleLink } from "./Atom/HiddenAccessibleLink"
+import { HiddenAccessibleLink } from './Atom/HiddenAccessibleLink';
 
 // This is unnecessarily complicated
 // See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42

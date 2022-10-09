@@ -1,4 +1,4 @@
-import { Col, Figure, Row } from "react-bootstrap"
+import { Col, Figure, Row } from 'react-bootstrap';
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
@@ -8,7 +8,7 @@ export const IntroSection = () => {
     return (
         <>
             <Row>
-                <Col md={7} style={{order:2}}>
+                <Col md={7} style={{ order: 2 }}>
                     <h1>
                         <FormattedMessage id="index.aboutMe.title" />
                     </h1>
@@ -16,7 +16,7 @@ export const IntroSection = () => {
                         <FormattedMessage id="index.aboutMe.para" />
                     </p>
                 </Col>
-                <Col md={5} style={{order:1}}>
+                <Col md={5} style={{ order: 1 }}>
                     <Figure>
                         <a href="https://tangmo-gal.anthro.asia/picture/773">
                             <StaticImage

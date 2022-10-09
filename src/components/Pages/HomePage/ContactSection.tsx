@@ -13,9 +13,7 @@ export const ContactSection = () => (
                 <dt className="fw-normal">
                     <FormattedMessage id="contact.telegram" />
                 </dt>
-                <dd>
-                    @Tang_Mo
-                </dd>
+                <dd>@Tang_Mo</dd>
             </Col>
 
             <Col>

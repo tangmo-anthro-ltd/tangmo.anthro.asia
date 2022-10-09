@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import Layout from '../../components/layout';
-import { FormattedMessage, Link, useIntl } from "gatsby-plugin-react-intl"
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 
 export default () => {
     const { formatMessage } = useIntl();
