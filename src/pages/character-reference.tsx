@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Container, Figure, Row, ToggleButton } from 'react-bootstrap';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
 import Layout from '../components/layout';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { Download } from '../svg/Download';
 import { useRef } from 'react';
+import { CharacterSheetBackground } from "../svg/CharacterSheetBackground"
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -40,11 +41,7 @@ export default () => {
                                 sizes="(min-width: 768px) 60vw, 100vw"
                                 alt={formatMessage({ id: 'reference.image_alt' })}
                             />
-                            <StaticImage
-                                src="../images/reference/bg-decoration.png"
-                                sizes="(min-width: 768px) 60vw, 100vw"
-                                alt=""
-                            />
+                            <CharacterSheetBackground/>
                             {/* Gatsby's convoluted StaticImage mess with this one, especially when JS is off */}
                             <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
                             <Figure.Caption>
@@ -140,15 +137,18 @@ const StyledRow = styled(Row)`
 const StyledFigure = styled(Figure)`
     position: relative;
     // Body image
-    > div:first-of-type {
+    > *:first-child {
         z-index: 2;
     }
     // Decorative background
-    > div:nth-of-type(2) {
+    > *:nth-child(2) {
+        display: block;
         z-index: 1;
         position: absolute;
         left: 0;
         top: 0;
+        width: 100%;
+        height: 100%;
         background: #b0b0b0;
     }
 `;
