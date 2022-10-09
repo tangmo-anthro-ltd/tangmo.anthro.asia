@@ -37,7 +37,7 @@ export default () => {
                     <Col md={9} lg={10} classNames="d-flex justify-content-between">
                         <StyledFigure>
                             <StaticImage
-                                src="../images/reference/body-flat.png"
+                                src="../images/reference-body-flat.png"
                                 sizes="(min-width: 768px) 60vw, 100vw"
                                 alt={formatMessage({ id: 'reference.image_alt' })}
                             />
