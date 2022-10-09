@@ -6,7 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { Download } from '../svg/Download';
-import { useRef } from "react"
+import { useRef } from 'react';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -26,7 +26,13 @@ export default () => {
                     <FormattedMessage id="reference.title" />
                 </h1>
                 <StyledRow>
-                    <input type="checkbox" ref={shadedInputRef} id="shade-toggle" defaultChecked onChange={e => setShaded(e.target.checked)}/>
+                    <input
+                        type="checkbox"
+                        ref={shadedInputRef}
+                        id="shade-toggle"
+                        defaultChecked
+                        onChange={e => setShaded(e.target.checked)}
+                    />
                     <Col md={9} lg={10} classNames="d-flex justify-content-between">
                         <StyledFigure>
                             <StaticImage
@@ -66,7 +72,11 @@ export default () => {
                         }}
                     >
                         <ButtonGroup>
-                            <label htmlFor="shade-toggle" className={toggleShadeLabelClass} title={jsEnabled && formatMessage({ id: 'reference.note_for_geek' })}>
+                            <label
+                                htmlFor="shade-toggle"
+                                className={toggleShadeLabelClass}
+                                title={jsEnabled && formatMessage({ id: 'reference.note_for_geek' })}
+                            >
                                 <FormattedMessage id="reference.toggle_shade" />
                             </label>
                             <DownloadLink
@@ -94,7 +104,7 @@ export default () => {
     );
 };
 
-const StyledRow=styled(Row)`
+const StyledRow = styled(Row)`
     #shade-layer {
         z-index: 2;
         position: absolute;
@@ -104,16 +114,19 @@ const StyledRow=styled(Row)`
         transition: opacity 0.5s;
         opacity: 0;
     }
-    #shade-toggle { // Input checkbox
+    #shade-toggle {
+        // Input checkbox
         display: none;
     }
     #shade-toggle:checked ~ * #shade-layer {
         opacity: 1;
     }
-    [download]:nth-of-type(1) { // Download shaded button
+    [download]:nth-of-type(1) {
+        // Download shaded button
         display: none;
     }
-    [download]:nth-of-type(2) { // Download flat button
+    [download]:nth-of-type(2) {
+        // Download flat button
         display: block;
     }
     #shade-toggle:checked ~ * [download]:nth-of-type(1) {
@@ -122,7 +135,7 @@ const StyledRow=styled(Row)`
     #shade-toggle:checked ~ * [download]:nth-of-type(2) {
         display: none;
     }
-`
+`;
 
 const StyledFigure = styled(Figure)`
     position: relative;
