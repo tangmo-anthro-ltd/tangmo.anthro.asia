@@ -68,11 +68,7 @@
         "image_alt": "Reference image for the blue wolf character, showing back and front view.",
         "imageCredits": "Artist: {link}",
         "color_palette": "Colour Palette",
-        "shaded_option": {
-            "toggle_shade": "Toggle shading",
-            "shaded": "Shaded colour",
-            "flat": "Flat colour"
-        },
+        "toggle_shade": "Toggle shading",
         "download": "Download",
         "note_for_geek": "Note for geeks: try disabling Javascript 😉",
         "artist_note": {

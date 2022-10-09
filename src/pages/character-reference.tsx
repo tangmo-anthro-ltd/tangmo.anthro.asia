@@ -3,17 +3,21 @@ import { Col, Container, Figure, Row, ToggleButton } from 'react-bootstrap';
 import Layout from '../components/layout';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { Download } from '../svg/Download';
+import { useRef } from "react"
 
 export default () => {
     const { formatMessage } = useIntl();
     const [jsEnabled, setJsEnabled] = React.useState(false);
     const [shaded, setShaded] = React.useState(true);
+    const shadedInputRef = useRef(null);
     React.useEffect(() => {
         setJsEnabled(true);
     }, []);
+    // This won't get updated without JS
+    const toggleShadeLabelClass = shaded ? 'btn btn-outline-primary' : 'btn btn-primary';
 
     return (
         <Layout title={formatMessage({ id: 'reference.title' })}>
@@ -21,7 +25,8 @@ export default () => {
                 <h1>
                     <FormattedMessage id="reference.title" />
                 </h1>
-                <Row>
+                <StyledRow>
+                    <input type="checkbox" ref={shadedInputRef} id="shade-toggle" defaultChecked onChange={e => setShaded(e.target.checked)}/>
                     <Col md={9} lg={10} classNames="d-flex justify-content-between">
                         <StyledFigure>
                             <StaticImage
@@ -35,7 +40,7 @@ export default () => {
                                 alt=""
                             />
                             {/* Gatsby's convoluted StaticImage mess with this one, especially when JS is off */}
-                            <ShadeImage src="/refsheet-body-shade.png" alt="" id="shade-off" $shaded={shaded} />
+                            <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
                             <Figure.Caption>
                                 <FormattedMessage
                                     id="index.aboutChara.imageCredits"
@@ -61,81 +66,72 @@ export default () => {
                         }}
                     >
                         <ButtonGroup>
-                            {jsEnabled ? (
-                                <>
-                                    <ToggleButton
-                                        id="toggle-check"
-                                        type="checkbox"
-                                        variant="outline-primary"
-                                        checked={shaded}
-                                        value="1"
-                                        onChange={() => setShaded(current => !current)}
-                                        title={formatMessage({ id: 'reference.note_for_geek' })}
-                                    >
-                                        <FormattedMessage id="reference.shaded_option.toggle_shade" />
-                                    </ToggleButton>
-                                    <DownloadLink
-                                        download
-                                        href={shaded ? '/refsheet-small-shaded.png' : '/refsheet-small-flat.png'}
-                                        className="btn btn-outline-secondary"
-                                    >
-                                        <Download />
-                                        <FormattedMessage id="reference.download" />
-                                    </DownloadLink>
-                                </>
-                            ) : (
-                                <>
-                                    <a className="btn btn-outline-primary" href="#">
-                                        <FormattedMessage id="reference.shaded_option.shaded" />
-                                    </a>
-                                    <a className="btn btn-outline-primary" href="#shade-off">
-                                        <FormattedMessage id="reference.shaded_option.flat" />
-                                    </a>
-                                    <DownloadDropdown tabIndex="0">
-                                        <div className="btn btn-outline-secondary" style={{ width: '100%' }}>
-                                            <Download />
-                                            <FormattedMessage id="reference.download" />
-                                        </div>
-                                        <ul className="list-group">
-                                            <li>
-                                                <a
-                                                    download
-                                                    href="/refsheet-small-shaded.png"
-                                                    className="list-group-item list-group-item-action"
-                                                >
-                                                    <FormattedMessage id="reference.shaded_option.shaded" />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a
-                                                    download
-                                                    href="/refsheet-small-flat.png"
-                                                    className="list-group-item list-group-item-action"
-                                                >
-                                                    <FormattedMessage id="reference.shaded_option.flat" />
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </DownloadDropdown>
-                                </>
-                            )}
+                            <label htmlFor="shade-toggle" className={toggleShadeLabelClass} title={jsEnabled && formatMessage({ id: 'reference.note_for_geek' })}>
+                                <FormattedMessage id="reference.toggle_shade" />
+                            </label>
+                            <DownloadLink
+                                download
+                                href="/refsheet-small-shaded.png"
+                                className="btn btn-outline-secondary"
+                            >
+                                <Download />
+                                <FormattedMessage id="reference.download" />
+                            </DownloadLink>
+                            <DownloadLink
+                                download
+                                href="/refsheet-small-flat.png"
+                                className="btn btn-outline-secondary"
+                            >
+                                <Download />
+                                <FormattedMessage id="reference.download" />
+                            </DownloadLink>
                         </ButtonGroup>
                         <StyledColorPalette />
                     </Col>
-                </Row>
+                </StyledRow>
             </Container>
         </Layout>
     );
 };
 
+const StyledRow=styled(Row)`
+    #shade-layer {
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transition: opacity 0.5s;
+        opacity: 0;
+    }
+    #shade-toggle { // Input checkbox
+        display: none;
+    }
+    #shade-toggle:checked ~ * #shade-layer {
+        opacity: 1;
+    }
+    [download]:nth-of-type(1) { // Download shaded button
+        display: none;
+    }
+    [download]:nth-of-type(2) { // Download flat button
+        display: block;
+    }
+    #shade-toggle:checked ~ * [download]:nth-of-type(1) {
+        display: block;
+    }
+    #shade-toggle:checked ~ * [download]:nth-of-type(2) {
+        display: none;
+    }
+`
+
 const StyledFigure = styled(Figure)`
     position: relative;
     // Body image
-    > div:first-child {
+    > div:first-of-type {
         z-index: 2;
     }
     // Decorative background
-    > div:nth-child(2) {
+    > div:nth-of-type(2) {
         z-index: 1;
         position: absolute;
         left: 0;
@@ -143,25 +139,7 @@ const StyledFigure = styled(Figure)`
         background: #b0b0b0;
     }
 `;
-const ShadeImage = styled.img`
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    transition: opacity 0.5s;
-    ${({ $shaded }) =>
-        $shaded
-            ? css`
-                  opacity: 1;
-              `
-            : css`
-                  opacity: 0;
-              `}
-    :target {
-        opacity: 0;
-    }
-`;
+
 const ButtonGroup = styled.div`
     display: flex;
     gap: 0.5rem;
@@ -175,47 +153,17 @@ const ButtonGroup = styled.div`
         flex-direction: column;
     }
 `;
+
 const StyledColorPalette = styled(ColorPalette)`
     // Bootstrap's md
     @media (min-width: 768px) {
         margin-bottom: 37px;
     }
 `;
-const DownloadCss = css`
+const DownloadLink = styled.a`
     svg {
         margin-inline-end: 0.2rem;
         width: 1.25rem;
         height: 1.25rem;
-    }
-`;
-const DownloadLink = styled.a`
-    ${DownloadCss}
-`;
-const DownloadDropdown = styled.div`
-    position: relative;
-    ${DownloadCss}
-    ul {
-        position: absolute;
-        left: 1em;
-        top: 38px;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        display: none;
-        // margin: 0 0 1rem 1rem;
-        padding: 0;
-        text-indent: 0;
-        li {
-            list-style-type: none;
-            a {
-                width: 100%;
-            }
-        }
-    }
-    &:hover ul,
-    &:focus-within ul {
-        visibility: visible;
-        opacity: 1;
-        display: block;
     }
 `;
