@@ -16,7 +16,7 @@ export const CharacterSection = () => {
                     <p>
                         <FormattedMessage id="index.aboutChara.para" />
                     </p>
-                    <Link to="/refsheet.png">
+                    <Link to="/character-reference">
                         <FormattedMessage id="index.aboutChara.refSheet" />
                     </Link>
                 </Col>

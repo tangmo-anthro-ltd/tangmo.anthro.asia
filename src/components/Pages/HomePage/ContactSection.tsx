@@ -14,6 +14,11 @@ export const ContactSection = () => (
                     <FormattedMessage id="contact.telegram" />
                 </dt>
                 <dd>@Tang_Mo</dd>
+                <dd>
+                    <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
+                        @Tang_Mo
+                    </a>
+                </dd>
             </Col>
 
             <Col>

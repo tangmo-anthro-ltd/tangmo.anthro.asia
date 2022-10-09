@@ -14,8 +14,8 @@
         "aboutChara": {
             "title": "About the character",
             "imageAlt": "Bust shot painting of TangMo’s character",
-            "imageCredits": "Image Credits: {link}",
-            "para": "Blue wolf number 23,547, reporting for duty! I just finished putting colors on a template reference sheet; haven’t made a proper one.",
+            "imageCredits": "Artist: {link}",
+            "para": "Yet another blue wolf among 23,547 others in the fandom. He… exists…? I just put him in drawings sometimes.",
             "refSheet": "Reference Sheet"
         }
     },
@@ -61,6 +61,22 @@
             "title": "Err…",
             "content": "You might have taken the joke too seriously. But if you are really bored, you feel free to come {link}.",
             "link_text": "talk to me"
+        }
+    },
+    "reference": {
+        "title": "Character Reference",
+        "image_alt": "Reference image for the blue wolf character, showing back and front view.",
+        "imageCredits": "Artist: {link}",
+        "color_palette": "Colour Palette",
+        "shaded_option": {
+            "toggle_shade": "Toggle shading",
+            "shaded": "Shaded colour",
+            "flat": "Flat colour"
+        },
+        "download": "Download",
+        "note_for_geek": "Note for geeks: try disabling Javascript 😉",
+        "artist_note": {
+            "title": "Note for artists"
         }
     }
 }
