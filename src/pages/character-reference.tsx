@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { Download } from '../svg/Download';
 import { useRef } from 'react';
-import { CharacterSheetBackground } from "../svg/CharacterSheetBackground"
+import { CharacterSheetBackground } from '../svg/CharacterSheetBackground';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -41,7 +41,9 @@ export default () => {
                                 sizes="(min-width: 768px) 60vw, 100vw"
                                 alt={formatMessage({ id: 'reference.image_alt' })}
                             />
-                            <CharacterSheetBackground/>
+                            <div>
+                                <CharacterSheetBackground />
+                            </div>
                             {/* Gatsby's convoluted StaticImage mess with this one, especially when JS is off */}
                             <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
                             <Figure.Caption>
@@ -148,8 +150,11 @@ const StyledFigure = styled(Figure)`
         left: 0;
         top: 0;
         width: 100%;
-        height: 100%;
         background: #b0b0b0;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
 `;
 
