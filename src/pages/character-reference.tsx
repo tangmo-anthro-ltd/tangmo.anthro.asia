@@ -41,14 +41,14 @@ export default () => {
                                 sizes="(min-width: 768px) 60vw, 100vw"
                                 alt={formatMessage({ id: 'reference.image_alt' })}
                             />
-                            <div>
+                            <span>
                                 <CharacterSheetBackground />
-                            </div>
+                            </span>
                             {/* Gatsby's convoluted StaticImage mess with this one, especially when JS is off */}
                             <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
                             <Figure.Caption>
                                 <FormattedMessage
-                                    id="index.aboutChara.imageCredits"
+                                    id="reference.imageCredits"
                                     values={{
                                         link: (
                                             <a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">
