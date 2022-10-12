@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "node ./owo-gen.js && gatsby build",
-    "develop": "gatsby develop --host=0.0.0.0",
+    "build": "npm run clean && node ./owo-gen.js && gatsby build",
+    "develop": "npm run clean && gatsby develop --host=0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'gatsby-plugin-react-intl';
 
-export function Header({ title, description, extraMeta = [] }: IProps) {
+export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
     const { locale, formatMessage } = useIntl();
     const name = formatMessage({ id: 'meta.name' });
 
@@ -43,7 +43,7 @@ export function Header({ title, description, extraMeta = [] }: IProps) {
 }
 // <script src="https://kit.fontawesome.com/d58dae4cfc.js" crossOrigin="anonymous" />
 
-interface IProps {
+export interface IHeaderProps {
     title?: string;
     description?: string;
     extraMeta?: IMeta[];

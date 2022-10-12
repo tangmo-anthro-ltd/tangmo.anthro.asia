@@ -63,6 +63,11 @@
             "link_text": "talk to me"
         }
     },
+    "breadcrumb": {
+        "home": "Home",
+        "reference": "Character Reference",
+        "reference-h": "Vorny Note"
+    },
     "reference": {
         "title": "Character Reference",
         "image_alt": "Reference image for the blue wolf character, showing back and front view.",
@@ -71,8 +76,21 @@
         "toggle_shade": "Toggle shading",
         "download": "Download",
         "note_for_geek": "Note for geeks: try disabling Javascript 😉",
-        "artist_note": {
-            "title": "Note for artists"
+        "h_note": {
+            "para": "Those who don’t mind something… UwU, {link}~",
+            "link": "come take a look"
         }
+    },
+    "reference-h": {
+        "title": "Vorny Note",
+        "image_alt": "A giant wolf mouth with small blue wolf resting at the inner-end of its pink tongue. There center of the tongue is dyed in white and blue, depicting the trail of where the small wolf have been.",
+        "imageCredits": "Artist: {link}",
+        "p1": "If you’ve been following me for a while, it is no secret that I am into vore and muscles. Specifically, I love being the prey in soft-vore with ideally both party having a muscular build. Goo-ey digestion is the furthest I’d go. Thus, this character is intended to be a prey, but with a fun gimmick.",
+        "p2": "When the torso area is wet, it can release some ink with the same colour as its fur pattern. If on a pred’s tongue, this ink would leave temporary mark, similar to colour from a lollipop or shush. Passerby could recognize the colour pattern and know who is inside. Despite the look, the body is {em} melting.",
+        "p2_em": "not",
+        "p2_summary": "How it works",
+        "p2_details": "This trait was supposed to be a defense mechanism, similar that of a squid. However, the evolution has not caught up, leaving him with this ineffective power. The ink secretion is voluntary, but when startled or scared, it may be unintentionally leaked by instinct. Since the dye can only be released when wet, this wouldn’t be a problem day-to-day as the body would be dry.",
+        "p3": "Despite intending to be a prey, a few friends have already mentioned to that this character look more like a pred. In fact, I do have a super-power idea for a pred character. If you’re interested, {c}!",
+        "p3_contact": "let’s have a chat"
     }
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Col, Container, Figure, Row } from 'react-bootstrap';
 import Layout from '../components/layout';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
@@ -21,7 +21,10 @@ export default () => {
     const toggleShadeLabelClass = shaded ? 'btn btn-outline-primary' : 'btn btn-primary';
 
     return (
-        <Layout title={formatMessage({ id: 'reference.title' })}>
+        <Layout
+            title={formatMessage({ id: 'reference.title' })}
+            extraMeta={[{ name: 'og:image', content: 'https://tangmo.anthro.asia/refsheet-small-shaded.png' }]}
+        >
             <Container>
                 <h1>
                     <FormattedMessage id="reference.title" />
@@ -98,6 +101,19 @@ export default () => {
                         <StyledColorPalette />
                     </Col>
                 </StyledRow>
+                <hr />
+                <p>
+                    <FormattedMessage
+                        id="reference.h_note.para"
+                        values={{
+                            link: (
+                                <Link to="/character-reference/h">
+                                    <FormattedMessage id="reference.h_note.link" />
+                                </Link>
+                            ),
+                        }}
+                    />
+                </p>
             </Container>
         </Layout>
     );

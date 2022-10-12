@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { Footer } from './footer';
-import { Header } from './header';
+import { Header, IHeaderProps } from './header';
 import { NavSection } from './navsection';
 import { ReactNode } from 'react';
 
-export default ({ children, title }: IProps) => (
+export default ({ children, ...rest }: IProps) => (
     <>
-        <Header title={title} />
+        <Header {...rest} />
         <NavSection />
         <main id="main">{children}</main>
         <Footer />
     </>
 );
 
-interface IProps {
-    title?: string;
+interface IProps extends IHeaderProps {
     children: ReactNode;
 }

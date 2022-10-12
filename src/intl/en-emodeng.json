@@ -54,6 +54,12 @@
         }
     },
     "reference": {
+        "imageCredits": "Awtist: {link}",
+        "h_note": {
+            "para": "Those who don’t mind something… UwU, {link}~"
+        }
+    },
+    "reference-h": {
         "imageCredits": "Awtist: {link}"
     }
 }
