@@ -10,13 +10,13 @@ export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
     if (title) {
         builtTitle = title + ' - ' + name;
     }
+    let desc = description || formatMessage({ id: 'meta.defaultDesc' });
 
     const meta = [
-        {
-            name: 'description',
-            content: description || formatMessage({ id: 'meta.defaultDesc' }),
-        },
-        { name: 'author', content: name },
+        { name: 'description', content: desc },
+        { name: 'og:type', content: 'website' },
+        { name: 'twitter:title', content: builtTitle },
+        { name: 'twitter:description', content: desc },
         { name: 'twitter:site', content: '@TangmoEat' },
         { name: 'twitter:creator', content: '@TangmoEat' },
         ...extraMeta,
