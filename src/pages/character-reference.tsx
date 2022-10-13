@@ -47,6 +47,7 @@ export default () => {
                                 src="../images/reference-body-flat.png"
                                 sizes="(min-width: 768px) 60vw, 100vw"
                                 alt={formatMessage({ id: 'reference.image_alt' })}
+                                placeholder="tracedSVG"
                             />
                             <span>
                                 <CharacterSheetBackground />
