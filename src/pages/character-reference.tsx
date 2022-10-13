@@ -23,7 +23,11 @@ export default () => {
     return (
         <Layout
             title={formatMessage({ id: 'reference.title' })}
-            extraMeta={[{ name: 'og:image', content: 'https://tangmo.anthro.asia/refsheet-small-shaded.png' }]}
+            description={formatMessage({ id: 'reference.title' })}
+            extraMeta={[
+                { name: 'og:image', content: 'https://tangmo.anthro.asia/refsheet-web-meta.jpg' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+            ]}
         >
             <Container>
                 <h1>

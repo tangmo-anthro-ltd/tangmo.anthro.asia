@@ -16,10 +16,9 @@ export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
             name: 'description',
             content: description || formatMessage({ id: 'meta.defaultDesc' }),
         },
-        {
-            name: 'author',
-            content: name,
-        },
+        { name: 'author', content: name },
+        { name: 'twitter:site', content: '@TangmoEat' },
+        { name: 'twitter:creator', content: '@TangmoEat' },
         ...extraMeta,
     ];
 
