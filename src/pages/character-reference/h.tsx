@@ -61,6 +61,7 @@ export default () => {
                                 src="../../images/reference-mouth.png"
                                 sizes="(min-width: 768px) 30vw, 100vw"
                                 alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                                placeholder="tracedSVG"
                             />
                             <Figure.Caption>
                                 <FormattedMessage
