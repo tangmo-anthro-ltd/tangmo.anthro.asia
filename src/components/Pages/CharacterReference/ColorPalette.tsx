@@ -42,7 +42,6 @@ const InvisibleH2 = styled.h2`
 
 const Container = styled.ul`
     display: grid;
-    gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
     > *:nth-child(4) {
         grid-column-start: span 3;
@@ -55,7 +54,6 @@ const Container = styled.ul`
     }
     // Bootstrap's md
     @media (min-width: 768px) {
-        gap: 0;
         grid-template-columns: 1fr;
     }
     // Bootstrap's lg
