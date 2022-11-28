@@ -73,8 +73,8 @@ export default () => {
                         lg={2}
                         style={{
                             display: 'flex',
-                            'flex-direction': 'column',
-                            'justify-content': 'space-between',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between',
                             gap: '1em',
                         }}
                     >
