@@ -10,6 +10,9 @@ export const ColorPalette = ({ className }) => {
                 <FormattedMessage id="reference.color_palette" />
             </InvisibleH2>
             <Container>
+                <Color color="#243242" $textColor="white">
+                    #243242
+                </Color>
                 <Color color="#2C599B" $textColor="white">
                     #2C599B
                 </Color>
@@ -41,6 +44,15 @@ const Container = styled.ul`
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
+    > *:nth-child(4) {
+        grid-column-start: span 3;
+        text-align: center;
+        // Bootstrap's md
+        @media (min-width: 768px) {
+            grid-column-start: auto;
+            text-align: start;
+        }
+    }
     // Bootstrap's md
     @media (min-width: 768px) {
         gap: 0;
