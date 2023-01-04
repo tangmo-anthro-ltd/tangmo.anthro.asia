@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Layout from '../components/layout';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { ContactSection } from '../components/Pages/HomePage/ContactSection';
