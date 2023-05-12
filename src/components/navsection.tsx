@@ -8,16 +8,19 @@ import { HiddenAccessibleLink } from './Atom/HiddenAccessibleLink';
 
 // This is unnecessarily complicated
 // See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42
-const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
+const LocaleLink = ({ children, to, lang }: ILocaleLinkProps) => {
     const { locale, defaultLocale } = useIntl();
     if (to === locale) {
-        return <span>{children}</span>;
+        return <span lang={lang}>{children}</span>;
     }
     const urlPrefix = to === defaultLocale ? '' : '/' + to;
     return (
         <Location>
             {({ location }) => (
-                <PlainLink to={(urlPrefix + location.pathname.replace('/' + locale, '') || '/') + location.search}>
+                <PlainLink
+                    lang={lang}
+                    to={(urlPrefix + location.pathname.replace('/' + locale, '') || '/') + location.search}
+                >
                     {children}
                 </PlainLink>
             )}
@@ -25,9 +28,10 @@ const LocaleLink = ({ children, to }: ILinkOrSpanProps) => {
     );
 };
 
-interface ILinkOrSpanProps {
+interface ILocaleLinkProps {
     children: ReactNode;
     to: string;
+    lang: string;
 }
 
 export function NavSection() {
@@ -55,8 +59,15 @@ export function NavSection() {
                         </a>
                     </Col>
                     <Col md={4} className={['text-center', 'text-md-end']}>
-                        <LocaleLink to="th">ภาษาไทย</LocaleLink> <LocaleLink to="en">English</LocaleLink>{' '}
-                        <LocaleLink to="en-emodeng">UwU</LocaleLink>
+                        <LocaleLink to="th" lang="th">
+                            ภาษาไทย
+                        </LocaleLink>{' '}
+                        <LocaleLink to="en" lang="en">
+                            English
+                        </LocaleLink>{' '}
+                        <LocaleLink to="en-emodeng" lang="en">
+                            UwU
+                        </LocaleLink>
                     </Col>
                 </Row>
             </nav>

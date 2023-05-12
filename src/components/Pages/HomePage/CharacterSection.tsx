@@ -35,6 +35,7 @@ export const CharacterSection = () => {
                                         <a
                                             href="https://www.facebook.com/profile.php?id=100077583383830"
                                             rel="noreferrer noopener"
+                                            lang="zh-CN"
                                         >
                                             骑士长
                                         </a>

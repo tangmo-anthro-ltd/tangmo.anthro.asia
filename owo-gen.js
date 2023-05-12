@@ -11,7 +11,7 @@ const override = {
   Telegram: 'Furrygram',
 };
 
-const owoify = (text) => {
+const owoify = text => {
   // Ignore texts to be substituted such as "Click {link} to learn more"
   const substrings = text.split(/([{}])/g);
   let inBraces = false;
@@ -27,7 +27,7 @@ const owoify = (text) => {
   return substrings.join('');
 };
 
-const recurseOwo = (obj) => {
+const recurseOwo = obj => {
   if (typeof obj === 'string') {
     if (obj in override) {
       return override[obj];
