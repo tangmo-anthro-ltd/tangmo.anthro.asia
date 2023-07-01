@@ -48,7 +48,7 @@ export const ContactSection = () => {
                     </dd>
                 </Col>
             </ContactList>
-            <NoHelloParagraph>
+            <NoHelloDiv>
                 <FormattedMessage
                     id="contact.note"
                     values={{
@@ -66,7 +66,7 @@ export const ContactSection = () => {
                     </StyledSummary>
                     <img src="/bat-sticker.webp" alt={formatMessage({ id: 'contact.note_img_alt' })} />
                 </NoHelloDetails>
-            </NoHelloParagraph>
+            </NoHelloDiv>
         </section>
     );
 };
@@ -82,7 +82,7 @@ const ContactList = styled(Row)`
         content: ':';
     }
 `;
-const NoHelloParagraph = styled.p`
+const NoHelloDiv = styled.div`
     position: relative;
 `;
 const Arrow = styled.span`
