@@ -6,7 +6,7 @@ import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 export const IntroSection = () => {
     const { formatMessage } = useIntl();
     return (
-        <>
+        <section id="about">
             <Row>
                 <Col md={7} style={{ order: 2 }}>
                     <h1>
@@ -31,6 +31,6 @@ export const IntroSection = () => {
                     </Figure>
                 </Col>
             </Row>
-        </>
+        </section>
     );
 };

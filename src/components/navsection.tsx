@@ -28,6 +28,13 @@ const LocaleLink = ({ children, to, lang }: ILocaleLinkProps) => {
     );
 };
 
+// Standard link without client-side navigation, or CSS :target won't be triggered properly
+const LinkToAnchor = ({ children, href }: { children: ReactNode; href: string }) => {
+    const { locale, defaultLocale } = useIntl();
+    const urlPrefix = locale === defaultLocale ? '' : `/${locale}`;
+    return <a href={urlPrefix + href}>{children}</a>;
+};
+
 interface ILocaleLinkProps {
     children: ReactNode;
     to: string;
@@ -50,13 +57,17 @@ export function NavSection() {
                         </h1>
                     </Col>
                     <Col md={4} className="text-center">
-                        <Link to="/">
+                        <LinkToAnchor href="/#about">
                             <FormattedMessage id="nav.about" />
-                        </Link>
+                        </LinkToAnchor>
                         {' | '}
                         <a href="https://tangmo-gal.anthro.asia">
                             <FormattedMessage id="nav.gallery" />
                         </a>
+                        {' | '}
+                        <LinkToAnchor href="/#contact">
+                            <FormattedMessage id="nav.contact" />
+                        </LinkToAnchor>
                     </Col>
                     <Col md={4} className={['text-center', 'text-md-end']}>
                         <LocaleLink to="th" lang="th">
