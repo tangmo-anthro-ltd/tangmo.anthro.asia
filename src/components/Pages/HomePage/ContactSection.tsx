@@ -64,7 +64,7 @@ export const ContactSection = () => {
                         <FormattedMessage id="contact.note_summary" />
                         <Arrow />
                     </StyledSummary>
-                    <img src="/bat-sticker.webp" alt={formatMessage({ id: 'contact.note_img_alt' })} />
+                    <img src="/bat-sticker.webp" alt={formatMessage({ id: 'contact.note_img_alt' })} loading="lazy" />
                 </NoHelloDetails>
             </NoHelloDiv>
         </section>
