@@ -1,52 +1,73 @@
 import { Col, Row } from 'react-bootstrap';
 import * as React from 'react';
-import { FormattedMessage } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
-export const ContactSection = () => (
-    <section id="contact">
-        <H1 as="h2">
-            <FormattedMessage id="contact.title" />
-        </H1>
-        <ContactList as="dl">
-            <Col>
-                <dt className="fw-normal">
-                    <FormattedMessage id="contact.telegram" />
-                </dt>
-                <dd>
-                    <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
-                        @Tang_Mo
-                    </a>
-                </dd>
-            </Col>
+export const ContactSection = () => {
+    const { formatMessage } = useIntl();
+    return (
+        <section id="contact">
+            <H1 as="h2">
+                <FormattedMessage id="contact.title" />
+            </H1>
+            <ContactList as="dl">
+                <Col>
+                    <dt className="fw-normal">
+                        <FormattedMessage id="contact.telegram" />
+                    </dt>
+                    <dd>
+                        <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
+                            @Tang_Mo
+                        </a>
+                    </dd>
+                </Col>
 
-            <Col>
-                <dt className="fw-normal">
-                    <FormattedMessage id="contact.twitter" />
-                </dt>
-                <dd>
-                    <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">
-                        @TangMoEat
-                    </a>
-                </dd>
-            </Col>
+                <Col>
+                    <dt className="fw-normal">
+                        <FormattedMessage id="contact.twitter" />
+                    </dt>
+                    <dd>
+                        <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">
+                            @TangMoEat
+                        </a>
+                    </dd>
+                </Col>
 
-            <Col>
-                <dt className="fw-normal">
-                    <FormattedMessage id="contact.vrchat" />
-                </dt>
-                <dd>
-                    <a
-                        href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
-                        rel="noreferrer noopener"
-                    >
-                        แตงโม TANGMO
-                    </a>
-                </dd>
-            </Col>
-        </ContactList>
-    </section>
-);
+                <Col>
+                    <dt className="fw-normal">
+                        <FormattedMessage id="contact.vrchat" />
+                    </dt>
+                    <dd>
+                        <a
+                            href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
+                            rel="noreferrer noopener"
+                        >
+                            แตงโม TANGMO
+                        </a>
+                    </dd>
+                </Col>
+                <NoHelloParagraph style={{ marginTop: '1rem' }}>
+                    <FormattedMessage
+                        id="contact.note"
+                        values={{
+                            link: <a href="https://nohello.net/" rel="noreferrer noopener">
+                                no hello
+                            </a>
+                        }}
+                    />
+                    <details>
+                        <summary><span><FormattedMessage
+                            id="contact.note_summary"/></span><Arrow/></summary>
+                        <img src="/bat-sticker.webp"
+                            alt={formatMessage({ id: 'contact.note_img_alt' })}
+                        />
+                    </details>
+                </NoHelloParagraph>
+            </ContactList>
+        </section>
+    );
+};
 const ContactList = styled(Row)`
     dd,
     dt {
@@ -59,4 +80,35 @@ const ContactList = styled(Row)`
         content: ':';
     }
 `;
+const Arrow = styled.span`
+    margin-left: 4px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.4rem 0.4rem 0.4rem 0;
+    border-color: transparent currentColor transparent transparent;
+    transition: transform 200ms;
+`;
+const NoHelloParagraph = styled.p`
+    position: relative;
+    details {
+        display: inline-block;
+        >summary {
+            list-style: none;
+            text-decoration: underline;
+        }
+        >:not(summary) {
+            z-index: 9;
+            position: absolute;
+            background-color: white;
+            padding: 1rem 0;
+            left: 0;
+            width: 200px;
+        }
+    }
+    details[open] ${Arrow} {
+        transform: rotate(-90deg);
+    }
+`
 const H1 = styled.h1``;

@@ -30,7 +30,10 @@
         "title": "Talk to me!",
         "telegram": "Telegram",
         "twitter": "Twitter",
-        "vrchat": "VRChat"
+        "vrchat": "VRChat",
+        "note": "Before sending a message, have a quick look at {link}. If you send me an “Hello” with nothing else, ",
+        "note_summary": "we'll see about that.",
+        "note_img_alt": "Sticker depicting a smiling wolf holding a baseball bat with menacing aura"
     },
     "footer": {
         "source": "Github",
