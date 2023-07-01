@@ -47,24 +47,26 @@ export const ContactSection = () => {
                         </a>
                     </dd>
                 </Col>
-                <NoHelloParagraph style={{ marginTop: '1rem' }}>
-                    <FormattedMessage
-                        id="contact.note"
-                        values={{
-                            link: <a href="https://nohello.net/" rel="noreferrer noopener">
+            </ContactList>
+            <NoHelloParagraph>
+                <FormattedMessage
+                    id="contact.note"
+                    values={{
+                        link: (
+                            <a href="https://nohello.net/" rel="noreferrer noopener">
                                 no hello
                             </a>
-                        }}
-                    />
-                    <details>
-                        <summary><span><FormattedMessage
-                            id="contact.note_summary"/></span><Arrow/></summary>
-                        <img src="/bat-sticker.webp"
-                            alt={formatMessage({ id: 'contact.note_img_alt' })}
-                        />
-                    </details>
-                </NoHelloParagraph>
-            </ContactList>
+                        ),
+                    }}
+                />
+                <NoHelloDetails>
+                    <StyledSummary>
+                        <FormattedMessage id="contact.note_summary" />
+                        <Arrow />
+                    </StyledSummary>
+                    <img src="/bat-sticker.webp" alt={formatMessage({ id: 'contact.note_img_alt' })} />
+                </NoHelloDetails>
+            </NoHelloParagraph>
         </section>
     );
 };
@@ -80,6 +82,9 @@ const ContactList = styled(Row)`
         content: ':';
     }
 `;
+const NoHelloParagraph = styled.p`
+    position: relative;
+`;
 const Arrow = styled.span`
     margin-left: 4px;
     display: inline-block;
@@ -90,25 +95,22 @@ const Arrow = styled.span`
     border-color: transparent currentColor transparent transparent;
     transition: transform 200ms;
 `;
-const NoHelloParagraph = styled.p`
-    position: relative;
-    details {
-        display: inline-block;
-        >summary {
-            list-style: none;
-            text-decoration: underline;
-        }
-        >:not(summary) {
-            z-index: 9;
-            position: absolute;
-            background-color: white;
-            padding: 1rem 0;
-            left: 0;
-            width: 200px;
-        }
+const StyledSummary = styled.summary`
+    list-style: none;
+    text-decoration: underline;
+`;
+const NoHelloDetails = styled.details`
+    display: inline-block;
+    > :not(summary) {
+        z-index: 9;
+        position: absolute;
+        background-color: white;
+        padding: 1rem 0;
+        left: 0;
+        width: 200px;
     }
-    details[open] ${Arrow} {
+    &[open] ${Arrow} {
         transform: rotate(-90deg);
     }
-`
+`;
 const H1 = styled.h1``;
