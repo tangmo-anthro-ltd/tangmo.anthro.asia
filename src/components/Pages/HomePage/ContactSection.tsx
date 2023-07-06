@@ -104,7 +104,7 @@ const NoHelloDetails = styled.details`
     > :not(summary) {
         z-index: 9;
         position: absolute;
-        background-color: white;
+        background-color: var(--bs-body-bg);
         padding: 1rem 0;
         left: 0;
         width: 200px;

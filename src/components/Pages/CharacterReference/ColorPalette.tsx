@@ -64,12 +64,10 @@ const Container = styled.ul`
     margin: 0;
     padding: 0;
     text-indent: 0;
-    li {
-        list-style-type: none;
-    }
 `;
 
 const Color = styled.li`
+    list-style-type: none;
     padding: 0.7rem;
     background: ${({ color }) => color};
     color: ${({ $textColor }) => $textColor};

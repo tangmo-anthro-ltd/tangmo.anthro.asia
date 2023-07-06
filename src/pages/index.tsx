@@ -27,7 +27,7 @@ const flashAnimation = keyframes`
         background-color: transparent;
     }
     50% {
-        background-color: #ffff80;
+        background-color: var(--bs-warning-border-subtle);
     }
     100% {
         background-color: transparent;

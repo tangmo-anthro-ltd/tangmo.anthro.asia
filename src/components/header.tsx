@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useIntl } from 'gatsby-plugin-react-intl';
+import { useEffect } from 'react';
+import { useColorSchemeContext } from '../contexts/ColorSchemeContext';
 
 export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
+    const { colorScheme, setColorScheme } = useColorSchemeContext();
     const { locale, formatMessage } = useIntl();
     const name = formatMessage({ id: 'meta.name' });
 
@@ -22,6 +25,12 @@ export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
         ...extraMeta,
     ];
 
+    useEffect(() => {
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            setColorScheme('light');
+        }
+    }, []);
+
     return (
         <Helmet
             title={builtTitle}
@@ -30,13 +39,13 @@ export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
                 {
                     // Bootstrap
                     rel: 'stylesheet',
-                    href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
-                    integrity: 'sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3',
+                    href: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+                    integrity: 'sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=',
                     crossOrigin: 'anonymous',
                 },
             ]}
         >
-            <html lang={locale} />
+            <html lang={locale} data-bs-theme={colorScheme} />
         </Helmet>
     );
 }

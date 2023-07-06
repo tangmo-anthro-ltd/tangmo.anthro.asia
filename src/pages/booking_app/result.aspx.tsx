@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import Layout from '../../components/layout';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
+import { LinkToAnchor } from '../../components/Atom/LinkToAnchor';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -16,9 +17,9 @@ export default () => {
                         id="bookingApp.result.content"
                         values={{
                             link: (
-                                <Link to="/#contact">
+                                <LinkToAnchor href="/#contact">
                                     <FormattedMessage id="bookingApp.result.link_text" />
-                                </Link>
+                                </LinkToAnchor>
                             ),
                         }}
                     />

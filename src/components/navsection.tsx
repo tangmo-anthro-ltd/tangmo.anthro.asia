@@ -5,6 +5,7 @@ import { Link as PlainLink } from 'gatsby';
 import { Location } from '@reach/router';
 import { ReactNode } from 'react';
 import { HiddenAccessibleLink } from './Atom/HiddenAccessibleLink';
+import { LinkToAnchor } from './Atom/LinkToAnchor';
 
 // This is unnecessarily complicated
 // See https://github.com/wiziple/gatsby-plugin-react-intl/issues/42
@@ -28,13 +29,6 @@ const LocaleLink = ({ children, to, lang }: ILocaleLinkProps) => {
     );
 };
 
-// Standard link without client-side navigation, or CSS :target won't be triggered properly
-const LinkToAnchor = ({ children, href }: { children: ReactNode; href: string }) => {
-    const { locale, defaultLocale } = useIntl();
-    const urlPrefix = locale === defaultLocale ? '' : `/${locale}`;
-    return <a href={urlPrefix + href}>{children}</a>;
-};
-
 interface ILocaleLinkProps {
     children: ReactNode;
     to: string;
@@ -49,7 +43,7 @@ export function NavSection() {
                     <FormattedMessage id="nav.skip_to_content" />
                 </HiddenAccessibleLink>
                 <Row style={{ marginTop: '1rem' }}>
-                    <Col md={4} className={['text-center', 'text-md-start']}>
+                    <Col md={4} className="text-center text-md-start">
                         <h1 className="h5">
                             <Link to="/">
                                 <FormattedMessage id="nav.title" />
@@ -69,7 +63,7 @@ export function NavSection() {
                             <FormattedMessage id="nav.contact" />
                         </LinkToAnchor>
                     </Col>
-                    <Col md={4} className={['text-center', 'text-md-end']}>
+                    <Col md={4} className="text-center text-md-end">
                         <LocaleLink to="th" lang="th">
                             ภาษาไทย
                         </LocaleLink>{' '}

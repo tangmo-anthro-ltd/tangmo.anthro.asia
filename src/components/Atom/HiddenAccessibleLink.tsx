@@ -2,9 +2,9 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 export const HiddenAccessibleLink = styled.a`
-    background: #ffffff;
-    color: #4b11a8;
-    border: 2px solid rgba(0, 0, 0, 0.16);
+    background: var(--bs-body-bg);
+    color: var(--bs-info-text-emphasis);
+    border: 2px solid var(--bs-border-color-translucent);
     border-radius: 2px;
     padding: 4px;
     position: absolute;
