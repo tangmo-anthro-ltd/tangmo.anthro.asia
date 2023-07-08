@@ -50,7 +50,7 @@ const Page = () => {
                     onChange={e => setShaded(e.target.checked)}
                 />
                 <Col md={9} lg={10} classNames="d-flex justify-content-between">
-                    <StyledFigure $showBackground={colorScheme === 'light'}>
+                    <StyledFigure>
                         <StaticImage
                             src="../images/reference-body-flat.png"
                             sizes="(min-width: 768px) 60vw, 100vw"
@@ -177,12 +177,13 @@ const StyledRow = styled(Row)`
     }
 `;
 
-const StyledFigure = styled(Figure)<{ $showBackground: boolean }>`
+const StyledFigure = styled(Figure)`
     position: relative;
     // Body image
     > *:first-child {
         z-index: 2;
     }
+
     // Decorative background
     > *:nth-child(2) {
         display: block;
@@ -191,11 +192,6 @@ const StyledFigure = styled(Figure)<{ $showBackground: boolean }>`
         left: 0;
         top: 0;
         width: 100%;
-        ${({ $showBackground }) => $showBackground && `background: #b0b0b0;`}
-        svg {
-            width: 100%;
-            height: 100%;
-        }
     }
 `;
 

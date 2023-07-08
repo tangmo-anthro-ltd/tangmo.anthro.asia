@@ -4,6 +4,7 @@ import Layout from '../../components/layout';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
 import Breadcrumbs from '../../components/Atom/Breadcrumbs';
+import { LinkToAnchor } from '../../components/Atom/LinkToAnchor';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -47,9 +48,9 @@ export default () => {
                                 id="reference-h.p3"
                                 values={{
                                     c: (
-                                        <Link to="/#contact">
+                                        <LinkToAnchor href="/#contact">
                                             <FormattedMessage id="reference-h.p3_contact" />
-                                        </Link>
+                                        </LinkToAnchor>
                                     ),
                                 }}
                             />
