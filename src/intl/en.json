@@ -32,8 +32,9 @@
         "twitter": "Twitter",
         "vrchat": "VRChat",
         "note": "Before sending a message, have a quick look at {link}. If you send me a “Hello” with nothing else, ",
-        "note_summary": "we'll see about that.",
-        "note_img_alt": "Sticker depicting a smiling wolf holding a baseball bat with menacing aura"
+        "note_summary": "we’ll see about that.",
+        "note_img_alt": "Sticker depicting a smiling wolf holding a baseball bat with menacing aura",
+        "no_hello": "no hello"
     },
     "footer": {
         "source": "Github",
@@ -95,5 +96,36 @@
         "p2_details": "This trait was supposed to be a defense mechanism, similar that of a squid. However, the evolution has not caught up, leaving him with this ineffective power. The ink secretion is voluntary, but when startled or scared, it may be unintentionally leaked by instinct. Since the dye can only be released when wet, this wouldn’t be a problem day-to-day as the body would be dry.",
         "p3": "Despite intending to be a prey, a few friends have already mentioned to that this character look more like a pred. In fact, I do have a super-power idea for a pred character. If you’re interested, {c}!",
         "p3_contact": "let’s have a chat"
+    },
+    "no-hello" : {
+        "meta_title": "No Hello",
+        "meta_description": "please don’t say just hello in chat",
+        "hero": {
+            "no": "no ",
+            "hello": "hello"
+        },
+        "p1": "People who do this are generally trying to be polite by not jumping right into the request, like one would in person or on the phone - and that’s great!. But text chat is neither of those things. For most people, typing is much slower than talking. So despite best intentions, {s} for you to phrase your question (which is kinda annoying).",
+        "p1_strong": "you’re actually just making the other person wait",
+        "p2": "It took 9 messages to get the answer, with 2 days of delay due to time zone differences",
+        "p3": "The most effective method of asking the question? Just ask the question!",
+        "p4": "Being succinct and effective does not have to be rude,\nit demonstrates respect for the other person's time.",
+        "chat": {
+            "monday": "Monday",
+            "tuesday": "Tuesday",
+            "wednesday": "Wednesday",
+            "chat1_1": "Hello",
+            "chat1_2": "Hey",
+            "chat1_3": "How are you?",
+            "chat1_4": "Fine thanks!",
+            "chat1_5": "Can I ask you a question?",
+            "chat1_6": "Just ask",
+            "chat1_7": "Saw this YCH, do you want to comm together?",
+            "chat1_8": "Ooh, looks great! Did you get a slot?",
+            "chat1_9": "It's full now :/",
+            "chat2_1": "Hello, I hope you are well!\nI have a question, I see this artist just opened this YCH, do you want to comm together?",
+            "chat2_2": "Hey, long time no see!\nlooks great! gogogo",
+            "chat2_3": "Messaged them now, which slot do you want?"
+        },
+        "footer": "Based on {a} and {b} (MIT License)"
     }
 }

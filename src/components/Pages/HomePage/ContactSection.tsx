@@ -1,8 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
 import * as React from 'react';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
 
 export const ContactSection = () => {
     const { formatMessage } = useIntl();
@@ -53,9 +52,9 @@ export const ContactSection = () => {
                     id="contact.note"
                     values={{
                         link: (
-                            <a href="https://nohello.net/" rel="noreferrer noopener">
-                                no hello
-                            </a>
+                            <Link to="/no-hello">
+                                <FormattedMessage id="contact.no_hello" />
+                            </Link>
                         ),
                     }}
                 />

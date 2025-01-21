@@ -9,6 +9,7 @@ import { Download } from '../svg/Download';
 import { useRef } from 'react';
 import { CharacterSheetBackground } from '../svg/CharacterSheetBackground';
 import { useColorSchemeContext } from '../contexts/ColorSchemeContext';
+import { useJsEnabled } from '../hooks/useJsEnabled';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -29,12 +30,9 @@ export default () => {
 const Page = () => {
     const { formatMessage } = useIntl();
     const { colorScheme } = useColorSchemeContext();
-    const [jsEnabled, setJsEnabled] = React.useState(false);
-    const [shaded, setShaded] = React.useState(true);
+    const jsEnabled = useJsEnabled();
+    const [shaded, setShaded] = React.useState(false);
     const shadedInputRef = useRef(null);
-    React.useEffect(() => {
-        setJsEnabled(true);
-    }, []);
 
     return (
         <Container>
@@ -46,7 +44,6 @@ const Page = () => {
                     type="checkbox"
                     ref={shadedInputRef}
                     id="shade-toggle"
-                    defaultChecked
                     onChange={e => setShaded(e.target.checked)}
                 />
                 <Col md={9} lg={10} classNames="d-flex justify-content-between">
