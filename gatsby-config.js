@@ -48,5 +48,13 @@ module.exports = {
         ignoredPaths: ['/js/**'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.svg$/,
+        }
+      }
+    },
   ],
 };

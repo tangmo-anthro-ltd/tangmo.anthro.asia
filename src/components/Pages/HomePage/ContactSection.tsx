@@ -2,6 +2,11 @@ import { Col, Row } from 'react-bootstrap';
 import * as React from 'react';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import styled from 'styled-components';
+import Discord from 'bootstrap-icons/icons/discord.svg';
+import QQ from 'bootstrap-icons/icons/tencent-qq.svg';
+import Telegram from 'bootstrap-icons/icons/telegram.svg';
+import Twitter from 'bootstrap-icons/icons/twitter.svg';
+import VRChat from '../../../icons/VRChat';
 
 export const ContactSection = () => {
     const { formatMessage } = useIntl();
@@ -12,7 +17,9 @@ export const ContactSection = () => {
             </H1>
             <ContactList as="dl">
                 <Col>
-                    <dt className="fw-normal">Telegram</dt>
+                    <dt className="fw-normal">
+                        <Telegram /> Telegram
+                    </dt>
                     <dd>
                         <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
                             @Tang_Mo
@@ -21,7 +28,9 @@ export const ContactSection = () => {
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">Twitter</dt>
+                    <dt className="fw-normal">
+                        <Twitter /> Twitter
+                    </dt>
                     <dd>
                         <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">
                             @TangMoEat
@@ -30,7 +39,9 @@ export const ContactSection = () => {
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">VRChat</dt>
+                    <dt className="fw-normal">
+                        <VRChat /> VRChat
+                    </dt>
                     <dd>
                         <a
                             href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
@@ -42,14 +53,18 @@ export const ContactSection = () => {
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">Discord</dt>
+                    <dt className="fw-normal">
+                        <Discord /> Discord
+                    </dt>
                     <dd>
                         <FormattedMessage id="contact.discord_note" />
                     </dd>
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">QQ</dt>
+                    <dt className="fw-normal">
+                        <QQ /> QQ
+                    </dt>
                     <dd>
                         <FormattedMessage id="contact.qq_note" />
                     </dd>
@@ -87,6 +102,10 @@ const ContactList = styled(Row)`
     }
     dt::after {
         content: ':';
+    }
+    svg {
+        // width: 1em;
+        height: 1em;
     }
 `;
 const NoHelloDiv = styled.div`
