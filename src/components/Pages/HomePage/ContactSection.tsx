@@ -12,9 +12,7 @@ export const ContactSection = () => {
             </H1>
             <ContactList as="dl">
                 <Col>
-                    <dt className="fw-normal">
-                        <FormattedMessage id="contact.telegram" />
-                    </dt>
+                    <dt className="fw-normal">Telegram</dt>
                     <dd>
                         <a href="https://t.me/Tang_Mo" rel="noreferrer noopener">
                             @Tang_Mo
@@ -23,9 +21,7 @@ export const ContactSection = () => {
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">
-                        <FormattedMessage id="contact.twitter" />
-                    </dt>
+                    <dt className="fw-normal">Twitter</dt>
                     <dd>
                         <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">
                             @TangMoEat
@@ -34,9 +30,7 @@ export const ContactSection = () => {
                 </Col>
 
                 <Col>
-                    <dt className="fw-normal">
-                        <FormattedMessage id="contact.vrchat" />
-                    </dt>
+                    <dt className="fw-normal">VRChat</dt>
                     <dd>
                         <a
                             href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
@@ -44,6 +38,20 @@ export const ContactSection = () => {
                         >
                             แตงโม TANGMO
                         </a>
+                    </dd>
+                </Col>
+
+                <Col>
+                    <dt className="fw-normal">Discord</dt>
+                    <dd>
+                        <FormattedMessage id="contact.discord_note" />
+                    </dd>
+                </Col>
+
+                <Col>
+                    <dt className="fw-normal">QQ</dt>
+                    <dd>
+                        <FormattedMessage id="contact.qq_note" />
                     </dd>
                 </Col>
             </ContactList>
