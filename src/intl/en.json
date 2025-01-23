@@ -96,7 +96,7 @@
         "p3": "Despite intending to be a prey, a few friends have already mentioned to that this character look more like a pred. In fact, I do have a super-power idea for a pred character. If you’re interested, {c}!",
         "p3_contact": "let’s have a chat"
     },
-    "no-hello" : {
+    "no-hello": {
         "meta_title": "No Hello",
         "meta_description": "please don’t say just hello in chat",
         "hero": {

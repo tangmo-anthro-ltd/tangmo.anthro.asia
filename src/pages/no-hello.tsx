@@ -216,8 +216,19 @@ SOFTWARE.
  */
 
 const Hero = styled.header`
-    font-family: lato, ubuntu, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans,
-        Helvetica Neue, sans-serif;
+    font-family:
+        lato,
+        ubuntu,
+        -apple-system,
+        BlinkMacSystemFont,
+        Segoe UI,
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        Open Sans,
+        Helvetica Neue,
+        sans-serif;
     margin: 150px auto 75px auto;
     @media (max-width: 1024px) {
         margin: 60px auto;
