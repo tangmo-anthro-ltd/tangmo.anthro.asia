@@ -118,12 +118,12 @@
             "chat1_4": "Fine thanks!",
             "chat1_5": "Can I ask you a question?",
             "chat1_6": "Just ask",
-            "chat1_7": "When do we need to submit that slide?",
-            "chat1_8": "by midnight the night before the day",
-            "chat1_9": "Okie, thanks",
-            "chat2_1": "Hello, I hope you are well!\nI have a question, when do we need to send the slides?",
-            "chat2_2": "Hey, long time no see!\nsend it by midnight before the day please",
-            "chat2_3": "Okie, thanks"
+            "chat1_7": "Saw this YCH, do you want to comm together?",
+            "chat1_8": "Ooh, looks great! Did you get a slot?",
+            "chat1_9": "It's full now :/",
+            "chat2_1": "Hello, I hope you are well!\nI have a question, I see this artist just opened this YCH, do you want to comm together?",
+            "chat2_2": "Hey, long time no see!\nlooks great! gogogo",
+            "chat2_3": "Messaged them now, which slot do you want?"
         },
         "footer": "Based on {a} and {b} (MIT License)"
     }
