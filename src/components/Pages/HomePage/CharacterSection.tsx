@@ -10,9 +10,9 @@ export const CharacterSection = () => {
         <section>
             <Row>
                 <Col md={8}>
-                    <H1 as="h2">
+                    <h2>
                         <FormattedMessage id="index.aboutChara.title" />
-                    </H1>
+                    </h2>
                     <p>
                         <FormattedMessage id="index.aboutChara.para" />
                     </p>
@@ -49,4 +49,3 @@ export const CharacterSection = () => {
         </section>
     );
 };
-const H1 = styled.h1``;

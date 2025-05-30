@@ -50,9 +50,9 @@ const Page = () => {
                     <StyledFigure>
                         <StaticImage
                             src="../images/reference-body-flat.png"
-                            sizes="(min-width: 768px) 60vw, 100vw"
+                            sizes="(min-width: 768px) 80vw, 100vw"
                             alt={formatMessage({ id: 'reference.image_alt' })}
-                            placeholder="tracedSVG"
+                            placeholder="none"
                         />
                         <span>
                             <CharacterSheetBackground />
@@ -99,7 +99,7 @@ const Page = () => {
                             <label
                                 htmlFor="shade-toggle"
                                 className="btn btn-outline-info"
-                                title={jsEnabled && formatMessage({ id: 'reference.note_for_geek' })}
+                                title={jsEnabled ? formatMessage({ id: 'reference.note_for_geek' }) : undefined}
                             >
                                 <FormattedMessage id="reference.toggle_shade" />
                             </label>

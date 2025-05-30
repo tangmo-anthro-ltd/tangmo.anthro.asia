@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-react-intl';
 import { ScreenReaderOnly } from '../../Atom/ScreenReaderOnly';
 
-export const ColorPalette = ({ className }) => {
+export const ColorPalette = ({ className }: {className?: string}) => {
     return (
         <div className={className}>
             <InvisibleH2>
@@ -66,7 +66,7 @@ const Container = styled.ul`
     text-indent: 0;
 `;
 
-const Color = styled.li`
+const Color = styled.li<{ color: string; $textColor: string }>`
     list-style-type: none;
     padding: 0.7rem;
     background: ${({ color }) => color};
