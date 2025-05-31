@@ -53,8 +53,8 @@ module.exports = {
       options: {
         rule: {
           include: /\.svg$/,
-        }
-      }
+        },
+      },
     },
   ],
 };

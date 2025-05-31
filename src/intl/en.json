@@ -79,6 +79,7 @@
         "image_alt_v2": "Reference image for the blue wolf character with cyan, orange, and yellow marking. Both back and front views are shown.",
         "notice_v2": "Notice: This reference sheet is drawn on a Fursuit template. For arts, please refer to v1 below for the preferred body shape.",
         "imageCredits": "Artist: {link}",
+        "illust_credit": "Illustration: {link}",
         "color_palette": "Colour Palette",
         "color_palette_space": "*HEX codes for sRGB",
         "toggle_shade": "Toggle shading",
