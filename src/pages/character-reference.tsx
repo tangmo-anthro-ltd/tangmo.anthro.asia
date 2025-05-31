@@ -39,10 +39,10 @@ const Page = () => {
             <h1>
                 <FormattedMessage id="reference.title_v2" />
             </h1>
+            <Callout className="mb-3">
+                <FormattedMessage id="reference.notice_v2" />
+            </Callout>
             <Row>
-                <Callout>
-                    <FormattedMessage id="reference.notice_v2" />
-                </Callout>
                 <Col md={9} lg={10} classNames="d-flex justify-content-between">
                     <Figure>
                         <StaticImage
@@ -272,7 +272,6 @@ const DownloadLink = styled.a`
 `;
 const Callout = styled.p`
     padding: 0.75rem 1.25rem;
-    margin: 0 calc(var(--bs-gutter-x) * 0.5) 1.25rem;
     color: var(--bs-warning-text-emphasis);
     background-color: var(--bs-warning-bg-subtle);
     border-left: 0.25rem solid var(--bs-warning-border-subtle, var(--bs-gray-300));
