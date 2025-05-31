@@ -37,8 +37,60 @@ const Page = () => {
     return (
         <Container>
             <h1>
-                <FormattedMessage id="reference.title" />
+                <FormattedMessage id="reference.title_v2" />
             </h1>
+            <Row>
+                <Callout>
+                    <FormattedMessage id="reference.notice_v2" />
+                </Callout>
+                <Col md={9} lg={10} classNames="d-flex justify-content-between">
+                    <Figure>
+                        <StaticImage
+                            src="../images/reference-v2.png"
+                            sizes="(min-width: 768px) 68vw, 100vw"
+                            alt={formatMessage({ id: 'reference.image_alt_v2' })}
+                            placeholder="none"
+                        />
+                        <Figure.Caption>
+                            <FormattedMessage
+                                id="reference.illust_credit"
+                                values={{
+                                    link: (
+                                        <a href="https://www.kigurumikagetsu.jp" rel="noreferrer noopener">
+                                            Kigurumi Kagetsu Co., Ltd.
+                                        </a>
+                                    ),
+                                }}
+                            />
+                        </Figure.Caption>
+                    </Figure>
+                </Col>
+                <Col
+                    md={3}
+                    lg={2}
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        gap: '1em',
+                    }}
+                >
+                    <ButtonGroup>
+                        <DownloadLink
+                            download
+                            href="/refsheet-small-v2.png"
+                            className={`btn btn-outline-${colorScheme === 'light' ? 'secondary' : 'light'}`}
+                        >
+                            <Download />
+                            <FormattedMessage id="reference.download" />
+                        </DownloadLink>
+                    </ButtonGroup>
+                    <StyledColorPalette />
+                </Col>
+            </Row>
+            <h2 className="mt-3 mt-md-0">
+                <FormattedMessage id="reference.title_v1" />
+            </h2>
             <StyledRow>
                 <input
                     type="checkbox"
@@ -51,7 +103,7 @@ const Page = () => {
                         <StaticImage
                             src="../images/reference-body-flat.png"
                             sizes="(min-width: 768px) 80vw, 100vw"
-                            alt={formatMessage({ id: 'reference.image_alt' })}
+                            alt={formatMessage({ id: 'reference.image_alt_v1' })}
                             placeholder="none"
                         />
                         <span>
@@ -121,7 +173,6 @@ const Page = () => {
                             <FormattedMessage id="reference.download" />
                         </DownloadLink>
                     </ButtonGroup>
-                    <StyledColorPalette />
                 </Col>
             </StyledRow>
             <hr />
@@ -218,4 +269,11 @@ const DownloadLink = styled.a`
         width: 1.25rem;
         height: 1.25rem;
     }
+`;
+const Callout = styled.p`
+    padding: 0.75rem 1.25rem;
+    margin: 0 calc(var(--bs-gutter-x) * 0.5) 1.25rem;
+    color: var(--bs-warning-text-emphasis);
+    background-color: var(--bs-warning-bg-subtle);
+    border-left: 0.25rem solid var(--bs-warning-border-subtle, var(--bs-gray-300));
 `;

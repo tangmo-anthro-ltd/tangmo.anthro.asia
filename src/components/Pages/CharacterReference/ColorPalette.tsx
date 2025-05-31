@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-react-intl';
 import { ScreenReaderOnly } from '../../Atom/ScreenReaderOnly';
 
-export const ColorPalette = ({ className }: {className?: string}) => {
+export const ColorPalette = ({ className }: { className?: string }) => {
     return (
         <div className={className}>
             <InvisibleH2>
@@ -32,6 +32,9 @@ export const ColorPalette = ({ className }: {className?: string}) => {
                     #CA4537
                 </Color>
             </Container>
+            <span style={{ display: 'block' }} className="mt-lg-3">
+                <FormattedMessage id="reference.color_palette_space" />
+            </span>
         </div>
     );
 };
