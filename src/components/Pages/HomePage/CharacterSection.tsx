@@ -9,7 +9,7 @@ export const CharacterSection = () => {
     return (
         <section>
             <Row>
-                <Col md={8}>
+                <Col md={7} className="mb-3 mb-md-0">
                     <h2>
                         <FormattedMessage id="index.aboutChara.title" />
                     </h2>
@@ -20,12 +20,13 @@ export const CharacterSection = () => {
                         <FormattedMessage id="index.aboutChara.refSheet" />
                     </Link>
                 </Col>
-                <Col md={4}>
+                <Col md={5}>
                     <Figure>
                         <StaticImage
-                            src="../../../images/index-chara.jpg"
-                            sizes="(min-width: 768px) 35vw, 100vw"
+                            src="../../../images/index-chara3.png"
+                            sizes="(min-width: 768px) 40vw, 100vw"
                             alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                            placeholder="none"
                         />
                         <Figure.Caption>
                             <FormattedMessage
@@ -33,11 +34,12 @@ export const CharacterSection = () => {
                                 values={{
                                     link: (
                                         <a
-                                            href="https://www.facebook.com/profile.php?id=100077583383830"
+                                            href="https://twitter.com/R00mbAI1"
                                             rel="noreferrer noopener"
-                                            lang="zh-CN"
+                                            lang="ja"
+                                            aria-label="ルンバイ"
                                         >
-                                            骑士长
+                                            ノレンバイ
                                         </a>
                                     ),
                                 }}
