@@ -1,4 +1,3 @@
-import * as React from 'react';
 export const Download = () => (
     <svg viewBox="0 0 24 24">
         <path

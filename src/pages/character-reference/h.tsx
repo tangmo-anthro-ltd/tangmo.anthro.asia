@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { Col, Container, Figure, Row } from 'react-bootstrap';
-import Layout from '../../components/layout';
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
+import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
+import { Col, Container, Figure, Row } from 'react-bootstrap';
 import Breadcrumbs from '../../components/Atom/Breadcrumbs';
 import { LinkToAnchor } from '../../components/Atom/LinkToAnchor';
+import Layout from '../../components/layout';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -62,11 +61,12 @@ export default () => {
                                 src="../../images/reference-mouth.png"
                                 sizes="(min-width: 768px) 30vw, 100vw"
                                 alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
-                                placeholder="tracedSVG"
+                                placeholder="none"
+                                loading="eager"
                             />
                             <Figure.Caption>
                                 <FormattedMessage
-                                    id="reference.imageCredits"
+                                    id="common.artCredits"
                                     values={{
                                         link: (
                                             <a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">

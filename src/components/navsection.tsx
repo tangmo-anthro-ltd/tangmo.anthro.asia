@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
-import { Link as PlainLink } from 'gatsby';
 import { Location } from '@reach/router';
+import { Link as PlainLink } from 'gatsby';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { ReactNode } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { HiddenAccessibleLink } from './Atom/HiddenAccessibleLink';
 import { LinkToAnchor } from './Atom/LinkToAnchor';
 

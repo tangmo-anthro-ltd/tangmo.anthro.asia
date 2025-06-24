@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useClientTimeZone } from '../../hooks/useClientTimeZone';
 
 export const NumericDateTime = ({ date }: { date: Date }) => {

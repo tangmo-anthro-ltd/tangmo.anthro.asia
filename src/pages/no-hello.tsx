@@ -1,11 +1,10 @@
-import * as React from 'react';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
+import { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 import { ColorSchemeProvider } from '../contexts/ColorSchemeContext';
-import { Helmet } from 'react-helmet';
-import { useEffect, useRef } from 'react';
-import { useMounted } from '../hooks/useMounted';
 import { useJsEnabled } from '../hooks/useJsEnabled';
+import { useMounted } from '../hooks/useMounted';
 
 export default () => {
     const { locale, formatMessage } = useIntl();

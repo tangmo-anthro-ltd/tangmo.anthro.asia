@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useIntl } from 'gatsby-plugin-react-intl';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { useColorSchemeContext } from '../contexts/ColorSchemeContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Header({ title, description, extraMeta = [] }: IHeaderProps) {
     const { colorScheme, setColorScheme } = useColorSchemeContext();

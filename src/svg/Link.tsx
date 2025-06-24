@@ -1,4 +1,3 @@
-import * as React from 'react';
 export const Link = () => (
     <svg viewBox="0 0 16 16">
         <path

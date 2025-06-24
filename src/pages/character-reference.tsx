@@ -1,15 +1,15 @@
-import * as React from 'react';
-import { Button, Col, Container, Figure, Row } from 'react-bootstrap';
-import Layout from '../components/layout';
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { StaticImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
-import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
-import { Download } from '../svg/Download';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
+import * as React from 'react';
 import { useRef } from 'react';
-import { CharacterSheetBackground } from '../svg/CharacterSheetBackground';
+import { Button, Col, Container, Figure, Row } from 'react-bootstrap';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { useColorSchemeContext } from '../contexts/ColorSchemeContext';
 import { useJsEnabled } from '../hooks/useJsEnabled';
+import { CharacterSheetBackground } from '../svg/CharacterSheetBackground';
+import { Download } from '../svg/Download';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -47,16 +47,20 @@ const Page = () => {
                     <Figure>
                         <StaticImage
                             src="../images/reference-v2.png"
-                            sizes="(min-width: 768px) 68vw, 100vw"
+                            sizes="(min-width: 768px) 75vw, 100vw"
                             alt={formatMessage({ id: 'reference.image_alt_v2' })}
                             placeholder="none"
+                            loading="eager"
                         />
                         <Figure.Caption>
                             <FormattedMessage
                                 id="reference.illust_credit"
                                 values={{
                                     link: (
-                                        <a href="https://www.kigurumikagetsu.jp" rel="noreferrer noopener">
+                                        <a
+                                            href="https://www.kigurumikagetsu.jp/en/%E8%A4%87%E8%A3%BD-stc"
+                                            rel="noreferrer noopener"
+                                        >
                                             Kigurumi Kagetsu Co., Ltd.
                                         </a>
                                     ),
@@ -113,7 +117,7 @@ const Page = () => {
                         <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
                         <Figure.Caption>
                             <FormattedMessage
-                                id="reference.imageCredits"
+                                id="common.artCredits"
                                 values={{
                                     link: (
                                         <a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">

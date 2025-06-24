@@ -1,9 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
+import { ColorSchemeProvider } from '../contexts/ColorSchemeContext';
 import { Footer } from './footer';
 import { Header, IHeaderProps } from './header';
 import { NavSection } from './navsection';
-import { ReactNode } from 'react';
-import { ColorSchemeProvider } from '../contexts/ColorSchemeContext';
 
 export default ({ children, ...rest }: IProps) => (
     <ColorSchemeProvider>

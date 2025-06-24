@@ -3,20 +3,22 @@
         "name": "TangMo",
         "defaultDesc": "TangMo’s website"
     },
+    "common": {
+        "artCredits": "Artist: {link}",
+        "photoCredits": "Photographer: {link}"
+    },
     "index": {
         "title": "About TangMo",
         "aboutMe": {
             "title": "Hello!",
-            "imageAlt": "Image of “Anemo” dragon from VRChat",
-            "imageCaption": "TangMo often use the default “Anemo” dragon avatar in VRChat",
-            "para": "It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, usually as the default “Anemo” avatar (pictured). See ya around!"
+            "para": "It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, see ya around!",
+            "refSheet": "Character Reference Sheet",
+            "charaImageAlt": "Bust shot painting of TangMo’s character standing at a bar. The character is a blue wolf with cyan, orange, and yellow markings, wearing a black shirt with the chest half-open."
         },
-        "aboutChara": {
-            "title": "About the character",
-            "imageAlt": "Bust shot painting of TangMo’s character eating a hotdog",
-            "imageCredits": "Artist: {link}",
-            "para": "Yet another blue wolf among 23,547 others in the fandom. He… exists…? I just put him in drawings sometimes.",
-            "refSheet": "Reference Sheet"
+        "aboutFursuit": {
+            "title": "The Fursuit",
+            "madeBy": "Built by {link}",
+            "imageAlt": "Photograph of the partial fursuit with one hand up, leaning against a Japanese-style wooden window frame."
         }
     },
     "nav": {
@@ -30,8 +32,8 @@
         "title": "Talk to me!",
         "discord_note": "Available for specific uses",
         "qq_note": "Divest - Only when absolutely necessary, alternative channel recommended",
-        "note": "Before sending a message, have a quick look at {link}. If you send me a “Hello” with nothing else, ",
-        "note_summary": "we’ll see about that.",
+        "note": "Before sending a message, have a quick look at {link}. If you send me a “Hello” with nothing else, {summary}.",
+        "note_summary": "we’ll see about that",
         "note_img_alt": "Sticker depicting a smiling wolf holding a baseball bat with menacing aura",
         "no_hello": "no hello"
     },
@@ -78,7 +80,6 @@
         "image_alt_v1": "Reference image for the blue wolf character, showing back and front view.",
         "image_alt_v2": "Reference image for the blue wolf character with cyan, orange, and yellow marking. Both back and front views are shown.",
         "notice_v2": "Notice: This reference sheet is drawn on a Fursuit template. For arts, please refer to v1 below for the preferred body shape.",
-        "imageCredits": "Artist: {link}",
         "illust_credit": "Illustration: {link}",
         "color_palette": "Colour Palette",
         "color_palette_space": "*HEX codes for sRGB",
@@ -93,7 +94,6 @@
     "reference-h": {
         "title": "Vorny Note",
         "image_alt": "A giant wolf mouth with small blue wolf resting at the inner-end of its pink tongue. There center of the tongue is dyed in white and blue, depicting the trail of where the small wolf have been.",
-        "imageCredits": "Artist: {link}",
         "p1": "If you’ve been following me for a while, it is no secret that I am into vore and muscles. Specifically, I love being the prey in soft-vore with ideally both party having a muscular build. Goo-ey digestion is the furthest I’d go. Thus, this character is intended to be a prey, but with a fun gimmick.",
         "p2": "When the torso area is wet, it can release some ink with the same colour as its fur pattern. If on a pred’s tongue, this ink would leave temporary mark, similar to colour from a lollipop or shush. Passerby could recognize the colour pattern and know who is inside. Despite the look, the body is {em} melting.",
         "p2_em": "not",

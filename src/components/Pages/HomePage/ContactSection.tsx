@@ -1,20 +1,21 @@
-import { Col, Row } from 'react-bootstrap';
-import * as React from 'react';
-import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
-import styled from 'styled-components';
 import Discord from 'bootstrap-icons/icons/discord.svg';
-import QQ from 'bootstrap-icons/icons/tencent-qq.svg';
 import Telegram from 'bootstrap-icons/icons/telegram.svg';
+import QQ from 'bootstrap-icons/icons/tencent-qq.svg';
 import Twitter from 'bootstrap-icons/icons/twitter.svg';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
+import * as React from 'react';
+import { Button, Col, Modal, Row } from 'react-bootstrap';
+import styled from 'styled-components';
 import VRChat from '../../../icons/VRChat';
 
 export const ContactSection = () => {
     const { formatMessage } = useIntl();
+    const [showModal, setShowModal] = React.useState(false);
     return (
         <section id="contact">
-            <H1 as="h2">
+            <h2>
                 <FormattedMessage id="contact.title" />
-            </H1>
+            </h2>
             <ContactList as="dl">
                 <Col>
                     <dt className="fw-normal">
@@ -70,7 +71,7 @@ export const ContactSection = () => {
                     </dd>
                 </Col>
             </ContactList>
-            <NoHelloDiv>
+            <p>
                 <FormattedMessage
                     id="contact.note"
                     values={{
@@ -79,16 +80,33 @@ export const ContactSection = () => {
                                 <FormattedMessage id="contact.no_hello" />
                             </Link>
                         ),
+                        summary: (
+                            <Button
+                                variant="link"
+                                onClick={() => setShowModal(true)}
+                                className="p-0"
+                                style={{ display: 'inline-block', verticalAlign: 'inherit' }}
+                                aria-labelledby="nohello-modal"
+                            >
+                                <FormattedMessage id="contact.note_summary" />
+                            </Button>
+                        ),
                     }}
                 />
-                <NoHelloDetails>
-                    <StyledSummary>
-                        <FormattedMessage id="contact.note_summary" />
-                        <Arrow />
-                    </StyledSummary>
-                    <img src="/bat-sticker.webp" alt={formatMessage({ id: 'contact.note_img_alt' })} loading="lazy" />
-                </NoHelloDetails>
-            </NoHelloDiv>
+            </p>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                <Modal.Header closeButton></Modal.Header>
+                <Modal.Body id="nohello-modal">
+                    <div className="text-center">
+                        <img
+                            src="/bat-sticker.webp"
+                            alt={formatMessage({ id: 'contact.note_img_alt' })}
+                            loading="lazy"
+                            style={{ maxWidth: '100%' }}
+                        />
+                    </div>
+                </Modal.Body>
+            </Modal>
         </section>
     );
 };
@@ -108,35 +126,3 @@ const ContactList = styled(Row)`
         height: 1em;
     }
 `;
-const NoHelloDiv = styled.div`
-    position: relative;
-`;
-const Arrow = styled.span`
-    margin-left: 4px;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0.4rem 0.4rem 0.4rem 0;
-    border-color: transparent currentColor transparent transparent;
-    transition: transform 200ms;
-`;
-const StyledSummary = styled.summary`
-    list-style: none;
-    text-decoration: underline;
-`;
-const NoHelloDetails = styled.details`
-    display: inline-block;
-    > :not(summary) {
-        z-index: 9;
-        position: absolute;
-        background-color: var(--bs-body-bg);
-        padding: 1rem 0;
-        left: 0;
-        width: 200px;
-    }
-    &[open] ${Arrow} {
-        transform: rotate(-90deg);
-    }
-`;
-const H1 = styled.h1``;

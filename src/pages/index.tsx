@@ -1,11 +1,9 @@
-import * as React from 'react';
-import { Container } from 'react-bootstrap';
-import Layout from '../components/layout';
 import { useIntl } from 'gatsby-plugin-react-intl';
-import { ContactSection } from '../components/Pages/HomePage/ContactSection';
-import { CharacterSection } from '../components/Pages/HomePage/CharacterSection';
-import { IntroSection } from '../components/Pages/HomePage/IntroSection';
+import { Container } from 'react-bootstrap';
 import styled, { keyframes } from 'styled-components';
+import Layout from '../components/layout';
+import { FursuitSection } from '../components/Pages/HomePage/FursuitSection';
+import { IntroSection } from '../components/Pages/HomePage/IntroSection';
 
 export default () => {
     const { formatMessage } = useIntl();
@@ -13,10 +11,9 @@ export default () => {
         <Layout title={formatMessage({ id: 'index.title' })}>
             <AnchorAwareContainer>
                 <IntroSection />
+                {/* <hr className="mt-4 mt-md-0" /> */}
                 <hr />
-                <CharacterSection />
-                <hr />
-                <ContactSection />
+                <FursuitSection />
             </AnchorAwareContainer>
         </Layout>
     );

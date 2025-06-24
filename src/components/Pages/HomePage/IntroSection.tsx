@@ -1,7 +1,6 @@
-import { Col, Figure, Row } from 'react-bootstrap';
 import { StaticImage } from 'gatsby-plugin-image';
-import * as React from 'react';
-import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
+import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
+import { Col, Figure, Row } from 'react-bootstrap';
 
 export const IntroSection = () => {
     const { formatMessage } = useIntl();
@@ -15,18 +14,39 @@ export const IntroSection = () => {
                     <p>
                         <FormattedMessage id="index.aboutMe.para" />
                     </p>
+                    <Link
+                        to="/character-reference"
+                        className="btn btn-outline-primary"
+                        style={{ color: 'var(--bs-body-color)' }}
+                    >
+                        <FormattedMessage id="index.aboutMe.refSheet" />
+                    </Link>
                 </Col>
                 <Col md={5} style={{ order: 1 }}>
                     <Figure>
-                        <a href="https://tangmo-gal.anthro.asia/picture/773">
+                        <Link to="/character-reference">
                             <StaticImage
-                                src="../../../images/index-anemo.jpg"
-                                sizes="(min-width: 768px) 40vw, 100vw"
-                                alt={formatMessage({ id: 'index.aboutMe.imageAlt' })}
+                                src="../../../images/index-chara11.png"
+                                sizes="(min-width: 768px) 50vw, 100vw"
+                                alt={formatMessage({ id: 'index.aboutMe.charaImageAlt' })}
+                                placeholder="none"
                             />
-                        </a>
+                        </Link>
                         <Figure.Caption>
-                            <FormattedMessage id="index.aboutMe.imageCaption" />
+                            <FormattedMessage
+                                id="common.artCredits"
+                                values={{
+                                    link: (
+                                        <a
+                                            href="https://twitter.com/lanhufengchen"
+                                            rel="noreferrer noopener"
+                                            lang="zh-CN"
+                                        >
+                                            岚虎枫晨
+                                        </a>
+                                    ),
+                                }}
+                            />
                         </Figure.Caption>
                     </Figure>
                 </Col>

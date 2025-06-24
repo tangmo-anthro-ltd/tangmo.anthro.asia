@@ -14,4 +14,4 @@ const ColorSchemeProvider = ({ children }) => {
 
 const useColorSchemeContext = () => React.useContext(ColorSchemeContext);
 
-export { useColorSchemeContext, ColorSchemeProvider };
+export { ColorSchemeProvider, useColorSchemeContext };

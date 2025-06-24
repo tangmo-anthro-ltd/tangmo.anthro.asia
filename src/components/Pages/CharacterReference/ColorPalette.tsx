@@ -1,6 +1,5 @@
-import * as React from 'react';
-import styled, { css } from 'styled-components';
 import { FormattedMessage } from 'gatsby-plugin-react-intl';
+import styled from 'styled-components';
 import { ScreenReaderOnly } from '../../Atom/ScreenReaderOnly';
 
 export const ColorPalette = ({ className }: { className?: string }) => {
