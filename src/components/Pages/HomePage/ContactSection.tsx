@@ -7,6 +7,7 @@ import * as React from 'react';
 import { Button, Col, Modal, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import VRChat from '../../../icons/VRChat';
+import batSticker from '../../../images/bat-sticker.avif';
 
 export const ContactSection = () => {
     const { formatMessage } = useIntl();
@@ -99,7 +100,7 @@ export const ContactSection = () => {
                 <Modal.Body id="nohello-modal">
                     <div className="text-center">
                         <img
-                            src="/bat-sticker.webp"
+                            src={batSticker}
                             alt={formatMessage({ id: 'contact.note_img_alt' })}
                             loading="lazy"
                             style={{ maxWidth: '100%' }}

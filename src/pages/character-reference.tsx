@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 import { ColorPalette } from '../components/Pages/CharacterReference/ColorPalette';
 import { useColorSchemeContext } from '../contexts/ColorSchemeContext';
 import { useJsEnabled } from '../hooks/useJsEnabled';
+import refsheetBodyShade from '../images/refsheet-body-shade.avif';
 import { CharacterSheetBackground } from '../svg/CharacterSheetBackground';
 import { Download } from '../svg/Download';
 
@@ -32,7 +33,7 @@ const Page = () => {
     const { colorScheme } = useColorSchemeContext();
     const jsEnabled = useJsEnabled();
     const [shaded, setShaded] = React.useState(false);
-    const shadedInputRef = useRef(null);
+    const shadedInputRef = useRef<HTMLInputElement>(null);
 
     return (
         <Container>
@@ -114,7 +115,7 @@ const Page = () => {
                             <CharacterSheetBackground />
                         </span>
                         {/* Gatsby's convoluted StaticImage mess with this one, especially when JS is off */}
-                        <img src="/refsheet-body-shade.png" alt="" id="shade-layer" />
+                        <img src={refsheetBodyShade} alt="" id="shade-layer" />
                         <Figure.Caption>
                             <FormattedMessage
                                 id="common.artCredits"
