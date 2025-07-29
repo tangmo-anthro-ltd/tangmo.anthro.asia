@@ -9,7 +9,7 @@ export const HiddenAccessibleLink = styled.a`
     position: absolute;
     z-index: 9999;
 
-    :not(:focus) {
+    &:not(:focus) {
         clip: rect(0, 0, 0, 0);
     }
 `;
