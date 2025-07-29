@@ -39,6 +39,7 @@ export const FursuitSection = () => {
                     src="../../../images/20250520_234939.jpg"
                     sizes="(min-width: 768px) 50vw, 100vw"
                     alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                    placeholder="blurred"
                 />
             </Col>
         </StyledRow>

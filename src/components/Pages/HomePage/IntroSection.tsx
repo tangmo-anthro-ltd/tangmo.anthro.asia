@@ -29,7 +29,7 @@ export const IntroSection = () => {
                                 src="../../../images/index-chara11.png"
                                 sizes="(min-width: 768px) 50vw, 100vw"
                                 alt={formatMessage({ id: 'index.aboutMe.charaImageAlt' })}
-                                placeholder="none"
+                                placeholder="blurred"
                             />
                         </Link>
                         <Figure.Caption>

@@ -11,7 +11,7 @@ export const CharacterSection = () => {
                     src="../../../images/index-chara11.png"
                     sizes="(min-width: 768px) 50vw, 100vw"
                     alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
-                    placeholder="none"
+                    placeholder="blurred"
                     // style={{ marginTop: '-10%' }}
                 />
                 <Figure.Caption>
