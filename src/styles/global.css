@@ -1,0 +1,10 @@
+@media not (dynamic-range: high) {
+    .hdr-only {
+        display: none !important;
+    }
+}
+@media (dynamic-range: high) {
+    .sdr-only {
+        display: none !important;
+    }
+}

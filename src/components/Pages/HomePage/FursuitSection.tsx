@@ -2,6 +2,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import fursuitPicHdr from '../../../images/20250520_234939_gm.avif';
+import { HdrImgWithFallback } from '../../Atom/HdrImgWithFallback';
 import { ContactSection } from './ContactSection';
 
 export const FursuitSection = () => {
@@ -35,11 +37,18 @@ export const FursuitSection = () => {
                 </section>
             </Col>
             <Col md={6}>
-                <StaticImage
-                    src="../../../images/20250520_234939.jpg"
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                <HdrImgWithFallback
+                    src={fursuitPicHdr}
                     alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
-                    placeholder="blurred"
+                    SdrFallback={({ className }) => (
+                        <StaticImage
+                            src="../../../images/20250520_234939.jpg"
+                            sizes="(min-width: 768px) 50vw, 100vw"
+                            alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                            placeholder="blurred"
+                            className={className}
+                        />
+                    )}
                 />
             </Col>
         </StyledRow>

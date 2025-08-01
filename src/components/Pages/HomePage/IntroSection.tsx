@@ -1,6 +1,8 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { Col, Figure, Row } from 'react-bootstrap';
+import gainMap from '../../../images/index-chara11_gm.avif';
+import { HdrImgWithFallback } from '../../Atom/HdrImgWithFallback';
 
 export const IntroSection = () => {
     const { formatMessage } = useIntl();
@@ -25,11 +27,18 @@ export const IntroSection = () => {
                 <Col md={5} style={{ order: 1 }}>
                     <Figure>
                         <Link to="/character-reference">
-                            <StaticImage
-                                src="../../../images/index-chara11.png"
-                                sizes="(min-width: 768px) 50vw, 100vw"
+                            <HdrImgWithFallback
+                                src={gainMap}
                                 alt={formatMessage({ id: 'index.aboutMe.charaImageAlt' })}
-                                placeholder="blurred"
+                                SdrFallback={({ className }) => (
+                                    <StaticImage
+                                        src="../../../images/index-chara11.png"
+                                        sizes="(min-width: 768px) 50vw, 100vw"
+                                        alt={formatMessage({ id: 'index.aboutMe.charaImageAlt' })}
+                                        placeholder="blurred"
+                                        className={className}
+                                    />
+                                )}
                             />
                         </Link>
                         <Figure.Caption>
