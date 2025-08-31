@@ -3,34 +3,37 @@ import styled from 'styled-components';
 
 interface DynamicGainmapImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     SdrFallback: ({ className }: { className: string }) => ReactNode;
+    mp4Fallback?: string;
 }
 
-const isForceSdr = () => {
+const isSafariFallback = () => {
     if (typeof window === 'undefined') return false;
-    // return true;
     const ua = navigator.userAgent;
-    if (/^((?!chrome|android).)*safari/i.test(ua)) {
+    if (/^((?!chrome|android).)*safari/i.test(ua) && window.matchMedia?.('(dynamic-range: high)')?.matches) {
         const matchVal = ua.match(/Version\/(\d+)\./);
         // Safari before v26: media query shows true due to legacy HDR video support
-        // but HDR image is actually not supported
+        // but HDR image is actually not supported, falling back to HDR video
         return matchVal && parseInt(matchVal[1], 10) < 26;
     }
     return false;
 };
 
 export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: DynamicGainmapImageProps) => {
-    const [forceSDR, setForceSDR] = useState(false);
-
+    const [safariFallback, setSafariFallback] = useState(false);
     useEffect(() => {
-        if (isForceSdr()) {
-            setForceSDR(true);
+        if (isSafariFallback()) {
+            setSafariFallback(true);
         }
     }, []);
 
+    if (safariFallback && props.mp4Fallback) {
+        return <HDRImage as="video" src={props.mp4Fallback} autoPlay muted playsInline className={className} />;
+    }
+
     return (
         <>
-            {!forceSDR && <HDRImage {...props} className="hdr-only" loading="lazy" />}
-            <SdrFallback className={forceSDR ? '' : 'sdr-only'} />
+            <HDRImage {...props} className="hdr-only" loading="lazy" />
+            <SdrFallback className="sdr-only" />
         </>
     );
 };

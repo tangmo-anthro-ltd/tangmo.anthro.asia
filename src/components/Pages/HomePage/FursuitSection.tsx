@@ -2,7 +2,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage, useIntl } from 'gatsby-plugin-react-intl';
 import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import fursuitPicHdr from '../../../images/20250520_234939_gm.avif';
+import fursuitPicHdr from '../../../images/20250520_234939_hdr.avif';
+import fursuitPicHdr265 from '../../../images/20250520_234939_hdr.mp4';
 import { HdrImgWithFallback } from '../../Atom/HdrImgWithFallback';
 import { ContactSection } from './ContactSection';
 
@@ -39,6 +40,7 @@ export const FursuitSection = () => {
             <Col md={6}>
                 <HdrImgWithFallback
                     src={fursuitPicHdr}
+                    mp4Fallback={fursuitPicHdr265}
                     alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
                     SdrFallback={({ className }) => (
                         <StaticImage

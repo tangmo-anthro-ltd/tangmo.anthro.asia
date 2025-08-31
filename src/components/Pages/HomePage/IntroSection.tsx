@@ -1,7 +1,8 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { Col, Figure, Row } from 'react-bootstrap';
-import gainMap from '../../../images/index-chara11_gm.avif';
+import charaPicHdr from '../../../images/index-chara11_hdr.avif';
+import CharaPicHdr265 from '../../../images/index-chara11_hdr.mp4';
 import { HdrImgWithFallback } from '../../Atom/HdrImgWithFallback';
 
 export const IntroSection = () => {
@@ -28,7 +29,8 @@ export const IntroSection = () => {
                     <Figure>
                         <Link to="/character-reference">
                             <HdrImgWithFallback
-                                src={gainMap}
+                                src={charaPicHdr}
+                                mp4Fallback={CharaPicHdr265}
                                 alt={formatMessage({ id: 'index.aboutMe.charaImageAlt' })}
                                 SdrFallback={({ className }) => (
                                     <StaticImage
