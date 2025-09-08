@@ -6,7 +6,7 @@ interface DynamicGainmapImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     mp4Fallback?: string;
 }
 
-const isSafariFallback = () => {
+const checkVideoFallback = () => {
     if (typeof window === 'undefined') return false;
     const ua = navigator.userAgent;
     if (/^((?!chrome|android).)*safari/i.test(ua) && window.matchMedia?.('(dynamic-range: high)')?.matches) {
@@ -15,18 +15,26 @@ const isSafariFallback = () => {
         // but HDR image is actually not supported, falling back to HDR video
         return matchVal && parseInt(matchVal[1], 10) < 26;
     }
+    if (
+        /Macintosh|Mac OS X/i.test(ua) &&
+        /Firefox\/\d+/.test(ua) &&
+        window.matchMedia?.('(video-dynamic-range: high)')?.matches
+    ) {
+        // Firefox on macOS supports HDR video but not HDR image
+        return true;
+    }
     return false;
 };
 
 export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: DynamicGainmapImageProps) => {
-    const [safariFallback, setSafariFallback] = useState(false);
+    const [videoFallback, setVideoFallback] = useState(false);
     useEffect(() => {
-        if (isSafariFallback()) {
-            setSafariFallback(true);
+        if (checkVideoFallback()) {
+            setVideoFallback(true);
         }
     }, []);
 
-    if (safariFallback && props.mp4Fallback) {
+    if (videoFallback && props.mp4Fallback) {
         return <HDRImage as="video" src={props.mp4Fallback} autoPlay muted playsInline className={className} />;
     }
 
