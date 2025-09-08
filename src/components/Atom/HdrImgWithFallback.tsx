@@ -13,7 +13,7 @@ const checkVideoFallback = () => {
         const matchVal = ua.match(/Version\/(\d+)\./);
         // Safari before v26: media query shows true due to legacy HDR video support
         // but HDR image is actually not supported, falling back to HDR video
-        return matchVal && parseInt(matchVal[1], 10) < 26;
+        return !!(matchVal && parseInt(matchVal[1], 10) < 26);
     }
     if (
         /Macintosh|Mac OS X/i.test(ua) &&
@@ -29,9 +29,18 @@ const checkVideoFallback = () => {
 export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: DynamicGainmapImageProps) => {
     const [videoFallback, setVideoFallback] = useState(false);
     useEffect(() => {
-        if (checkVideoFallback()) {
-            setVideoFallback(true);
-        }
+        const updateFallback = () => {
+            setVideoFallback(checkVideoFallback());
+        };
+        updateFallback();
+        const mq = window.matchMedia('(dynamic-range: high)');
+        mq.addEventListener?.('change', updateFallback);
+        const vmq = window.matchMedia('(video-dynamic-range: high)');
+        vmq.addEventListener?.('change', updateFallback);
+        return () => {
+            mq.removeEventListener?.('change', updateFallback);
+            vmq.removeEventListener?.('change', updateFallback);
+        };
     }, []);
 
     if (videoFallback && props.mp4Fallback) {
