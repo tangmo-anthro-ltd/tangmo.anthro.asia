@@ -41,12 +41,12 @@ export const FursuitSection = () => {
                 <HdrImgWithFallback
                     src={fursuitPicHdr}
                     mp4Fallback={fursuitPicHdr265}
-                    alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                    alt={formatMessage({ id: 'index.aboutFursuit.imageAlt' })}
                     SdrFallback={({ className }) => (
                         <StaticImage
                             src="../../../images/20250520_234939.jpg"
                             sizes="(min-width: 768px) 50vw, 100vw"
-                            alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                            alt={formatMessage({ id: 'index.aboutFursuit.imageAlt' })}
                             placeholder="blurred"
                             className={className}
                         />

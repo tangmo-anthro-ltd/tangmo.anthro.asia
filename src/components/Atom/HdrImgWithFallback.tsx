@@ -6,40 +6,44 @@ interface DynamicGainmapImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     mp4Fallback?: string;
 }
 
-const checkVideoFallback = () => {
-    if (typeof window === 'undefined') return false;
-    const ua = navigator.userAgent;
-    if (/^((?!chrome|android).)*safari/i.test(ua) && window.matchMedia?.('(dynamic-range: high)')?.matches) {
-        const matchVal = ua.match(/Version\/(\d+)\./);
-        // Safari before v26: media query shows true due to legacy HDR video support
-        // but HDR image is actually not supported, falling back to HDR video
-        return !!(matchVal && parseInt(matchVal[1], 10) < 26);
-    }
-    if (
-        /Macintosh|Mac OS X/i.test(ua) &&
-        /Firefox\/\d+/.test(ua) &&
-        window.matchMedia?.('(video-dynamic-range: high)')?.matches
-    ) {
-        // Firefox on macOS supports HDR video but not HDR image
-        return true;
-    }
-    return false;
-};
-
 export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: DynamicGainmapImageProps) => {
     const [videoFallback, setVideoFallback] = useState(false);
     useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const ua = navigator.userAgent;
+        const isSafariBelow26 = (() => {
+            if (!/^((?!chrome|android).)*safari/i.test(ua)) {
+                return false;
+            }
+            const matchVal = ua.match(/Version\/(\d+)\./);
+            return !!(matchVal && parseInt(matchVal[1], 10) < 26);
+        })();
+        const isFirefoxMac = /Macintosh|Mac OS X/i.test(ua) && /Firefox\/\d+/.test(ua);
+
+        let mq: MediaQueryList | undefined;
+        let vmq: MediaQueryList | undefined;
+        if (isSafariBelow26) {
+            // Safari before v26: media query shows true due to legacy HDR video support
+            // but HDR image is actually not supported, falling back to HDR video
+            mq = window.matchMedia?.('(dynamic-range: high)');
+        }
+        if (isFirefoxMac) {
+            // Firefox on macOS supports HDR video but not HDR image
+            vmq = window.matchMedia?.('(video-dynamic-range: high)');
+        }
         const updateFallback = () => {
-            setVideoFallback(checkVideoFallback());
+            if (mq?.matches || vmq?.matches) {
+                setVideoFallback(true);
+            } else {
+                setVideoFallback(false);
+            }
         };
         updateFallback();
-        const mq = window.matchMedia('(dynamic-range: high)');
-        mq.addEventListener?.('change', updateFallback);
-        const vmq = window.matchMedia('(video-dynamic-range: high)');
-        vmq.addEventListener?.('change', updateFallback);
+        mq?.addEventListener?.('change', updateFallback);
+        vmq?.addEventListener?.('change', updateFallback);
         return () => {
-            mq.removeEventListener?.('change', updateFallback);
-            vmq.removeEventListener?.('change', updateFallback);
+            mq?.removeEventListener?.('change', updateFallback);
+            vmq?.removeEventListener?.('change', updateFallback);
         };
     }, []);
 

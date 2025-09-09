@@ -60,7 +60,7 @@ export default () => {
                             <StaticImage
                                 src="../../images/reference-mouth.png"
                                 sizes="(min-width: 768px) 30vw, 100vw"
-                                alt={formatMessage({ id: 'index.aboutChara.imageAlt' })}
+                                alt=""
                                 placeholder="none"
                                 loading="eager"
                             />
