@@ -32,11 +32,7 @@ export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: Dynamic
             vmq = window.matchMedia?.('(video-dynamic-range: high)');
         }
         const updateFallback = () => {
-            if (mq?.matches || vmq?.matches) {
-                setVideoFallback(true);
-            } else {
-                setVideoFallback(false);
-            }
+            setVideoFallback(!!(mq?.matches || vmq?.matches));
         };
         updateFallback();
         mq?.addEventListener?.('change', updateFallback);
