@@ -6,7 +6,7 @@ interface DynamicGainmapImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     mp4Fallback?: string;
 }
 
-export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: DynamicGainmapImageProps) => {
+export const HdrImgWithFallback = ({ SdrFallback, className, mp4Fallback, ...props }: DynamicGainmapImageProps) => {
     const [videoFallback, setVideoFallback] = useState(false);
     useEffect(() => {
         if (typeof window === 'undefined') return;
@@ -43,8 +43,8 @@ export const HdrImgWithFallback = ({ SdrFallback, className, ...props }: Dynamic
         };
     }, []);
 
-    if (videoFallback && props.mp4Fallback) {
-        return <HDRImage as="video" src={props.mp4Fallback} autoPlay muted playsInline className={className} />;
+    if (videoFallback && mp4Fallback) {
+        return <HDRImage as="video" src={mp4Fallback} autoPlay muted playsInline className={className} />;
     }
 
     return (
