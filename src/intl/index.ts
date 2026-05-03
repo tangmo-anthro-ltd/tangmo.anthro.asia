@@ -10,7 +10,7 @@ const owoOverrides: Record<string, string> = {
     Telegram: 'Furrygram',
 };
 
-function owoify(text: string): string {
+const owoify = (text: string): string => {
     const parts = text.split(/([{}])/g);
     let inBraces = false;
     for (let i = 0; i < parts.length; i++) {
@@ -19,9 +19,9 @@ function owoify(text: string): string {
         else if (!inBraces) parts[i] = owo.translate(parts[i]);
     }
     return parts.join('');
-}
+};
 
-function owoifyDeep(obj: unknown): unknown {
+const owoifyDeep = (obj: unknown): unknown => {
     if (typeof obj === 'string') {
         return obj in owoOverrides ? owoOverrides[obj] : owoify(obj);
     }
@@ -33,7 +33,7 @@ function owoifyDeep(obj: unknown): unknown {
         return result;
     }
     return obj;
-}
+};
 
 const messages: Record<Locale, Record<string, unknown>> = {
     th,
@@ -41,7 +41,7 @@ const messages: Record<Locale, Record<string, unknown>> = {
     owo: owoifyDeep(en) as Record<string, unknown>,
 };
 
-function flattenMessages(obj: Record<string, unknown>, prefix = ''): Record<string, string> {
+const flattenMessages = (obj: Record<string, unknown>, prefix = ''): Record<string, string> => {
     const result: Record<string, string> = {};
     for (const key of Object.keys(obj)) {
         const val = obj[key];
@@ -53,7 +53,7 @@ function flattenMessages(obj: Record<string, unknown>, prefix = ''): Record<stri
         }
     }
     return result;
-}
+};
 
 const flatMessages: Record<Locale, Record<string, string>> = {
     th: flattenMessages(messages.th as Record<string, unknown>),
@@ -61,26 +61,31 @@ const flatMessages: Record<Locale, Record<string, string>> = {
     owo: flattenMessages(messages.owo as Record<string, unknown>),
 };
 
-export function getMessages(locale: Locale): Record<string, string> {
-    return flatMessages[locale];
-}
+export const getMessages = (locale: Locale): Record<string, string> =>
+    flatMessages[locale];
 
-export function t(locale: Locale, key: string): string {
-    return flatMessages[locale]?.[key] ?? flatMessages[defaultLocale]?.[key] ?? key;
-}
+export const t = (locale: Locale, key: string): string =>
+    flatMessages[locale]?.[key] ?? flatMessages[defaultLocale]?.[key] ?? key;
 
-export function getLocalePrefix(locale: Locale): string {
-    return locale === defaultLocale ? '' : `/${locale}`;
-}
+export const getLocalePrefix = (locale: Locale): string =>
+    locale === defaultLocale ? '' : `/${locale}`;
 
-export function localePath(locale: Locale, path: string): string {
+export const localePath = (locale: Locale, path: string): string => {
     const prefix = getLocalePrefix(locale);
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
     return prefix + cleanPath;
-}
+};
 
-export function switchLocalePath(currentPath: string, currentLocale: Locale, targetLocale: Locale): string {
-    // Strip current locale prefix from the front of the path
+export const getLocaleStaticPaths = () =>
+    languages.map(locale => ({
+        params: { locale: locale === defaultLocale ? undefined : locale },
+        props: { locale },
+    }));
+
+export const localeFromParams = (params: { locale?: string }): Locale =>
+    (params.locale as Locale) || defaultLocale;
+
+export const switchLocalePath = (currentPath: string, currentLocale: Locale, targetLocale: Locale): string => {
     let stripped = currentPath;
     if (currentLocale !== defaultLocale) {
         const prefix = `/${currentLocale}`;
@@ -88,13 +93,11 @@ export function switchLocalePath(currentPath: string, currentLocale: Locale, tar
             stripped = stripped.slice(prefix.length) || '/';
         }
     }
-    // Build target path
     if (targetLocale === defaultLocale) {
         return stripped;
     }
-    // Avoid double slash: if stripped is "/" just return "/locale"
     if (stripped === '/') {
         return `/${targetLocale}`;
     }
     return `/${targetLocale}${stripped}`;
-}
+};

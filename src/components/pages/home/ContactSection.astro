@@ -21,7 +21,9 @@ const summaryText = t(locale, 'contact.note_summary');
     <ul class="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6 list-none pl-0">
         <li>
             <a href="https://t.me/Tang_Mo" rel="noreferrer noopener" class="contact-card">
-                <span class="font-medium"><Icon name="simple-icons:telegram" class="inline w-4 h-4 mr-1" />Telegram</span>
+                <span class="font-medium"
+                    ><Icon name="simple-icons:telegram" class="inline w-4 h-4 mr-1" />Telegram</span
+                >
                 <span>@Tang_Mo</span>
             </a>
         </li>
@@ -34,7 +36,11 @@ const summaryText = t(locale, 'contact.note_summary');
         </li>
 
         <li>
-            <a href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08" rel="noreferrer noopener" class="contact-card">
+            <a
+                href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
+                rel="noreferrer noopener"
+                class="contact-card"
+            >
                 <span class="font-medium"><Icon name="vrchat" class="inline w-4 h-4 mr-1" />VRChat</span>
                 <span>แตงโม TangMo</span>
             </a>
@@ -58,8 +64,9 @@ const summaryText = t(locale, 'contact.note_summary');
     <p>
         {noteParts[0]}<a href={localePath(locale, '/no-hello')}>{noHelloText}</a>{noteParts[1]}<span
             class="note-wrapper"
-            ><input type="checkbox" id="note-toggle" class="note-checkbox" aria-controls="note-popup" /><label for="note-toggle" class="note-label"
-                >{summaryText}<span class="note-arrow" aria-hidden="true"></span></label
+            ><input type="checkbox" id="note-toggle" class="note-checkbox" aria-controls="note-popup" /><label
+                for="note-toggle"
+                class="note-label">{summaryText}<span class="note-arrow" aria-hidden="true"></span></label
             ><span class="note-popup" id="note-popup" role="region"
                 ><img
                     src="/bat-sticker.avif"
@@ -84,7 +91,10 @@ const summaryText = t(locale, 'contact.note_summary');
         color: var(--card-foreground);
         font-size: 0.875rem;
         height: 100%;
-        transition: border-color 200ms, background-color 200ms, box-shadow 200ms;
+        transition:
+            border-color 200ms,
+            background-color 200ms,
+            box-shadow 200ms;
     }
     .contact-card:hover {
         border-color: var(--ring);

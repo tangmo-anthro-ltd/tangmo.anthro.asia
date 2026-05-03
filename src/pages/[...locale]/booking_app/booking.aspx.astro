@@ -1,8 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import BookingPage from '@/components/pages/booking/BookingPage.astro';
-import { type Locale, t } from '@/intl';
-const locale: Locale = 'en';
+import { getLocaleStaticPaths, localeFromParams, t } from '@/intl';
+
+export const getStaticPaths = getLocaleStaticPaths;
+const locale = localeFromParams(Astro.params);
 ---
 
 <Layout title={t(locale, 'bookingApp.booking.title')} locale={locale}>

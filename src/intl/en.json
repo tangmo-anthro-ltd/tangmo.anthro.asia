@@ -86,7 +86,6 @@
         "color_palette_space": "*HEX codes for sRGB",
         "toggle_shade": "Toggle shading",
         "download": "Download",
-        "note_for_geek": "Note for geeks: try disabling Javascript 😉",
         "h_note": {
             "para": "Those who don’t mind something… UwU, {link}~",
             "link": "come take a look"

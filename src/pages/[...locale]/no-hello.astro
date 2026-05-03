@@ -1,9 +1,10 @@
 ---
 import Bare from '@/layouts/Bare.astro';
 import NoHelloContent from '@/components/pages/no-hello/NoHelloContent.astro';
-import { type Locale, t } from '@/intl';
+import { getLocaleStaticPaths, localeFromParams, t } from '@/intl';
 
-const locale: Locale = 'th';
+export const getStaticPaths = getLocaleStaticPaths;
+const locale = localeFromParams(Astro.params);
 ---
 
 <Bare

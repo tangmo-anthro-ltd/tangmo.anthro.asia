@@ -1,9 +1,10 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import CharacterReferencePage from '@/components/pages/character-reference/CharacterReferencePage.astro';
-import { type Locale, t } from '@/intl';
+import { getLocaleStaticPaths, localeFromParams, t } from '@/intl';
 
-const locale: Locale = 'en';
+export const getStaticPaths = getLocaleStaticPaths;
+const locale = localeFromParams(Astro.params);
 ---
 
 <Layout
