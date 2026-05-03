@@ -1,10 +1,15 @@
 import owo from '@zuzak/owo';
-import en from './en.json';
-import th from './th.json';
+import messagesRaw from './messages.json';
 
 export const languages = ['th', 'en', 'owo'] as const;
 export type Locale = (typeof languages)[number];
 export const defaultLocale: Locale = 'th';
+
+type BaseLocale = 'th' | 'en';
+type MessageLeaf = Record<BaseLocale, string>;
+interface MessageBranch {
+    [key: string]: MessageLeaf | MessageBranch;
+}
 
 const owoOverrides: Record<string, string> = {
     Telegram: 'Furrygram',
@@ -21,54 +26,54 @@ const owoify = (text: string): string => {
     return parts.join('');
 };
 
-const owoifyDeep = (obj: unknown): unknown => {
-    if (typeof obj === 'string') {
-        return obj in owoOverrides ? owoOverrides[obj] : owoify(obj);
+const isMessageLeaf = (value: unknown): value is MessageLeaf => {
+    if (typeof value !== 'object' || value === null) {
+        return false;
     }
-    if (typeof obj === 'object' && obj !== null) {
-        const result: Record<string, unknown> = {};
-        for (const [key, val] of Object.entries(obj)) {
-            result[key] = owoifyDeep(val);
-        }
-        return result;
-    }
-    return obj;
+    const candidate = value as Partial<MessageLeaf>;
+    return typeof candidate.th === 'string' && typeof candidate.en === 'string';
 };
 
-const messages: Record<Locale, Record<string, unknown>> = {
-    th,
-    en,
-    owo: owoifyDeep(en) as Record<string, unknown>,
-};
-
-const flattenMessages = (obj: Record<string, unknown>, prefix = ''): Record<string, string> => {
+const flattenMessagesForLocale = (
+    obj: Record<string, MessageLeaf | MessageBranch>,
+    locale: BaseLocale,
+    prefix = ''
+): Record<string, string> => {
     const result: Record<string, string> = {};
     for (const key of Object.keys(obj)) {
         const val = obj[key];
         const fullKey = prefix ? `${prefix}.${key}` : key;
-        if (typeof val === 'string') {
-            result[fullKey] = val;
+        if (isMessageLeaf(val)) {
+            result[fullKey] = val[locale];
         } else if (typeof val === 'object' && val !== null) {
-            Object.assign(result, flattenMessages(val as Record<string, unknown>, fullKey));
+            Object.assign(
+                result,
+                flattenMessagesForLocale(val as Record<string, MessageLeaf | MessageBranch>, locale, fullKey)
+            );
         }
     }
     return result;
 };
 
+const typedMessages = messagesRaw as Record<string, MessageLeaf | MessageBranch>;
+const thMessages = flattenMessagesForLocale(typedMessages, 'th');
+const enMessages = flattenMessagesForLocale(typedMessages, 'en');
+const owoMessages = Object.fromEntries(
+    Object.entries(enMessages).map(([key, value]) => [key, value in owoOverrides ? owoOverrides[value] : owoify(value)])
+) as Record<string, string>;
+
 const flatMessages: Record<Locale, Record<string, string>> = {
-    th: flattenMessages(messages.th as Record<string, unknown>),
-    en: flattenMessages(messages.en as Record<string, unknown>),
-    owo: flattenMessages(messages.owo as Record<string, unknown>),
+    th: thMessages,
+    en: enMessages,
+    owo: owoMessages,
 };
 
-export const getMessages = (locale: Locale): Record<string, string> =>
-    flatMessages[locale];
+export const getMessages = (locale: Locale): Record<string, string> => flatMessages[locale];
 
 export const t = (locale: Locale, key: string): string =>
     flatMessages[locale]?.[key] ?? flatMessages[defaultLocale]?.[key] ?? key;
 
-export const getLocalePrefix = (locale: Locale): string =>
-    locale === defaultLocale ? '' : `/${locale}`;
+export const getLocalePrefix = (locale: Locale): string => (locale === defaultLocale ? '' : `/${locale}`);
 
 export const localePath = (locale: Locale, path: string): string => {
     const prefix = getLocalePrefix(locale);
@@ -82,8 +87,7 @@ export const getLocaleStaticPaths = () =>
         props: { locale },
     }));
 
-export const localeFromParams = (params: { locale?: string }): Locale =>
-    (params.locale as Locale) || defaultLocale;
+export const localeFromParams = (params: { locale?: string }): Locale => (params.locale as Locale) || defaultLocale;
 
 export const switchLocalePath = (currentPath: string, currentLocale: Locale, targetLocale: Locale): string => {
     let stripped = currentPath;

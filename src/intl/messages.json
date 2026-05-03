@@ -1,0 +1,434 @@
+{
+    "meta": {
+        "name": {
+            "th": "แตงโม",
+            "en": "TangMo"
+        },
+        "defaultDesc": {
+            "th": "เว็บของแตงโม",
+            "en": "TangMo’s website"
+        }
+    },
+    "common": {
+        "artCredits": {
+            "th": "ศิลปิน: {link}",
+            "en": "Artist: {link}"
+        },
+        "artHdrEditCredit": {
+            "th": ", ปรับแต่ง HDR โดยแตงโม",
+            "en": ", HDR edit by TangMo"
+        },
+        "photoCredits": {
+            "th": "ถ่ายโดย {link}, แต่งสีโดยแตงโม",
+            "en": "Shot by {link}, edited by TangMo"
+        }
+    },
+    "index": {
+        "title": {
+            "th": "เกี่ยวกับแตงโม",
+            "en": "About TangMo"
+        },
+        "aboutMe": {
+            "title": {
+                "th": "สวัสดี!",
+                "en": "Hello!"
+            },
+            "para": {
+                "th": "เราแตงโม เป็นชาวไทยอาศัยอยู่ต่างแดน คุยเล่นได้ตั้งแต่เรื่องเทคโนโลยี การถ่ายภาพ ยันมีมเฟอรร์รี่ประจำวัน ส่วนมากจะสิงอยู่ในVRChat แล้วเจอกันนะค้าบบบ",
+                "en": "It’s TangMo from Thailand, living far from home. The name literally translates to “watermelon”. I’d be happy to chat about stuff from tech, photography, to daily dose of furry memes. I spend a lot of time on VRChat, see ya around!"
+            },
+            "refSheet": {
+                "th": "ภาพอ้างอิงตัวละคร",
+                "en": "Character Reference Sheet"
+            },
+            "charaImageAlt": {
+                "th": "ภาพวาดตัวละครแตงโมยืนอยู่ที่บาร์ ตัวละครเป็นหมาป่าสีน้ำเงินมีแต้มลายสีฟ้าคราม ส้ม และเหลือง ใส่เสื้อดำที่เปิดอกครึ่งหนึ่ง",
+                "en": "Bust shot painting of TangMo’s character standing at a bar. The character is a blue wolf with cyan, orange, and yellow markings, wearing a black shirt with the chest half-open."
+            }
+        },
+        "aboutFursuit": {
+            "title": {
+                "th": "ชุดเฟอร์สูท",
+                "en": "The Fursuit"
+            },
+            "madeBy": {
+                "th": "สร้างโดย {link}",
+                "en": "Built by {link}"
+            },
+            "imageAlt": {
+                "th": "ภาพถ่ายชุดเฟอร์สูทไม่เต็มตัว ยกมือขึ้นหนึางข้างท้าวกรอบหน้าต่างไม้สไตล์ญี่ปุ่น",
+                "en": "Photograph of the partial fursuit with one hand up, leaning against a Japanese-style wooden window frame."
+            }
+        }
+    },
+    "nav": {
+        "title": {
+            "th": "แตงโม",
+            "en": "TangMo"
+        },
+        "about": {
+            "th": "เกี่ยวกับ",
+            "en": "About"
+        },
+        "contact": {
+            "th": "ติดต่อเรา",
+            "en": "Contact"
+        },
+        "gallery": {
+            "th": "แกลเลอรี่",
+            "en": "Gallery"
+        },
+        "skip_to_content": {
+            "th": "ข้ามไปยังเนื้อหาหลัก",
+            "en": "Skip to content"
+        }
+    },
+    "contact": {
+        "title": {
+            "th": "คุยกับเรา!",
+            "en": "Talk to me!"
+        },
+        "discord_note": {
+            "th": "ใช้ในกรณีเฉพาะเท่านั้น",
+            "en": "Available for specific uses"
+        },
+        "qq_note": {
+            "th": "ถอนการใช้งาน - ใช้ในกรณีจำเป็นจริงๆเท่านั้น แนะนำให้ติดต่อผ่านช่องทางอื่น",
+            "en": "Divest - Only when absolutely necessary, alternative channel recommended"
+        },
+        "note": {
+            "th": "ก่อนจะทักแนะนำให้อ่าน{link}ก่อนนะ ถ้าเห็นทักมาแค่“หวัดดี”เปล่าๆ ไม่มีหัวเรื่อง{summary}",
+            "en": "Before sending a message, have a quick look at {link}. If you send me a “Hello” with nothing else, {summary}."
+        },
+        "note_summary": {
+            "th": "เดี๋ยวมีเคือง",
+            "en": "we’ll see about that"
+        },
+        "note_img_alt": {
+            "th": "สติ๊กเกอร์หมายืนยิ้ม ถือไม้เบสบอล ส่งพลังงานออกมาว่าอันตราย",
+            "en": "Sticker depicting a smiling wolf holding a baseball bat with menacing aura"
+        },
+        "no_hello": {
+            "th": "เลิกสวัสดี",
+            "en": "no hello"
+        }
+    },
+    "footer": {
+        "source": {
+            "th": "Github",
+            "en": "Github"
+        },
+        "last_updated": {
+            "th": "อัปเดตล่าสุดเมื่อ {date}",
+            "en": "Updated on {date}"
+        }
+    },
+    "bookingApp": {
+        "booking": {
+            "title": {
+                "th": "จองตัวเรา!",
+                "en": "Book My Body!"
+            },
+            "intro": {
+                "th": "อยากเล่นกับเราหรอ? ในที่ส่วนตัวด้วย? ขอจองตัวเราได้ที่นี่!",
+                "en": "Want to play with me? Perhaps in private? Request booking here!"
+            },
+            "form_telegram": {
+                "th": "เทเลแกรม",
+                "en": "Telegram"
+            },
+            "form_date_time": {
+                "th": "วัน/เวลา",
+                "en": "Date/Time"
+            },
+            "form_date_time_hint": {
+                "th": "(เวลาท้องถิ่นตามเบราว์เซอร์ของท่าน)",
+                "en": "(Your browser’s local time)"
+            },
+            "form_duration": {
+                "th": "ระยะเวลา",
+                "en": "Duration"
+            },
+            "form_duration_option_1": {
+                "th": "30 นาที",
+                "en": "30 minutes"
+            },
+            "form_duration_option_2": {
+                "th": "1 ชั่วโมง",
+                "en": "1 hour"
+            },
+            "form_duration_option_3": {
+                "th": "1.5 ชั่วโมง",
+                "en": "1.5 hour"
+            },
+            "form_duration_option_4": {
+                "th": "2 ชั่วโมง",
+                "en": "2 hours"
+            },
+            "form_duration_option_5": {
+                "th": "3 ชั่วโมง",
+                "en": "3 hours"
+            },
+            "form_duration_option_6": {
+                "th": "4 ชั่วโมง",
+                "en": "4 hours"
+            },
+            "form_duration_option_7": {
+                "th": "6 ชั่วโมง",
+                "en": "6 hours"
+            },
+            "form_coupon_code": {
+                "th": "รหัสคูปอง",
+                "en": "Coupon code"
+            },
+            "form_coupon_code_hint": {
+                "th": "(ถ้ามี)",
+                "en": "(optional)"
+            },
+            "form_info": {
+                "th": "อยากทำอะไรกับเรา uwu",
+                "en": "What do you want to do to me uwu?"
+            },
+            "form_notice": {
+                "th": "หลังจากส่งคำขอแล้ว ทางเราจะส่งใบเสนอราคากลับไปทางเทเลแกรม",
+                "en": "Once you submit the form, I will review the request and send you quotation on Telegram."
+            },
+            "form_submit": {
+                "th": "จองตัวเราเลย! o//w//o",
+                "en": "Book me now! o//w//o"
+            }
+        },
+        "result": {
+            "title": {
+                "th": "เอ่อ…",
+                "en": "Err…"
+            },
+            "content": {
+                "th": "เราว่า เธออาจจะจริงจังกับมุขมากเกินไปหนะ แต่ว่าถ้าเบื่อจริงๆ {link}ได้นะ",
+                "en": "You might have taken the joke too seriously. But if you are really bored, you feel free to come {link}."
+            },
+            "link_text": {
+                "th": "คุยกับเรา",
+                "en": "talk to me"
+            }
+        }
+    },
+    "breadcrumb": {
+        "home": {
+            "th": "หน้าหลัก",
+            "en": "Home"
+        },
+        "reference": {
+            "th": "ภาพอ้างอิงตัวละคร",
+            "en": "Character Reference"
+        },
+        "reference-h": {
+            "th": "บันทึกสุด Vorny",
+            "en": "Vorny Note"
+        }
+    },
+    "reference": {
+        "title": {
+            "th": "ภาพอ้างอิงตัวละคร",
+            "en": "Character Reference"
+        },
+        "title_v1": {
+            "th": "ภาพอ้างอิงตัวละคร (v1)",
+            "en": "Character Reference (v1)"
+        },
+        "title_v2": {
+            "th": "ภาพอ้างอิงตัวละคร (v2)",
+            "en": "Character Reference (v2)"
+        },
+        "image_alt_v1": {
+            "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า ",
+            "en": "Reference image for the blue wolf character, showing back and front view."
+        },
+        "image_alt_v2": {
+            "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า ตัวละครมีแต้มลายสีฟ้าคราม ส้มและเหลืองตามจุดต่างๆ",
+            "en": "Reference image for the blue wolf character with cyan, orange, and yellow marking. Both back and front views are shown."
+        },
+        "notice_v2": {
+            "th": "หมายเหตุ: ภาพอ้างอิงนี้วาดมาจากแม่แบบสำหรับชุดเฟอร์สูท. สำหรับงานวาดภาพ ให้อ้างอิงลายสีจาก v2 และรูปร่างหุ่นจาก v1 ด้านล่าง",
+            "en": "Notice: This reference sheet is drawn on a Fursuit template. For drawings, please use the pattern from v2 with body shape from v1 below."
+        },
+        "image_alt": {
+            "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า",
+            "en": ""
+        },
+        "illust_credit": {
+            "th": "ภาพวาดโดย {link}",
+            "en": "Illustration: {link}"
+        },
+        "color_palette": {
+            "th": "ชุดสี",
+            "en": "Colour Palette"
+        },
+        "color_palette_space": {
+            "th": "*โค้ดสี HEX สำหรับปริภูมิสี sRGB",
+            "en": "*HEX codes for sRGB"
+        },
+        "toggle_shade": {
+            "th": "แสงเงา",
+            "en": "Toggle shading"
+        },
+        "download": {
+            "th": "ดาวน์โหลด",
+            "en": "Download"
+        },
+        "h_note": {
+            "para": {
+                "th": "ใครที่อยากเห็นอะไร UwU {link}~",
+                "en": "Those who don’t mind something… UwU, {link}~"
+            },
+            "link": {
+                "th": "ลองคลิกดูได้นะ",
+                "en": "come take a look"
+            }
+        }
+    },
+    "reference-h": {
+        "title": {
+            "th": "บันทึกสุด Vorny",
+            "en": "Vorny Note"
+        },
+        "image_alt": {
+            "th": "ปากหมาขนาดใหญ่ที่มีหมาป่าสีน้ำเงินตัวเล็กนอนคว่ำอยู่บริเวณโคนลิ้นสีชมพู กลางลิ้นมีสีขาว-น้ำเงินติดอยู่แสดงถึงหมาป่าตัวเล็กที่ไหลผ่านกลางลิ้นมาก่อน",
+            "en": "A giant wolf mouth with small blue wolf resting at the inner-end of its pink tongue. There center of the tongue is dyed in white and blue, depicting the trail of where the small wolf have been."
+        },
+        "p1": {
+            "th": "ถ้าเธอฟอลเราอยู่ก็คงรู้แหละว่าเราชอบสาย vore และกล้าม ไม่ใช่ความลับอะไร จะให้ระบุก็เราชอบ soft-vore, เป็นเหยื่อ, ถ้าหุ่นล่ำทั้งสองฝ่ายได้ก็ดี, และถ้ามีการย่อยขอไม่เกินละลายแบบการ์ตูน (goo-ey digestion) ว่ามาขนาดนี้แล้วตัวละครนี้ต้องเป็นแหยื่อแน่นอน! แต่เราก็มีลูกล่นมาแถมมานะ",
+            "en": "If you’ve been following me for a while, it is no secret that I am into vore and muscles. Specifically, I love being the prey in soft-vore with ideally both party having a muscular build. Goo-ey digestion is the furthest I’d go. Thus, this character is intended to be a prey, but with a fun gimmick."
+        },
+        "p2": {
+            "th": "เมื่อบริเวณลำตัวเปียก,ขนบริเวณนั้นสามารถปล่อยน้ำหมึกออกมาได้ โดยสีของหมึกจะตรงกับสีขนบนตัว ถ้าสัมผัสลิ้นของฝ่ายล่าก็จะทิ้งรอยสีไว้คล้ายกับเวลาดูดลูกอมหรือกินน้ำแข็งไสเฮลซ์บลูบอย ใครที่เดินผ่านเห็นลิ้นติดสีก็เดาได้ว่าใครอยู่ข้างใน หมึกนี้โดนหลั่งออกมา {em}ตัวกำลังละลายนะ",
+            "en": "When the torso area is wet, it can release some ink with the same colour as its fur pattern. If on a pred’s tongue, this ink would leave temporary mark, similar to colour from a lollipop or shush. Passerby could recognize the colour pattern and know who is inside. Despite the look, the body is {em} melting."
+        },
+        "p2_em": {
+            "th": "ไม่ใช่",
+            "en": "not"
+        },
+        "p2_summary": {
+            "th": "ที่มาที่ไป",
+            "en": "How it works"
+        },
+        "p2_details": {
+            "th": "ที่จริงความสามารถนี้ควรจะเป็นกลไกการป้องกันตนเองคล้ายๆที่ปลาหมึกพ่นหมึกได้ แต่เหมือนพลังนี้จะวิวัฒนาการไม่ทันอย่างอื่นเลยกลายเป็นไร้ประโยชน์ไปซะอย่างงั้น เจ้าตัวสามารถควบคุมการปล่อยหมึกได้แต่หากถูกทำให้ตกใจหรือกลัวสัญชาติญาณอาจสั่งให้หลั่งออกมาโดยไม่รู้ตัว อย่างไรก็ตามหมึกนี้จะหลั่งได้เฉพาะเวลาตัวเปียกจึงไม่เป็นปัญหาในชีวิตประจำวันที่ตัวแห้ง",
+            "en": "This trait was supposed to be a defense mechanism, similar that of a squid. However, the evolution has not caught up, leaving him with this ineffective power. The ink secretion is voluntary, but when startled or scared, it may be unintentionally leaked by instinct. Since the dye can only be released when wet, this wouldn’t be a problem day-to-day as the body would be dry."
+        },
+        "p3": {
+            "th": "แม้ว่าจะตั้งใจให้เป็นเหยื่อแต่เพื่อนหลายคนก็ทักว่าหุ่นแบบนี้ลุคนี้น่าจะเป็นฝ่ายล่ามากกว่า อันที่จริงเราก็มีไอเดียพลังพิเศษสำหรับตัวละคร pred เหมือนกันนะ เผื่อใครสนใจ{c}!",
+            "en": "Despite intending to be a prey, a few friends have already mentioned to that this character look more like a pred. In fact, I do have a super-power idea for a pred character. If you’re interested, {c}!"
+        },
+        "p3_contact": {
+            "th": "มาเมาท์กันได้",
+            "en": "let’s have a chat"
+        }
+    },
+    "no-hello": {
+        "meta_title": {
+            "th": "เลิกสวัสดี",
+            "en": "No Hello"
+        },
+        "meta_description": {
+            "th": "ช่วยอย่าส่งแค่“สวัสดี”มาในแชท",
+            "en": "please don’t say just hello in chat"
+        },
+        "hero": {
+            "no": {
+                "th": "เลิก",
+                "en": "no "
+            },
+            "hello": {
+                "th": "สวัสดี",
+                "en": "hello"
+            }
+        },
+        "p1": {
+            "th": "คนส่วนใหญ่ทำแบบนี้ให้ดูสุภาพ ไม่ได้เอาแต่จะถาม ซึ่งเป็นมรรยาทที่ดีเวลาเจอกันต่อหน้าหรือคุยโทรศัพท์ แต่แชทไม่ใช่โทรฯ คนส่วนใหญ่พิมพ์ไม่เร็วเท่าพูด แม้ว่าคุณจะเจตนาดีแต่{s}เรียงประโยคคำถาม (แถมแอบน่ารำคาญ)",
+            "en": "People who do this are generally trying to be polite by not jumping right into the request, like one would in person or on the phone - and that’s great!. But text chat is neither of those things. For most people, typing is much slower than talking. So despite best intentions, {s} for you to phrase your question (which is kinda annoying)."
+        },
+        "p1_strong": {
+            "th": "คนอื่นเขาต้องมานั่งรอคุณ",
+            "en": "you’re actually just making the other person wait"
+        },
+        "p2": {
+            "th": "ใช้ไปทั้งหมด 9 ข้อความกว่าจะได้คำตอบ แถมต้องรออีก 2 วันเพราะอยู่กันคนละโซนเวลา",
+            "en": "It took 9 messages to get the answer with 2 days of delay due to time zone differences"
+        },
+        "p3": {
+            "th": "วิธีการถามคำถามที่ดีที่สุดก็คือ… ถามไปเลย!",
+            "en": "The most effective method of asking the question? Just ask the question!"
+        },
+        "p4": {
+            "th": "เขียนข้อความให้กระชับ แต่ไม่ห้วนเกินก็ย่อมได้\nเขาเรียกว่า เคารพเวลาคนอื่น",
+            "en": "Being succinct and effective does not have to be rude,\nit demonstrates respect for the other person's time."
+        },
+        "chat": {
+            "monday": {
+                "th": "วันจันทร์",
+                "en": "Monday"
+            },
+            "tuesday": {
+                "th": "วันอังคาร",
+                "en": "Tuesday"
+            },
+            "wednesday": {
+                "th": "วันพุธ",
+                "en": "Wednesday"
+            },
+            "chat1_1": {
+                "th": "หวัดดีคับ",
+                "en": "Hello"
+            },
+            "chat1_2": {
+                "th": "คับ?",
+                "en": "Hey"
+            },
+            "chat1_3": {
+                "th": "ช่วงนี้เป็นไงมั่ง?",
+                "en": "How are you?"
+            },
+            "chat1_4": {
+                "th": "ก็ โอเคคับ!",
+                "en": "Fine thanks!"
+            },
+            "chat1_5": {
+                "th": "เรามีคำถามหนะ?",
+                "en": "Can I ask you a question?"
+            },
+            "chat1_6": {
+                "th": "ก็ถามสิคับ",
+                "en": "Just ask"
+            },
+            "chat1_7": {
+                "th": "ไปเจอ YCH นี่มา เธอสนใจแจมรูปคู่ปะ",
+                "en": "Saw this YCH, do you want to comm together?"
+            },
+            "chat1_8": {
+                "th": "เหยยยย ดูดี~ จองยังอ่ะ",
+                "en": "Ooh, looks great! Did you get a slot?"
+            },
+            "chat1_9": {
+                "th": "เต็มแล้ว :/",
+                "en": "It's full now :/"
+            },
+            "chat2_1": {
+                "th": "หวัดดีจ้า~ สบายดีบ่?\nถามนิดนึง พอดีไปเจอ YCH นี่มา เธอสนใจแจมรูปคู่ปะ",
+                "en": "Hello, I hope you are well!\nI have a question, I see this artist just opened this YCH, do you want to comm together?"
+            },
+            "chat2_2": {
+                "th": "สวัสดีคาบ ไม่ได้เจอนาน\nเอา! จองเลยเร็วๆ",
+                "en": "Hey, long time no see!\nlooks great! gogogo"
+            },
+            "chat2_3": {
+                "th": "ส่งไปแล้ว ขอให้ทัน แกอยากได้AหรือB",
+                "en": "Messaged them now, which slot do you want?"
+            }
+        },
+        "footer": {
+            "th": "นำเค้าโครงมาจาก {a} และ {b} (สัญญาอนุญาต MIT)",
+            "en": "Based on {a} and {b} (MIT License)"
+        }
+    }
+}
