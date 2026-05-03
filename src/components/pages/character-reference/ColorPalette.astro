@@ -1,0 +1,41 @@
+---
+import { type Locale, t } from '@/intl';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const colors = [
+    { hex: '#243242', text: 'white' },
+    { hex: '#2C599B', text: 'white' },
+    { hex: '#74BCE2', text: 'black' },
+    { hex: '#FFFFFF', text: 'black' },
+    { hex: '#FFC97A', text: 'black' },
+    { hex: '#D8863C', text: 'black' },
+    { hex: '#CA4537', text: 'white' },
+];
+---
+
+<div>
+    <h2 class="sr-only">{t(locale, 'reference.color_palette')}</h2>
+    <ul class="grid grid-cols-3 md:grid-cols-1 lg:gap-4 gap-0 list-none p-0 m-0">
+        {
+            colors.map((c, i) => (
+                <li
+                    class:list={[
+                        'px-2 py-2 lg:py-3 font-mono text-center md:text-left',
+                        i === 3 && 'col-span-3 md:col-span-1',
+                    ]}
+                    style={`background-color: ${c.hex}; color: ${c.text}`}
+                >
+                    {c.hex}
+                </li>
+            ))
+        }
+    </ul>
+    <span class="block text-xs text-muted-foreground mt-2">
+        {t(locale, 'reference.color_palette_space')}
+    </span>
+</div>

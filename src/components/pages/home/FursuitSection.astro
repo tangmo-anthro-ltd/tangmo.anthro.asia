@@ -1,0 +1,69 @@
+---
+import { type Locale, t } from '@/intl';
+import { Image } from 'astro:assets';
+import fursuitImgSdr from '@/images/IMG_4697.jpg';
+import ContactSection from './ContactSection.astro';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const madeByText = t(locale, 'index.aboutFursuit.madeBy');
+const [madeBefore, madeAfter] = madeByText.split('{link}');
+
+const photoCreditText = t(locale, 'common.photoCredits');
+const [photoBefore, photoAfter] = photoCreditText.split('{link}');
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+        <figure class="m-0">
+            <div class="aspect-square md:aspect-auto lg:aspect-square xl:aspect-[4/3] overflow-hidden rounded-lg">
+                <!-- HDR version -->
+                <img
+                    src="/IMG_4697.avif"
+                    alt={t(locale, 'index.aboutFursuit.imageAlt')}
+                    class="w-full h-full object-cover object-top xl:object-[center_12%] hdr-only"
+                    loading="lazy"
+                />
+                <!-- HDR video fallback for Safari < 26 / Firefox macOS -->
+                <video
+                    src="/IMG_4697.mp4"
+                    autoplay
+                    muted
+                    playsinline
+                    class="w-full h-full object-cover object-top xl:object-[center_12%] hdr-video-fallback"></video>
+                <!-- SDR fallback -->
+                <Image
+                    src={fursuitImgSdr}
+                    alt={t(locale, 'index.aboutFursuit.imageAlt')}
+                    widths={[400, 600, 800]}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    format="avif"
+                    class="w-full h-full object-cover object-top xl:object-[center_12%] sdr-only"
+                />
+            </div>
+            <figcaption class="text-sm text-muted-foreground mt-2">
+                {photoBefore}<a href="https://twitter.com/Rig_sor2024" rel="noreferrer noopener">Rigel</a>{photoAfter}
+            </figcaption>
+        </figure>
+    </div>
+    <div>
+        <section>
+            <h2 class="text-2xl font-bold mb-3 mt-2 md:mt-0">
+                {t(locale, 'index.aboutFursuit.title')}
+            </h2>
+            <p>
+                {madeBefore}<a href="https://www.kigurumikagetsu.jp/en/%E8%A4%87%E8%A3%BD-stc" rel="noreferrer noopener"
+                    >Kigurumi Kagetsu Co., Ltd.</a
+                >{madeAfter}
+            </p>
+        </section>
+        <hr class="my-4 border-border md:border-transparent" />
+        <section class="md:mt-4">
+            <ContactSection locale={locale} />
+        </section>
+    </div>
+</div>

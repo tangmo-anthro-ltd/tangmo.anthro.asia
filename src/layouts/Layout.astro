@@ -1,0 +1,51 @@
+---
+import '@/styles/global.css';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import { type Locale, t } from '@/intl';
+
+interface Props {
+    title?: string;
+    description?: string;
+    extraMeta?: { name: string; content: string }[];
+    locale: Locale;
+}
+
+const { title, description, extraMeta = [], locale } = Astro.props;
+const name = t(locale, 'meta.name');
+const builtTitle = title ? `${title} - ${name}` : name;
+const desc = description || t(locale, 'meta.defaultDesc');
+---
+
+<!doctype html>
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{builtTitle}</title>
+        <meta name="description" content={desc} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content={builtTitle} />
+        <meta name="twitter:description" content={desc} />
+        <meta name="twitter:site" content="@TangMoEat" />
+        <meta name="twitter:creator" content="@TangMoEat" />
+        {
+            extraMeta.map(m =>
+                m.name.startsWith('og:') ? (
+                    <meta property={m.name} content={m.content} />
+                ) : (
+                    <meta name={m.name} content={m.content} />
+                )
+            )
+        }
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+    </head>
+    <body class="min-h-screen">
+        <Nav locale={locale} currentPath={Astro.url.pathname} />
+        <main id="main">
+            <slot />
+        </main>
+        <Footer locale={locale} />
+    </body>
+</html>

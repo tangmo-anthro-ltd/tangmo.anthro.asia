@@ -1,0 +1,170 @@
+---
+import { Icon } from 'astro-icon/components';
+import { type Locale, t, localePath } from '@/intl';
+import { Image } from 'astro:assets';
+import referenceV2 from '@/images/reference-v2.png';
+import referenceBodyFlat from '@/images/reference-body-flat.png';
+import ColorPalette from './ColorPalette.astro';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const illustCreditText = t(locale, 'reference.illust_credit');
+const [illustBefore, illustAfter] = illustCreditText.split('{link}');
+
+const artCreditText = t(locale, 'common.artCredits');
+const [artBefore, artAfter] = artCreditText.split('{link}');
+
+const hNoteText = t(locale, 'reference.h_note.para');
+const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
+---
+
+<div class="mx-auto max-w-7xl px-4">
+    <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference.title_v2')}</h1>
+    <p class="mb-4 p-3 bg-accent rounded-md text-accent-foreground">
+        {t(locale, 'reference.notice_v2')}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+        <div class="md:col-span-9 lg:col-span-10">
+            <figure class="m-0">
+                <Image
+                    src={referenceV2}
+                    alt={t(locale, 'reference.image_alt_v2')}
+                    widths={[600, 900, 1200]}
+                    sizes="(min-width: 768px) 75vw, 100vw"
+                    format="avif"
+                    loading="eager"
+                    class="w-full rounded-lg"
+                />
+                <figcaption class="text-sm text-muted-foreground mt-2">
+                    {illustBefore}<a
+                        href="https://www.kigurumikagetsu.jp/en/%E8%A4%87%E8%A3%BD-stc"
+                        rel="noreferrer noopener">Kigurumi Kagetsu Co., Ltd.</a
+                    >{illustAfter}
+                </figcaption>
+            </figure>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2 flex flex-col justify-between gap-4">
+            <a
+                download
+                href="/refsheet-small-v2.png"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors"
+            >
+                <Icon name="mdi:tray-download" class="w-5 h-5" />
+                {t(locale, 'reference.download')}
+            </a>
+            <ColorPalette locale={locale} />
+        </div>
+    </div>
+
+    <!-- V1 Reference with shade toggle -->
+    <h2 class="text-2xl font-bold mt-8 mb-4">{t(locale, 'reference.title_v1')}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 refsheet-v1">
+        <div class="md:col-span-9 lg:col-span-10">
+            <figure class="m-0 relative">
+                <Image
+                    src={referenceBodyFlat}
+                    alt={t(locale, 'reference.image_alt_v1')}
+                    widths={[600, 900, 1200]}
+                    sizes="(min-width: 768px) 75vw, 100vw"
+                    format="avif"
+                    class="w-full rounded-lg relative z-10"
+                />
+                <img
+                    src="/refsheet-body-shade.avif"
+                    alt=""
+                    class="absolute inset-0 w-full z-20 rounded-lg opacity-0 transition-opacity duration-500 shade-layer"
+                    loading="lazy"
+                />
+                <figcaption class="text-sm text-muted-foreground mt-2">
+                    {artBefore}<a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">Crowwing Wolf</a>{
+                        artAfter
+                    }
+                </figcaption>
+            </figure>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2 flex flex-col gap-3">
+            <div class="flex items-center gap-2">
+                <input type="checkbox" id="shade-toggle" class="shade-toggle" />
+                <label for="shade-toggle" class="cursor-pointer select-none">
+                    {t(locale, 'reference.toggle_shade')}
+                </label>
+            </div>
+            <a
+                download
+                href="/refsheet-small-shaded.png"
+                class="hidden items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-shaded"
+            >
+                <Icon name="mdi:tray-download" class="w-5 h-5" />
+                {t(locale, 'reference.download')}
+            </a>
+            <a
+                download
+                href="/refsheet-small-flat.png"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-flat"
+            >
+                <Icon name="mdi:tray-download" class="w-5 h-5" />
+                {t(locale, 'reference.download')}
+            </a>
+        </div>
+    </div>
+
+    <hr class="my-8 border-border" />
+    <p>
+        {hNoteBefore}<a href={localePath(locale, '/character-reference/h')}>{t(locale, 'reference.h_note.link')}</a>{
+            hNoteAfter
+        }
+    </p>
+</div>
+
+<style>
+    /* Switch-styled checkbox */
+    .shade-toggle {
+        appearance: none;
+        width: 2.75rem;
+        height: 1.5rem;
+        border-radius: 9999px;
+        background-color: var(--muted-foreground);
+        position: relative;
+        cursor: pointer;
+        transition: background-color 200ms;
+        flex-shrink: 0;
+    }
+    .shade-toggle::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        background: white;
+        transition: transform 200ms;
+    }
+    .shade-toggle:checked {
+        background-color: var(--primary);
+    }
+    .shade-toggle:checked::before {
+        transform: translateX(1.25rem);
+    }
+    .shade-toggle:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    /* CSS-only shade toggle using :has() - works without JS */
+    .refsheet-v1:has(#shade-toggle:checked) .shade-layer {
+        opacity: 1;
+    }
+    .refsheet-v1:has(#shade-toggle:checked) .shade-download-flat {
+        display: none;
+    }
+    .refsheet-v1:has(#shade-toggle:checked) .shade-download-shaded {
+        display: inline-flex;
+    }
+</style>

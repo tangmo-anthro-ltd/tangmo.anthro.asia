@@ -1,0 +1,11 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import CharRefHPage from '@/components/pages/character-reference/HPage.astro';
+import { type Locale, t } from '@/intl';
+
+const locale: Locale = 'owo';
+---
+
+<Layout title={t(locale, 'reference-h.title')} extraMeta={[{ name: 'robots', content: 'noindex' }]} locale={locale}>
+    <CharRefHPage locale={locale} />
+</Layout>

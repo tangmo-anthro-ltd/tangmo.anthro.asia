@@ -1,7 +1,10 @@
-'use strict';
+import owo from '@zuzak/owo';
+import fs from 'fs';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-const owo = require('@zuzak/owo');
-const fs = require('fs');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const en = JSON.parse(fs.readFileSync(__dirname + '/src/intl/en.json', 'utf8'));
 
@@ -41,4 +44,4 @@ const recurseOwo = obj => {
 };
 recurseOwo(en);
 
-fs.writeFileSync(__dirname + '/src/intl/en-emodeng.json', JSON.stringify(en, null, 4));
+fs.writeFileSync(__dirname + '/src/intl/owo.json', JSON.stringify(en, null, 4));

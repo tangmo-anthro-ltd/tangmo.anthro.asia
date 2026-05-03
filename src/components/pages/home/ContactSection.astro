@@ -1,0 +1,134 @@
+---
+import { Icon } from 'astro-icon/components';
+import { type Locale, t, localePath } from '@/intl';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const noteText = t(locale, 'contact.note');
+// Split on {link} and {summary} placeholders
+const noteParts = noteText.split(/\{link\}|\{summary\}/);
+const noHelloText = t(locale, 'contact.no_hello');
+const summaryText = t(locale, 'contact.note_summary');
+---
+
+<section id="contact">
+    <h2 class="text-2xl font-bold mb-4">{t(locale, 'contact.title')}</h2>
+
+    <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div>
+            <dt class="font-normal">
+                <Icon name="simple-icons:telegram" class="inline w-4 h-4 mr-1" />
+                Telegram
+            </dt>
+            <dd class="ml-0"><a href="https://t.me/Tang_Mo" rel="noreferrer noopener">@Tang_Mo</a></dd>
+        </div>
+
+        <div>
+            <dt class="font-normal">
+                <Icon name="simple-icons:twitter" class="inline w-4 h-4 mr-1" />
+                Twitter
+            </dt>
+            <dd class="ml-0"><a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">@TangMoEat</a></dd>
+        </div>
+
+        <div>
+            <dt class="font-normal">
+                <Icon name="vrchat" class="inline w-4 h-4 mr-1" />
+                VRChat
+            </dt>
+            <dd class="ml-0">
+                <a
+                    href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
+                    rel="noreferrer noopener">แตงโม TangMo</a>
+            </dd>
+        </div>
+
+        <div>
+            <dt class="font-normal">
+                <Icon name="simple-icons:discord" class="inline w-4 h-4 mr-1" />
+                Discord
+            </dt>
+            <dd class="ml-0">{t(locale, 'contact.discord_note')}</dd>
+        </div>
+
+        <div class="sm:col-span-2 lg:col-span-2">
+            <dt class="font-normal">
+                <Icon name="simple-icons:tencentqq" class="inline w-4 h-4 mr-1" />
+                QQ
+            </dt>
+            <dd class="ml-0">{t(locale, 'contact.qq_note')}</dd>
+        </div>
+    </dl>
+
+    <p>
+        {noteParts[0]}<a href={localePath(locale, '/no-hello')}>{noHelloText}</a>{noteParts[1]}<span
+            class="note-wrapper"
+            ><input type="checkbox" id="note-toggle" class="note-checkbox" aria-controls="note-popup" /><label for="note-toggle" class="note-label"
+                >{summaryText}<span class="note-arrow" aria-hidden="true"></span></label
+            ><span class="note-popup" id="note-popup" role="region"
+                ><img
+                    src="/bat-sticker.avif"
+                    alt={t(locale, 'contact.note_img_alt')}
+                    class="w-full rounded-lg"
+                    loading="lazy"
+                /></span
+            ></span
+        >{noteParts[2] || ''}
+    </p>
+</section>
+
+<style>
+    .note-wrapper {
+        position: relative;
+    }
+    .note-checkbox {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    .note-label {
+        anchor-name: --note-label;
+        text-decoration: underline;
+        cursor: pointer;
+        color: var(--primary);
+    }
+    .note-popup {
+        display: none;
+        position: fixed;
+        position-anchor: --note-label;
+        top: anchor(bottom);
+        left: anchor(left);
+        z-index: 10;
+        width: 200px;
+        padding: 0.5rem 0 0;
+        background-color: var(--background);
+        position-try-fallbacks: flip-block;
+    }
+    .note-checkbox:checked ~ .note-popup {
+        display: block;
+    }
+    .note-arrow {
+        display: inline-block;
+        margin-left: 4px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0.4rem 0.4rem 0.4rem 0;
+        border-color: transparent currentColor transparent transparent;
+        transition: transform 200ms;
+        vertical-align: middle;
+    }
+    .note-checkbox:checked ~ .note-label .note-arrow {
+        transform: rotate(90deg);
+    }
+</style>

@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import CharacterReferencePage from '@/components/pages/character-reference/CharacterReferencePage.astro';
+import { type Locale, t } from '@/intl';
+
+const locale: Locale = 'owo';
+---
+
+<Layout
+    title={t(locale, 'reference.title')}
+    description={t(locale, 'reference.title')}
+    extraMeta={[
+        { name: 'og:image', content: 'https://tangmo.anthro.asia/refsheet-web-meta.jpg' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+    ]}
+    locale={locale}
+>
+    <CharacterReferencePage locale={locale} />
+</Layout>

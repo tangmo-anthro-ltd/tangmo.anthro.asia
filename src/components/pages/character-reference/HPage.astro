@@ -1,0 +1,64 @@
+---
+import { type Locale, t, localePath } from '@/intl';
+import { Image } from 'astro:assets';
+import referenceMouth from '@/images/reference-mouth.png';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const artCreditText = t(locale, 'common.artCredits');
+const [artBefore, artAfter] = artCreditText.split('{link}');
+
+const p2Text = t(locale, 'reference-h.p2');
+const [p2Before, p2After] = p2Text.split('{em}');
+
+const p3Text = t(locale, 'reference-h.p3');
+const [p3Before, p3After] = p3Text.split('{c}');
+---
+
+<div class="mx-auto max-w-7xl px-4">
+    <nav aria-label="breadcrumb">
+        <ol class="flex gap-2 text-sm text-muted-foreground mb-4 list-none p-0">
+            <li><a href={localePath(locale, '/character-reference')}>{t(locale, 'breadcrumb.reference')}</a></li>
+            <li class="before:content-['/'] before:mr-2">{t(locale, 'breadcrumb.reference-h')}</li>
+        </ol>
+    </nav>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-8">
+            <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference-h.title')}</h1>
+            <p class="mb-4">{t(locale, 'reference-h.p1')}</p>
+            <p class="mb-4">
+                {p2Before}<em>{t(locale, 'reference-h.p2_em')}</em>{p2After}
+            </p>
+            <details class="mb-4">
+                <summary class="cursor-pointer text-primary">{t(locale, 'reference-h.p2_summary')}</summary>
+                <p class="mt-2 text-muted-foreground">{t(locale, 'reference-h.p2_details')}</p>
+            </details>
+            <p class="mb-4">
+                {p3Before}<a href={localePath(locale, '/#contact')}>{t(locale, 'reference-h.p3_contact')}</a>{p3After}
+            </p>
+        </div>
+        <div class="md:col-span-4">
+            <figure class="m-0">
+                <Image
+                    src={referenceMouth}
+                    alt={t(locale, 'reference-h.image_alt')}
+                    widths={[300, 500]}
+                    sizes="(min-width: 768px) 30vw, 100vw"
+                    format="avif"
+                    loading="eager"
+                    class="w-full rounded-lg"
+                />
+                <figcaption class="text-muted-foreground mt-2">
+                    {artBefore}<a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">Crowwing Wolf</a>{
+                        artAfter
+                    }
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>

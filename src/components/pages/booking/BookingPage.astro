@@ -1,0 +1,79 @@
+---
+import { type Locale, t, localePath } from '@/intl';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div class="mx-auto max-w-7xl px-4">
+    <h1 class="text-3xl font-bold mb-4">{t(locale, 'bookingApp.booking.title')}</h1>
+    <p class="mb-6">{t(locale, 'bookingApp.booking.intro')}</p>
+    <form class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-2 items-center">
+            <label class="font-medium">{t(locale, 'bookingApp.booking.form_telegram')}</label>
+            <input
+                type="text"
+                class="border border-input rounded-md px-3 py-2 bg-background"
+                placeholder="@SeaSaltTheDog"
+            />
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-2 items-center">
+            <label class="font-medium">{t(locale, 'bookingApp.booking.form_date_time')}</label>
+            <div>
+                <input
+                    type="datetime-local"
+                    class="border border-input rounded-md px-3 py-2 bg-background"
+                    min="2021-01-01T00:00"
+                />
+                <small class="block text-muted-foreground mt-1"
+                    >{t(locale, 'bookingApp.booking.form_date_time_hint')}</small
+                >
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-2 items-center">
+            <label class="font-medium">{t(locale, 'bookingApp.booking.form_duration')}</label>
+            <select class="border border-input rounded-md px-3 py-2 bg-background">
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_1')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_2')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_3')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_4')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_5')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_6')}</option>
+                <option>{t(locale, 'bookingApp.booking.form_duration_option_7')}</option>
+            </select>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-2 items-center">
+            <label class="font-medium">{t(locale, 'bookingApp.booking.form_coupon_code')}</label>
+            <div>
+                <input type="text" class="border border-input rounded-md px-3 py-2 bg-background" id="coupon-input" />
+                <small class="block text-muted-foreground mt-1"
+                    >{t(locale, 'bookingApp.booking.form_coupon_code_hint')}</small
+                >
+            </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-2">
+            <label class="font-medium">{t(locale, 'bookingApp.booking.form_info')}</label>
+            <textarea class="border border-input rounded-md px-3 py-2 bg-background" rows="4"></textarea>
+        </div>
+        <p class="text-sm text-muted-foreground">{t(locale, 'bookingApp.booking.form_notice')}</p>
+        <a
+            href={localePath(locale, '/booking_app/result.aspx')}
+            class="inline-block px-6 py-2 bg-primary text-primary-foreground no-underline rounded-md hover:opacity-90 transition-opacity"
+        >
+            {t(locale, 'bookingApp.booking.form_submit')}
+        </a>
+    </form>
+</div>
+
+<script>
+    // Read coupon from URL param
+    const params = new URLSearchParams(window.location.search);
+    const coupon = params.get('coupon');
+    if (coupon) {
+        const input = document.getElementById('coupon-input') as HTMLInputElement;
+        if (input) input.value = coupon;
+    }
+</script>

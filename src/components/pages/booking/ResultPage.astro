@@ -1,0 +1,21 @@
+---
+import { type Locale, t, localePath } from '@/intl';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const contentText = t(locale, 'bookingApp.result.content');
+const [contentBefore, contentAfter] = contentText.split('{link}');
+---
+
+<div class="mx-auto max-w-7xl px-4">
+    <h1 class="text-3xl font-bold mb-4">{t(locale, 'bookingApp.result.title')}</h1>
+    <p>
+        {contentBefore}<a href={localePath(locale, '/#contact')}>{t(locale, 'bookingApp.result.link_text')}</a>{
+            contentAfter
+        }
+    </p>
+</div>

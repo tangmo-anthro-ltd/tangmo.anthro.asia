@@ -1,0 +1,39 @@
+---
+/**
+ * Bare layout with no nav/footer — used by standalone pages like no-hello
+ */
+import '@/styles/global.css';
+import { type Locale } from '@/intl';
+
+interface Props {
+    title: string;
+    description?: string;
+    extraMeta?: { name: string; content: string }[];
+    locale: Locale;
+}
+
+const { title, description, extraMeta = [], locale } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        {description && <meta name="description" content={description} />}
+        <meta property="og:type" content="website" />
+        {
+            extraMeta.map(m =>
+                m.name.startsWith('og:') ? (
+                    <meta property={m.name} content={m.content} />
+                ) : (
+                    <meta name={m.name} content={m.content} />
+                )
+            )
+        }
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>

@@ -1,10 +1,62 @@
-@media not (dynamic-range: high) {
-    .hdr-only {
-        display: none !important;
-    }
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
-@media (dynamic-range: high) {
-    .sdr-only {
-        display: none !important;
-    }
+
+:root {
+  color-scheme: light dark;
+  --background: light-dark(oklch(1 0 0), oklch(0.16 0.02 260));
+  --foreground: light-dark(oklch(0.145 0 0), oklch(0.95 0.01 260));
+  --card: light-dark(oklch(1 0 0), oklch(0.2 0.025 260));
+  --card-foreground: light-dark(oklch(0.145 0 0), oklch(0.95 0.01 260));
+  --popover: light-dark(oklch(1 0 0), oklch(0.2 0.025 260));
+  --popover-foreground: light-dark(oklch(0.145 0 0), oklch(0.95 0.01 260));
+  --primary: light-dark(oklch(0.45 0.18 255), oklch(0.7 0.12 254));
+  --primary-foreground: light-dark(oklch(0.985 0 0), oklch(0.145 0.014 254));
+  --secondary: light-dark(oklch(0.97 0.014 254), oklch(0.27 0.025 254));
+  --secondary-foreground: light-dark(oklch(0.205 0.08 265), oklch(0.95 0.01 260));
+  --muted: light-dark(oklch(0.97 0.014 254), oklch(0.27 0.025 254));
+  --muted-foreground: light-dark(oklch(0.556 0.02 252), oklch(0.7 0.015 254));
+  --accent: light-dark(oklch(0.97 0.014 254), oklch(0.27 0.025 254));
+  --accent-foreground: light-dark(oklch(0.205 0.08 265), oklch(0.95 0.01 260));
+  --destructive: light-dark(oklch(0.577 0.245 27.325), oklch(0.704 0.191 22.216));
+  --border: light-dark(oklch(0.922 0.014 254), oklch(0.33 0.025 254));
+  --input: light-dark(oklch(0.922 0.014 254), oklch(0.33 0.025 254));
+  --ring: light-dark(oklch(0.37 0.09 260), oklch(0.7 0.12 254));
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  a {
+    @apply text-primary underline hover:opacity-75;
+  }
 }

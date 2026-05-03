@@ -85,7 +85,7 @@
         "illust_credit": "ภาพวาดโดย {link}",
         "color_palette": "ชุดสี",
         "color_palette_space": "*โค้ดสี HEX สำหรับปริภูมิสี sRGB",
-        "toggle_shade": "เปิด/ปิดแสงเงา",
+        "toggle_shade": "แสงเงา",
         "download": "ดาวน์โหลด",
         "note_for_geek": "สำหรับพวกกี๊ค: ลองปิด Javascript ในหน้านี้ดูสิ😉",
         "h_note": {

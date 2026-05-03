@@ -1,0 +1,60 @@
+<script is:inline>
+    // Detect browsers that report HDR support via media query but can't
+    // actually render HDR images — fall back to HDR video instead.
+    (function () {
+        var ua = navigator.userAgent;
+        var needsVideo = false;
+        // Safari < 26: media query is true (legacy HDR video) but HDR images unsupported
+        if (/^((?!chrome|android).)*safari/i.test(ua)) {
+            var m = ua.match(/Version\/(\d+)\./);
+            if (m && parseInt(m[1], 10) < 26) {
+                needsVideo = window.matchMedia('(dynamic-range: high)').matches;
+            }
+        }
+        // Firefox on macOS: supports HDR video but not HDR images
+        if (!needsVideo && /Macintosh|Mac OS X/i.test(ua) && /Firefox\/\d+/.test(ua)) {
+            needsVideo = window.matchMedia('(video-dynamic-range: high)').matches;
+        }
+        if (needsVideo) document.documentElement.classList.add('hdr-video-only');
+    })();
+</script>
+
+<style is:global>
+    /* HDR display media queries */
+    @media not (dynamic-range: high) {
+        .hdr-only {
+            display: none !important;
+        }
+    }
+    @media (dynamic-range: high) {
+        .sdr-only {
+            display: none !important;
+        }
+    }
+
+    .hdr-video-fallback {
+        display: none !important;
+    }
+    html.hdr-video-only .hdr-only {
+        display: none !important;
+    }
+    html.hdr-video-only .hdr-video-fallback {
+        display: block !important;
+    }
+
+    /* Flash animation when navigating to an anchor */
+    @keyframes anchor-flash {
+        0% {
+            background-color: transparent;
+        }
+        50% {
+            background-color: light-dark(#ffecb5, #664d03);
+        }
+        100% {
+            background-color: transparent;
+        }
+    }
+    section:target {
+        animation: anchor-flash 1s ease-in-out 1;
+    }
+</style>
