@@ -18,51 +18,42 @@ const summaryText = t(locale, 'contact.note_summary');
 <section id="contact">
     <h2 class="text-2xl font-bold mb-4">{t(locale, 'contact.title')}</h2>
 
-    <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-        <div>
-            <dt class="font-normal">
-                <Icon name="simple-icons:telegram" class="inline w-4 h-4 mr-1" />
-                Telegram
-            </dt>
-            <dd class="ml-0"><a href="https://t.me/Tang_Mo" rel="noreferrer noopener">@Tang_Mo</a></dd>
-        </div>
+    <ul class="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6 list-none pl-0">
+        <li>
+            <a href="https://t.me/Tang_Mo" rel="noreferrer noopener" class="contact-card">
+                <span class="font-medium"><Icon name="simple-icons:telegram" class="inline w-4 h-4 mr-1" />Telegram</span>
+                <span>@Tang_Mo</span>
+            </a>
+        </li>
 
-        <div>
-            <dt class="font-normal">
-                <Icon name="simple-icons:twitter" class="inline w-4 h-4 mr-1" />
-                Twitter
-            </dt>
-            <dd class="ml-0"><a href="https://twitter.com/TangMoEat" rel="noreferrer noopener">@TangMoEat</a></dd>
-        </div>
+        <li>
+            <a href="https://twitter.com/TangMoEat" rel="noreferrer noopener" class="contact-card">
+                <span class="font-medium"><Icon name="simple-icons:twitter" class="inline w-4 h-4 mr-1" />Twitter</span>
+                <span>@TangMoEat</span>
+            </a>
+        </li>
 
-        <div>
-            <dt class="font-normal">
-                <Icon name="vrchat" class="inline w-4 h-4 mr-1" />
-                VRChat
-            </dt>
-            <dd class="ml-0">
-                <a
-                    href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08"
-                    rel="noreferrer noopener">แตงโม TangMo</a>
-            </dd>
-        </div>
+        <li>
+            <a href="https://vrchat.com/home/user/usr_6d1b1cf8-44ea-4c7d-81a9-0d25f17dfd08" rel="noreferrer noopener" class="contact-card">
+                <span class="font-medium"><Icon name="vrchat" class="inline w-4 h-4 mr-1" />VRChat</span>
+                <span>แตงโม TangMo</span>
+            </a>
+        </li>
 
-        <div>
-            <dt class="font-normal">
-                <Icon name="simple-icons:discord" class="inline w-4 h-4 mr-1" />
-                Discord
-            </dt>
-            <dd class="ml-0">{t(locale, 'contact.discord_note')}</dd>
-        </div>
+        <li>
+            <div class="contact-card">
+                <span class="font-medium"><Icon name="simple-icons:discord" class="inline w-4 h-4 mr-1" />Discord</span>
+                <span>{t(locale, 'contact.discord_note')}</span>
+            </div>
+        </li>
 
-        <div class="sm:col-span-2 lg:col-span-2">
-            <dt class="font-normal">
-                <Icon name="simple-icons:tencentqq" class="inline w-4 h-4 mr-1" />
-                QQ
-            </dt>
-            <dd class="ml-0">{t(locale, 'contact.qq_note')}</dd>
-        </div>
-    </dl>
+        <li class="col-span-2 lg:col-span-2">
+            <div class="contact-card">
+                <span class="font-medium"><Icon name="simple-icons:tencentqq" class="inline w-4 h-4 mr-1" />QQ</span>
+                <span>{t(locale, 'contact.qq_note')}</span>
+            </div>
+        </li>
+    </ul>
 
     <p>
         {noteParts[0]}<a href={localePath(locale, '/no-hello')}>{noHelloText}</a>{noteParts[1]}<span
@@ -82,6 +73,28 @@ const summaryText = t(locale, 'contact.note_summary');
 </section>
 
 <style>
+    .contact-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1rem;
+        border-radius: var(--radius-xl);
+        border: 1px solid var(--border);
+        background-color: var(--card);
+        color: var(--card-foreground);
+        font-size: 0.875rem;
+        height: 100%;
+        transition: border-color 200ms, background-color 200ms, box-shadow 200ms;
+    }
+    .contact-card:hover {
+        border-color: var(--ring);
+        background-color: var(--accent);
+        box-shadow: 0 0 0 1px var(--ring);
+    }
+    a.contact-card {
+        text-decoration: none;
+        color: var(--card-foreground);
+    }
     .note-wrapper {
         position: relative;
     }
