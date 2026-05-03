@@ -1,15 +1,44 @@
+import owo from '@zuzak/owo';
 import en from './en.json';
-import owo from './owo.json';
 import th from './th.json';
 
 export const languages = ['th', 'en', 'owo'] as const;
 export type Locale = (typeof languages)[number];
 export const defaultLocale: Locale = 'th';
 
+const owoOverrides: Record<string, string> = {
+    Telegram: 'Furrygram',
+};
+
+function owoify(text: string): string {
+    const parts = text.split(/([{}])/g);
+    let inBraces = false;
+    for (let i = 0; i < parts.length; i++) {
+        if (parts[i] === '{') inBraces = true;
+        else if (parts[i] === '}') inBraces = false;
+        else if (!inBraces) parts[i] = owo.translate(parts[i]);
+    }
+    return parts.join('');
+}
+
+function owoifyDeep(obj: unknown): unknown {
+    if (typeof obj === 'string') {
+        return obj in owoOverrides ? owoOverrides[obj] : owoify(obj);
+    }
+    if (typeof obj === 'object' && obj !== null) {
+        const result: Record<string, unknown> = {};
+        for (const [key, val] of Object.entries(obj)) {
+            result[key] = owoifyDeep(val);
+        }
+        return result;
+    }
+    return obj;
+}
+
 const messages: Record<Locale, Record<string, unknown>> = {
     th,
     en,
-    owo,
+    owo: owoifyDeep(en) as Record<string, unknown>,
 };
 
 function flattenMessages(obj: Record<string, unknown>, prefix = ''): Record<string, string> {

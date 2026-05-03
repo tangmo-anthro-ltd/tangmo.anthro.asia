@@ -7,7 +7,7 @@
     "type": "module",
     "scripts": {
         "dev": "astro dev --host",
-        "build": "node ./owo-gen.js && astro build",
+        "build": "astro build",
         "preview": "astro preview --host",
         "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,astro}\""
     },
