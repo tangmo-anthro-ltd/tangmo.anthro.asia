@@ -5,7 +5,8 @@
     },
     "common": {
         "artCredits": "ศิลปิน: {link}",
-        "photoCredits": "ช่างภาพ: {link}"
+        "artHdrEditCredit": ", ปรับแต่ง HDR โดยแตงโม",
+        "photoCredits": "ถ่ายโดย {link}, แต่งสีโดยแตงโม"
     },
     "index": {
         "title": "เกี่ยวกับแตงโม",

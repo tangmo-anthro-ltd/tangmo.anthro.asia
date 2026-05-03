@@ -1,6 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import { FormattedMessage, Link, useIntl } from 'gatsby-plugin-react-intl';
 import { Col, Figure, Row } from 'react-bootstrap';
+import styled from 'styled-components';
 import charaPicHdr from '../../../images/index-chara11_hdr.avif';
 import CharaPicHdr265 from '../../../images/index-chara11_hdr.mp4';
 import { HdrImgWithFallback } from '../../Atom/HdrImgWithFallback';
@@ -9,8 +10,8 @@ export const IntroSection = () => {
     const { formatMessage } = useIntl();
     return (
         <section id="about">
-            <Row>
-                <Col md={7} style={{ order: 2 }}>
+            <StyledRow>
+                <Col md={7}>
                     <h1>
                         <FormattedMessage id="index.aboutMe.title" />
                     </h1>
@@ -25,7 +26,7 @@ export const IntroSection = () => {
                         <FormattedMessage id="index.aboutMe.refSheet" />
                     </Link>
                 </Col>
-                <Col md={5} style={{ order: 1 }}>
+                <Col md={5}>
                     <Figure>
                         <Link to="/character-reference">
                             <HdrImgWithFallback
@@ -43,7 +44,7 @@ export const IntroSection = () => {
                                 )}
                             />
                         </Link>
-                        <Figure.Caption>
+                        <Figure.Caption className="text-end">
                             <FormattedMessage
                                 id="common.artCredits"
                                 values={{
@@ -58,10 +59,24 @@ export const IntroSection = () => {
                                     ),
                                 }}
                             />
+                            <span className="hdr-only">
+                                <FormattedMessage id="common.artHdrEditCredit" />
+                            </span>
                         </Figure.Caption>
                     </Figure>
                 </Col>
-            </Row>
+            </StyledRow>
         </section>
     );
 };
+const StyledRow = styled(Row)`
+    // Bootstrap's md
+    @media (max-width: 767px) {
+        > :nth-child(1) {
+            order: 2;
+        }
+        > :nth-child(2) {
+            order: 1;
+        }
+    }
+`;

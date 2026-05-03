@@ -5,7 +5,8 @@
     },
     "common": {
         "artCredits": "Artist: {link}",
-        "photoCredits": "Photographer: {link}"
+        "artHdrEditCredit": ", HDR edit by TangMo",
+        "photoCredits": "Shot by {link}, edited by TangMo"
     },
     "index": {
         "title": "About TangMo",
