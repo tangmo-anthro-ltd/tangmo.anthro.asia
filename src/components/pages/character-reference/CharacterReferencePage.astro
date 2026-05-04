@@ -38,7 +38,7 @@ const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
                     sizes="(min-width: 768px) 75vw, 100vw"
                     format="avif"
                     loading="eager"
-                    class="w-full rounded-lg"
+                    class="w-full"
                 />
                 <figcaption class="text-sm text-muted-foreground mt-2">
                     {illustBefore}<a
@@ -73,12 +73,12 @@ const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
                     widths={[600, 900, 1200]}
                     sizes="(min-width: 768px) 75vw, 100vw"
                     format="avif"
-                    class="w-full rounded-lg relative z-10"
+                    class="w-full relative z-10"
                 />
                 <img
                     src="/refsheet-body-shade.avif"
                     alt=""
-                    class="absolute inset-0 w-full z-20 rounded-lg opacity-0 transition-opacity duration-500 shade-layer"
+                    class="absolute inset-0 w-full z-20 opacity-0 transition-opacity duration-500 shade-layer"
                     loading="lazy"
                 />
                 <figcaption class="text-sm text-muted-foreground mt-2">
@@ -90,7 +90,11 @@ const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
         </div>
         <div class="md:col-span-3 lg:col-span-2 flex flex-col gap-3">
             <div class="flex items-center gap-2">
-                <input type="checkbox" id="shade-toggle" class="shade-toggle" />
+                <input
+                    type="checkbox"
+                    id="shade-toggle"
+                    class="appearance-none w-11 h-6 bg-muted-foreground relative cursor-pointer transition-colors shrink-0 rounded-full before:content-[''] before:absolute before:top-[2px] before:left-[2px] before:w-5 before:h-5 before:rounded-full before:bg-white before:transition-transform checked:bg-primary checked:before:translate-x-5 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+                />
                 <label for="shade-toggle" class="cursor-pointer select-none">
                     {t(locale, 'reference.toggle_shade')}
                 </label>
@@ -123,40 +127,6 @@ const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
 </div>
 
 <style>
-    /* Switch-styled checkbox */
-    .shade-toggle {
-        appearance: none;
-        width: 2.75rem;
-        height: 1.5rem;
-        border-radius: 9999px;
-        background-color: var(--muted-foreground);
-        position: relative;
-        cursor: pointer;
-        transition: background-color 200ms;
-        flex-shrink: 0;
-    }
-    .shade-toggle::before {
-        content: '';
-        position: absolute;
-        top: 2px;
-        left: 2px;
-        width: 1.25rem;
-        height: 1.25rem;
-        border-radius: 50%;
-        background: white;
-        transition: transform 200ms;
-    }
-    .shade-toggle:checked {
-        background-color: var(--primary);
-    }
-    .shade-toggle:checked::before {
-        transform: translateX(1.25rem);
-    }
-    .shade-toggle:focus-visible {
-        outline: 2px solid var(--primary);
-        outline-offset: 2px;
-    }
-
     /* CSS-only shade toggle using :has() - works without JS */
     .refsheet-v1:has(#shade-toggle:checked) .shade-layer {
         opacity: 1;

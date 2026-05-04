@@ -89,12 +89,12 @@
             "en": "Talk to me!"
         },
         "discord_note": {
-            "th": "ใช้ในกรณีเฉพาะเท่านั้น",
-            "en": "Available for specific uses"
+            "th": "สำหรับคุยเสียงในกลุ่มสาธารณะ",
+            "en": "for voice chat in public guilds"
         },
         "qq_note": {
-            "th": "ถอนการใช้งาน - ใช้ในกรณีจำเป็นจริงๆเท่านั้น แนะนำให้ติดต่อผ่านช่องทางอื่น",
-            "en": "Divest - Only when absolutely necessary, alternative channel recommended"
+            "th": "ถอนการใช้งาน",
+            "en": "Divest"
         },
         "note": {
             "th": "ก่อนจะทักแนะนำให้อ่าน{link}ก่อนนะ ถ้าเห็นทักมาแค่“หวัดดี”เปล่าๆ ไม่มีหัวเรื่อง{summary}",
