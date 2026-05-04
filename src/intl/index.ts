@@ -1,7 +1,7 @@
 import owo from '@zuzak/owo';
 import messagesRaw from './messages.json';
 
-export const languages = ['th', 'en', 'owo'] as const;
+export const languages = ['th', 'en', 'uwu'] as const;
 export type Locale = (typeof languages)[number];
 export const defaultLocale: Locale = 'th';
 
@@ -15,7 +15,7 @@ const owoOverrides: Record<string, string> = {
     Telegram: 'Furrygram',
 };
 
-const owoify = (text: string): string => {
+const uwuify = (text: string): string => {
     const parts = text.split(/([{}])/g);
     let inBraces = false;
     for (let i = 0; i < parts.length; i++) {
@@ -58,14 +58,14 @@ const flattenMessagesForLocale = (
 const typedMessages = messagesRaw as Record<string, MessageLeaf | MessageBranch>;
 const thMessages = flattenMessagesForLocale(typedMessages, 'th');
 const enMessages = flattenMessagesForLocale(typedMessages, 'en');
-const owoMessages = Object.fromEntries(
-    Object.entries(enMessages).map(([key, value]) => [key, value in owoOverrides ? owoOverrides[value] : owoify(value)])
+const uwuMessages = Object.fromEntries(
+    Object.entries(enMessages).map(([key, value]) => [key, value in owoOverrides ? owoOverrides[value] : uwuify(value)])
 ) as Record<string, string>;
 
 const flatMessages: Record<Locale, Record<string, string>> = {
     th: thMessages,
     en: enMessages,
-    owo: owoMessages,
+    uwu: uwuMessages,
 };
 
 export const getMessages = (locale: Locale): Record<string, string> => flatMessages[locale];
