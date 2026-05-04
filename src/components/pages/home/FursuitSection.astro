@@ -22,28 +22,34 @@ const [photoBefore, photoAfter] = photoCreditText.split('{link}');
         <figure class="m-0">
             <div class="aspect-square md:aspect-auto lg:aspect-square xl:aspect-[4/3] overflow-hidden rounded-lg">
                 <!-- HDR version -->
-                <img
-                    src="/IMG_4697.avif"
-                    alt={t(locale, 'index.aboutFursuit.imageAlt')}
-                    class="w-full h-full object-cover object-top xl:object-[center_12%] hdr-only"
-                    loading="lazy"
-                />
+                <a href="https://tangmo-gal.anthro.asia/picture/4211/category/10" class="hdr-only">
+                    <img
+                        src="/IMG_4697.avif"
+                        alt={t(locale, 'index.aboutFursuit.imageAlt')}
+                        class="w-full h-full object-cover object-top xl:object-[center_12%]"
+                        loading="lazy"
+                    />
+                </a>
                 <!-- HDR video fallback for Safari < 26 / Firefox macOS -->
-                <video
-                    src="/IMG_4697.mp4"
-                    autoplay
-                    muted
-                    playsinline
-                    class="w-full h-full object-cover object-top xl:object-[center_12%] hdr-video-fallback"></video>
+                <a href="https://tangmo-gal.anthro.asia/picture/4211/category/10" class="hdr-video-fallback">
+                    <video
+                        src="/IMG_4697.mp4"
+                        autoplay
+                        muted
+                        playsinline
+                        class="w-full h-full object-cover object-top xl:object-[center_12%]"></video>
+                </a>
                 <!-- SDR fallback -->
-                <Image
-                    src={fursuitImgSdr}
-                    alt={t(locale, 'index.aboutFursuit.imageAlt')}
-                    widths={[400, 600, 800]}
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    format="avif"
-                    class="w-full h-full object-cover object-top xl:object-[center_12%] sdr-only"
-                />
+                <a href="https://tangmo-gal.anthro.asia/picture/4210/category/7" class="sdr-only">
+                    <Image
+                        src={fursuitImgSdr}
+                        alt={t(locale, 'index.aboutFursuit.imageAlt')}
+                        widths={[400, 600, 800]}
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        format="avif"
+                        class="w-full h-full object-cover object-top xl:object-[center_12%]"
+                    />
+                </a>
             </div>
             <figcaption class="text-sm text-muted-foreground mt-2">
                 {photoBefore}<a href="https://twitter.com/Rig_sor2024" rel="noreferrer noopener">Rigel</a>{photoAfter}
