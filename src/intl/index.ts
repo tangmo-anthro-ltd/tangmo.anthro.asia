@@ -75,10 +75,20 @@ export const t = (locale: Locale, key: string): string =>
 
 export const getLocalePrefix = (locale: Locale): string => (locale === defaultLocale ? '' : `/${locale}`);
 
+const normalizePathname = (pathname: string): string => {
+    if (!pathname || pathname === '/') {
+        return '/';
+    }
+    return `${pathname.replace(/\/+$/, '')}/`;
+};
+
 export const localePath = (locale: Locale, path: string): string => {
     const prefix = getLocalePrefix(locale);
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    return prefix + cleanPath;
+    const hashIndex = cleanPath.indexOf('#');
+    const pathname = hashIndex >= 0 ? cleanPath.slice(0, hashIndex) : cleanPath;
+    const hash = hashIndex >= 0 ? cleanPath.slice(hashIndex) : '';
+    return `${prefix}${normalizePathname(pathname)}${hash}`;
 };
 
 export const getLocaleStaticPaths = () =>
@@ -97,11 +107,9 @@ export const switchLocalePath = (currentPath: string, currentLocale: Locale, tar
             stripped = stripped.slice(prefix.length) || '/';
         }
     }
+    const normalized = normalizePathname(stripped);
     if (targetLocale === defaultLocale) {
-        return stripped;
+        return normalized;
     }
-    if (stripped === '/') {
-        return `/${targetLocale}`;
-    }
-    return `/${targetLocale}${stripped}`;
+    return `/${targetLocale}${normalized}`;
 };

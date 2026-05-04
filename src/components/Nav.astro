@@ -8,9 +8,9 @@ interface Props {
 
 const { locale, currentPath } = Astro.props;
 
-const homeHref = locale === 'th' ? '/' : `/${locale}`;
-const aboutHref = locale === 'th' ? '/#about' : `/${locale}#about`;
-const contactHref = locale === 'th' ? '/#contact' : `/${locale}#contact`;
+const homeHref = locale === 'th' ? '/' : `/${locale}/`;
+const aboutHref = locale === 'th' ? '/#about' : `/${locale}/#about`;
+const contactHref = locale === 'th' ? '/#contact' : `/${locale}/#contact`;
 ---
 
 <div class="mx-auto max-w-7xl px-4">

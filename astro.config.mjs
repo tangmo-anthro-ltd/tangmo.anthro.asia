@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://tangmo.anthro.asia',
     output: 'static',
-    trailingSlash: 'never',
+    trailingSlash: 'always',
     i18n: {
         defaultLocale: 'th',
         locales: ['th', 'en', 'uwu'],
