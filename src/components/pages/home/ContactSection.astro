@@ -127,16 +127,18 @@ const summaryText = t(locale, 'contact.note_summary');
     }
     .note-popup {
         display: none;
-        position: fixed;
+        position: absolute;
         position-anchor: --note-label;
-        top: anchor(bottom);
-        left: anchor(left);
+        bottom: anchor(top);
+        left: anchor(center);
+        transform: translateX(-50%);
         z-index: 10;
-        width: calc(200px);
-        margin: 0.5rem;
+        width: 200px;
         position-try-fallbacks: flip-block;
         backdrop-filter: blur(10px);
         border-radius: var(--radius);
+        padding: 0.5rem;
+        margin-bottom: 1rem;
     }
     .note-checkbox:checked ~ .note-popup {
         display: block;
