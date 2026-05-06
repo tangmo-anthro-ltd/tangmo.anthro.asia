@@ -4,6 +4,7 @@ import { type Locale, t, localePath } from '@/intl';
 import { Image } from 'astro:assets';
 import referenceV2 from '@/images/reference-v2.png';
 import referenceBodyFlat from '@/images/reference-body-flat.png';
+import referenceBodyV2Flat from '@/images/reference-body-v2-flat.png';
 import ColorPalette from './ColorPalette.astro';
 
 interface Props {
@@ -12,110 +13,185 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const illustCreditText = t(locale, 'reference.illust_credit');
-const [illustBefore, illustAfter] = illustCreditText.split('{link}');
-
-const artCreditText = t(locale, 'common.artCredits');
-const [artBefore, artAfter] = artCreditText.split('{link}');
-
 const hNoteText = t(locale, 'reference.h_note.para');
 const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
+
+const tabs = [
+    {
+        id: 'v2-drawing',
+        label: t(locale, 'reference.tab_v2_drawing'),
+        image: referenceBodyV2Flat,
+        portalBg: true,
+        alt: t(locale, 'reference.image_alt'),
+        credit: {
+            text: t(locale, 'common.artCredits') + t(locale, 'common.artEditCredit'),
+            url: 'https://twitter.com/Crowwingwolf',
+            name: 'Crowwing Wolf',
+        },
+        shading: {
+            enabled: true,
+            overlayImage: '/refsheet-body-shade-v2.avif',
+            downloadFlat: '/refsheet-small-v2-2d-flat.png',
+            downloadShaded: '/refsheet-small-v2-2d-shaded.png',
+        },
+    },
+    {
+        id: 'v2-fursuit',
+        label: t(locale, 'reference.tab_v2_fursuit'),
+        image: referenceV2,
+        portalBg: false,
+        alt: t(locale, 'reference.image_alt'),
+        credit: {
+            text: t(locale, 'reference.illust_credit'),
+            url: 'https://www.kigurumikagetsu.jp/en/%E8%A4%87%E8%A3%BD-stc',
+            name: 'Kigurumi Kagetsu Co., Ltd.',
+        },
+        shading: {
+            enabled: false,
+            downloadFlat: '/refsheet-small-v2.png',
+        },
+    },
+    {
+        id: 'v1',
+        label: t(locale, 'reference.tab_v1'),
+        image: referenceBodyFlat,
+        portalBg: true,
+        alt: t(locale, 'reference.image_alt'),
+        credit: {
+            text: t(locale, 'common.artCredits'),
+            url: 'https://twitter.com/Crowwingwolf',
+            name: 'Crowwing Wolf',
+        },
+        shading: {
+            enabled: true,
+            overlayImage: '/refsheet-body-shade.avif',
+            downloadFlat: '/refsheet-small-flat.png',
+            downloadShaded: '/refsheet-small-shaded.png',
+        },
+    },
+];
 ---
 
-<div class="mx-auto max-w-7xl px-4">
-    <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference.title_v2')}</h1>
-    <p class="mb-4 p-3 bg-accent rounded-md text-accent-foreground">
-        {t(locale, 'reference.notice_v2')}
-    </p>
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-        <div class="md:col-span-9 lg:col-span-10">
-            <figure class="m-0">
-                <Image
-                    src={referenceV2}
-                    alt={t(locale, 'reference.image_alt_v2')}
-                    widths={[600, 900, 1200]}
-                    sizes="(min-width: 768px) 75vw, 100vw"
-                    format="avif"
-                    loading="eager"
-                    class="w-full"
-                />
-                <figcaption class="text-sm text-muted-foreground mt-2">
-                    {illustBefore}<a
-                        href="https://www.kigurumikagetsu.jp/en/%E8%A4%87%E8%A3%BD-stc"
-                        rel="noreferrer noopener">Kigurumi Kagetsu Co., Ltd.</a
-                    >{illustAfter}
-                </figcaption>
-            </figure>
-        </div>
-        <div class="md:col-span-3 lg:col-span-2 flex flex-col justify-between gap-4">
-            <a
-                download
-                href="/refsheet-small-v2.png"
-                class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors"
-            >
-                <Icon name="mdi:tray-download" class="w-5 h-5" />
-                {t(locale, 'reference.download')}
-            </a>
-            <ColorPalette locale={locale} />
-        </div>
+<div class="mx-auto max-w-7xl px-4 reference-tabs">
+    <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference.title')}</h1>
+    <!-- Tab Navigation -->
+    <div class="flex gap-2 mb-6 border-b border-border" role="tablist">
+        {
+            tabs.map(tab => (
+                <a
+                    href={`#${tab.id}`}
+                    class="px-4 py-2 no-underline border-b-2 border-transparent rounded-t-base hover:border-muted-foreground hover:bg-accent transition-colors tab-link"
+                    role="tab"
+                    aria-controls={tab.id}
+                >
+                    {tab.label}
+                </a>
+            ))
+        }
     </div>
 
-    <!-- V1 Reference with shade toggle -->
-    <h2 class="text-2xl font-bold mt-8 mb-4">{t(locale, 'reference.title_v1')}</h2>
+    <div class="tab-container">
+        {
+            tabs.map((tab, i) => {
+                const [creditBefore, creditAfter] = tab.credit.text.split('{link}');
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 refsheet-v1">
-        <div class="md:col-span-9 lg:col-span-10">
-            <figure class="m-0 relative">
-                <Image
-                    src={referenceBodyFlat}
-                    alt={t(locale, 'reference.image_alt_v1')}
-                    widths={[600, 900, 1200]}
-                    sizes="(min-width: 768px) 75vw, 100vw"
-                    format="avif"
-                    class="w-full relative z-10"
-                />
-                <img
-                    src="/refsheet-body-shade.avif"
-                    alt=""
-                    class="absolute inset-0 w-full z-20 opacity-0 transition-opacity duration-500 shade-layer"
-                    loading="lazy"
-                />
-                <figcaption class="text-sm text-muted-foreground mt-2">
-                    {artBefore}<a href="https://twitter.com/Crowwingwolf" rel="noreferrer noopener">Crowwing Wolf</a>{
-                        artAfter
-                    }
-                </figcaption>
-            </figure>
-        </div>
-        <div class="md:col-span-3 lg:col-span-2 grid grid-cols-2 md:flex md:flex-col gap-3">
-            <div class="flex items-center gap-2">
-                <input
-                    type="checkbox"
-                    id="shade-toggle"
-                    class="appearance-none w-11 h-6 bg-muted-foreground relative cursor-pointer transition-colors shrink-0 rounded-full before:content-[''] before:absolute before:top-[2px] before:left-[2px] before:w-5 before:h-5 before:rounded-full before:bg-white before:transition-transform checked:bg-primary checked:before:translate-x-5 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
-                />
-                <label for="shade-toggle" class="cursor-pointer select-none">
-                    {t(locale, 'reference.toggle_shade')}
-                </label>
-            </div>
-            <a
-                download
-                href="/refsheet-small-shaded.png"
-                class="hidden items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-shaded"
-            >
-                <Icon name="mdi:tray-download" class="w-5 h-5" />
-                {t(locale, 'reference.download')}
-            </a>
-            <a
-                download
-                href="/refsheet-small-flat.png"
-                class="inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-flat"
-            >
-                <Icon name="mdi:tray-download" class="w-5 h-5" />
-                {t(locale, 'reference.download')}
-            </a>
-        </div>
+                return (
+                    <section
+                        id={tab.id}
+                        class="tab-panel refsheet-panel"
+                        role="tabpanel"
+                        aria-labelledby={`tab-${tab.id}`}
+                    >
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                            <div class="md:col-span-9 lg:col-span-10">
+                                <figure class="m-0 relative">
+                                    <Image
+                                        src={tab.image}
+                                        alt={tab.alt}
+                                        widths={[600, 900, 1200]}
+                                        sizes="(min-width: 768px) 75vw, 100vw"
+                                        format="avif"
+                                        loading={i === 0 ? 'eager' : undefined}
+                                        class="w-full relative z-10"
+                                    />
+                                    {tab.portalBg && (
+                                        <svg
+                                            width="700"
+                                            height="525"
+                                            viewBox="0 0 700 525"
+                                            class="absolute inset-0 w-full h-full z-0 bg-sheet"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M 39.248 259.250 L 39.500 500.500 185.250 500.753 L 331 501.007 331 259.503 L 331 18 184.998 18 L 38.996 18 39.248 259.250 M 45 259 L 45 495 185.500 495 L 326 495 326 259 L 326 23 185.500 23 L 45 23 45 259 "
+                                                class="sheet-path-1"
+                                                fill-rule="evenodd"
+                                            />
+                                            <path
+                                                d="M 369 259 L 369 500 515 500 L 661 500 661 259 L 661 18 515 18 L 369 18 369 259 M 374 259 L 374 495 514.500 495 L 655 495 655 259 L 655 23 514.500 23 L 374 23 374 259 "
+                                                class="sheet-path-2"
+                                                fill-rule="evenodd"
+                                            />
+                                        </svg>
+                                    )}
+                                    {tab.shading.enabled && (
+                                        <img
+                                            src={tab.shading.overlayImage}
+                                            alt=""
+                                            class="absolute inset-0 w-full z-20 opacity-0 transition-opacity duration-500 shade-layer"
+                                            loading="lazy"
+                                        />
+                                    )}
+                                    <figcaption class="text-sm text-muted-foreground mt-2">
+                                        {creditBefore}
+                                        <a href={tab.credit.url} rel="noreferrer noopener">
+                                            {tab.credit.name}
+                                        </a>
+                                        {creditAfter}
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="md:col-span-3 lg:col-span-2 flex flex-col justify-between gap-4">
+                                <div class="grid grid-cols-2 md:flex md:flex-col gap-3">
+                                    {tab.shading.enabled && <>
+                                        <div class="flex items-center gap-2">
+                                            <input
+                                                type="checkbox"
+                                                id={`shade-toggle-${tab.id}`}
+                                                class="appearance-none w-11 h-6 bg-muted-foreground relative cursor-pointer transition-colors shrink-0 rounded-full before:content-[''] before:absolute before:top-[2px] before:left-[2px] before:w-5 before:h-5 before:rounded-full before:bg-white before:transition-transform checked:bg-primary checked:before:translate-x-5 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+                                            />
+                                            <label
+                                                for={`shade-toggle-${tab.id}`}
+                                                class="cursor-pointer select-none"
+                                            >
+                                                {t(locale, 'reference.toggle_shade')}
+                                            </label>
+                                        </div>
+                                        <a
+                                            download
+                                            href={tab.shading.downloadShaded}
+                                            class="hidden items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-shaded"
+                                        >
+                                            <Icon name="mdi:tray-download" class="w-5 h-5" />
+                                            {t(locale, 'reference.download')}
+                                        </a>
+                                    </>}
+                                    <a
+                                        download
+                                        href={tab.shading.downloadFlat}
+                                        class={`inline-flex items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors ${tab.shading.enabled ? 'shade-download-flat' : ''}`}
+                                    >
+                                        <Icon name="mdi:tray-download" class="w-5 h-5" />
+                                        {t(locale, 'reference.download')}
+                                    </a>
+                                </div>
+                                <ColorPalette locale={locale} />
+                            </div>
+                        </div>
+                    </section>
+                );
+            })
+        }
     </div>
 
     <hr class="my-8 border-border" />
@@ -127,14 +203,100 @@ const [hNoteBefore, hNoteAfter] = hNoteText.split('{link}');
 </div>
 
 <style>
-    /* CSS-only shade toggle using :has() - works without JS */
-    .refsheet-v1:has(#shade-toggle:checked) .shade-layer {
-        opacity: 1;
-    }
-    .refsheet-v1:has(#shade-toggle:checked) .shade-download-flat {
+    /* Base: hide all panels */
+    .tab-panel {
         display: none;
     }
-    .refsheet-v1:has(#shade-toggle:checked) .shade-download-shaded {
+
+    /* No-JS mode: :target controls visibility */
+    .reference-tabs:not(.js-enhanced) .tab-panel:target {
+        display: block;
+    }
+    .reference-tabs:not(.js-enhanced) .tab-container:not(:has(:target)) .tab-panel:first-child {
+        display: block;
+    }
+
+    /* No-JS mode: :target controls active styling - generated from tabs array */
+    {
+        tabs.map(tab => `.reference-tabs:not(.js-enhanced):has(#${tab.id}:target) .tab-link[href='#${tab.id}'] {
+            border-bottom-color: var(--primary);
+            color: var(--primary);
+        }`).join('')
+    }
+    .reference-tabs:not(.js-enhanced):not(:has(:target)) .tab-link[href='#{tabs[0].id}'] {
+        border-bottom-color: var(--primary);
+        color: var(--primary);
+    }
+
+    /* JS mode: .active controls everything */
+    .reference-tabs.js-enhanced .tab-panel.active {
+        display: block;
+    }
+    .reference-tabs.js-enhanced .tab-link.active {
+        border-bottom-color: var(--primary);
+        color: var(--primary);
+    }
+
+    /* CSS-only shade toggle using :has() - works without JS */
+    .refsheet-panel:has(input[type='checkbox']:checked) .shade-layer {
+        opacity: 1;
+    }
+    .refsheet-panel:has(input[type='checkbox']:checked) .shade-download-flat {
+        display: none;
+    }
+    .refsheet-panel:has(input[type='checkbox']:checked) .shade-download-shaded {
         display: inline-flex;
     }
+
+    /* Decorative background for character sheets
+    .bg-sheet {
+        background: light-dark(#b0b0b0, transparent);
+    }*/
+    .sheet-path-1 {
+        fill: light-dark(#74bce4, #2076a4);
+    }
+    .sheet-path-2 {
+        fill: light-dark(#fccb7c, #d8863c);
+    }
 </style>
+
+<script>
+    const container = document.querySelector('.reference-tabs');
+    if (container) {
+        // Enable JS mode
+        container.classList.add('js-enhanced');
+
+        // Get first tab href for default tab detection
+        const firstTabHref = document.querySelector('.tab-link')?.getAttribute('href');
+
+        function activateTab(link: HTMLAnchorElement) {
+            // Remove active from all
+            document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+            // Add active to target
+            link.classList.add('active');
+            const panelId = link.getAttribute('href')!.substring(1);
+            document.getElementById(panelId)?.classList.add('active');
+
+            // Update URL without history or scroll
+            // Clear hash for default tab, keep hash for others
+            const href = link.getAttribute('href')!;
+            const url = href === firstTabHref ? window.location.pathname : href;
+            window.history.replaceState(null, '', url);
+        }
+
+        // Set up click handlers
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                activateTab(link as HTMLAnchorElement);
+            });
+        });
+
+        // Initialize from URL hash or default to first
+        const hash = window.location.hash.substring(1);
+        const targetLink = hash ? document.querySelector(`[href="#${hash}"]`) : document.querySelector('.tab-link');
+        if (targetLink) activateTab(targetLink as HTMLAnchorElement);
+    }
+</script>

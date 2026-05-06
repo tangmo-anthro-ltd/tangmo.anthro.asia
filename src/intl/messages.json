@@ -18,6 +18,10 @@
             "th": ", ปรับแต่ง HDR โดยแตงโม",
             "en": ", HDR edit by TangMo"
         },
+        "artEditCredit": {
+            "th": ", ปรับแต่งโดยแตงโม",
+            "en": ", edited by TangMo"
+        },
         "photoCredits": {
             "th": "ถ่ายโดย {link}, แต่งสีโดยแตงโม",
             "en": "Shot by {link}, edited by TangMo"
@@ -240,21 +244,25 @@
             "th": "ภาพอ้างอิงตัวละคร (v2)",
             "en": "Character Reference (v2)"
         },
-        "image_alt_v1": {
-            "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า ",
-            "en": "Reference image for the blue wolf character, showing back and front view."
+        "tab_v2_drawing": {
+            "th": "v2 รูปวาด",
+            "en": "v2 Drawing"
         },
-        "image_alt_v2": {
+        "tab_v2_fursuit": {
+            "th": "v2 ชุดเฟอร์",
+            "en": "v2 Fursuit"
+        },
+        "tab_v1": {
+            "th": "v1",
+            "en": "v1"
+        },
+        "image_alt": {
             "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า ตัวละครมีแต้มลายสีฟ้าคราม ส้มและเหลืองตามจุดต่างๆ",
             "en": "Reference image for the blue wolf character with cyan, orange, and yellow marking. Both back and front views are shown."
         },
         "notice_v2": {
             "th": "หมายเหตุ: ภาพอ้างอิงนี้วาดมาจากแม่แบบสำหรับชุดเฟอร์สูท. สำหรับงานวาดภาพ ให้อ้างอิงลายสีจาก v2 และรูปร่างหุ่นจาก v1 ด้านล่าง",
             "en": "Notice: This reference sheet is drawn on a Fursuit template. For drawings, please use the pattern from v2 with body shape from v1 below."
-        },
-        "image_alt": {
-            "th": "ภาพอ้างอิงตัวละครหมาป่าสีน้ำเงิน แสดงมุมมองจากด้านหลังและหน้า",
-            "en": ""
         },
         "illust_credit": {
             "th": "ภาพวาดโดย {link}",
