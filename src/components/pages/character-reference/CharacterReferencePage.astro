@@ -153,29 +153,31 @@ const tabs = [
                             </div>
                             <div class="md:col-span-3 lg:col-span-2 flex flex-col justify-between gap-4">
                                 <div class="grid grid-cols-2 md:flex md:flex-col gap-3">
-                                    {tab.shading.enabled && <>
-                                        <div class="flex items-center gap-2">
-                                            <input
-                                                type="checkbox"
-                                                id={`shade-toggle-${tab.id}`}
-                                                class="appearance-none w-11 h-6 bg-muted-foreground relative cursor-pointer transition-colors shrink-0 rounded-full before:content-[''] before:absolute before:top-[2px] before:left-[2px] before:w-5 before:h-5 before:rounded-full before:bg-white before:transition-transform checked:bg-primary checked:before:translate-x-5 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
-                                            />
-                                            <label
-                                                for={`shade-toggle-${tab.id}`}
-                                                class="cursor-pointer select-none"
+                                    {tab.shading.enabled && (
+                                        <>
+                                            <div class="flex items-center gap-2">
+                                                <input
+                                                    type="checkbox"
+                                                    id={`shade-toggle-${tab.id}`}
+                                                    class="appearance-none w-11 h-6 bg-muted-foreground relative cursor-pointer transition-colors shrink-0 rounded-full before:content-[''] before:absolute before:top-[2px] before:left-[2px] before:w-5 before:h-5 before:rounded-full before:bg-white before:transition-transform checked:bg-primary checked:before:translate-x-5 focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+                                                />
+                                                <label
+                                                    for={`shade-toggle-${tab.id}`}
+                                                    class="cursor-pointer select-none"
+                                                >
+                                                    {t(locale, 'reference.toggle_shade')}
+                                                </label>
+                                            </div>
+                                            <a
+                                                download
+                                                href={tab.shading.downloadShaded}
+                                                class="hidden items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-shaded"
                                             >
-                                                {t(locale, 'reference.toggle_shade')}
-                                            </label>
-                                        </div>
-                                        <a
-                                            download
-                                            href={tab.shading.downloadShaded}
-                                            class="hidden items-center justify-center gap-2 px-4 py-2 border border-border rounded-md text-foreground no-underline hover:bg-accent transition-colors shade-download-shaded"
-                                        >
-                                            <Icon name="mdi:tray-download" class="w-5 h-5" />
-                                            {t(locale, 'reference.download')}
-                                        </a>
-                                    </>}
+                                                <Icon name="mdi:tray-download" class="w-5 h-5" />
+                                                {t(locale, 'reference.download')}
+                                            </a>
+                                        </>
+                                    )}
                                     <a
                                         download
                                         href={tab.shading.downloadFlat}
@@ -216,14 +218,12 @@ const tabs = [
         display: block;
     }
 
-    /* No-JS mode: :target controls active styling - generated from tabs array */
-    {
-        tabs.map(tab => `.reference-tabs:not(.js-enhanced):has(#${tab.id}:target) .tab-link[href='#${tab.id}'] {
-            border-bottom-color: var(--primary);
-            color: var(--primary);
-        }`).join('')
-    }
-    .reference-tabs:not(.js-enhanced):not(:has(:target)) .tab-link[href='#{tabs[0].id}'] {
+    /* No-JS mode: :target controls active tab styling */
+    .reference-tabs:not(.js-enhanced):has(#v2-drawing:target) .tab-link[href='#v2-drawing'],
+    .reference-tabs:not(.js-enhanced):has(#v2-fursuit:target) .tab-link[href='#v2-fursuit'],
+    .reference-tabs:not(.js-enhanced):has(#v1:target) .tab-link[href='#v1'],
+    /* Default first tab when no hash */
+    .reference-tabs:not(.js-enhanced):not(:has(:target)) .tab-link:first-child {
         border-bottom-color: var(--primary);
         color: var(--primary);
     }
@@ -248,10 +248,7 @@ const tabs = [
         display: inline-flex;
     }
 
-    /* Decorative background for character sheets
-    .bg-sheet {
-        background: light-dark(#b0b0b0, transparent);
-    }*/
+    /* Decorative background for character sheets */
     .sheet-path-1 {
         fill: light-dark(#74bce4, #2076a4);
     }
@@ -263,12 +260,8 @@ const tabs = [
 <script>
     const container = document.querySelector('.reference-tabs');
     if (container) {
-        // Enable JS mode
         container.classList.add('js-enhanced');
-
-        // Get first tab href for default tab detection
         const firstTabHref = document.querySelector('.tab-link')?.getAttribute('href');
-
         function activateTab(link: HTMLAnchorElement) {
             // Remove active from all
             document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
