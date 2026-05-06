@@ -132,10 +132,11 @@ const summaryText = t(locale, 'contact.note_summary');
         top: anchor(bottom);
         left: anchor(left);
         z-index: 10;
-        width: 200px;
-        padding: 0.5rem 0 0;
-        background-color: var(--background);
+        width: calc(200px);
+        margin: 0.5rem;
         position-try-fallbacks: flip-block;
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius);
     }
     .note-checkbox:checked ~ .note-popup {
         display: block;
