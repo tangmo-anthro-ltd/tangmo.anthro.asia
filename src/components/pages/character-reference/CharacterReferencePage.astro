@@ -75,20 +75,24 @@ const tabs = [
 <div class="mx-auto max-w-7xl px-4 reference-tabs">
     <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference.title')}</h1>
     <!-- Tab Navigation -->
-    <div class="flex gap-2 mb-6 border-b border-border" role="tablist">
+    <nav class="" role="tablist">
+        <menu class="no-list flex gap-2 mb-6 border-b border-border">
         {
             tabs.map(tab => (
-                <a
-                    href={`#${tab.id}`}
-                    class="px-4 py-2 no-underline border-b-2 border-transparent rounded-t-base hover:border-muted-foreground hover:bg-accent transition-colors tab-link"
-                    role="tab"
-                    aria-controls={tab.id}
-                >
-                    {tab.label}
-                </a>
+                <li class="flex flex-col bg-accent hover:bg-input rounded-t-base transition-colors tab-li">
+                    <a
+                        href={`#${tab.id}`}
+                        class="px-6 py-2 no-underline"
+                        role="tab"
+                        aria-controls={tab.id}
+                    >
+                        {tab.label}
+                    </a>
+                </li>
             ))
         }
-    </div>
+        </menu>
+    </nav>
 
     <div class="tab-container">
         {
@@ -211,30 +215,39 @@ const tabs = [
     }
 
     /* No-JS mode: :target controls visibility */
-    .reference-tabs:not(.js-enhanced) .tab-panel:target {
-        display: block;
-    }
-    .reference-tabs:not(.js-enhanced) .tab-container:not(:has(:target)) .tab-panel:first-child {
-        display: block;
-    }
-
-    /* No-JS mode: :target controls active tab styling */
-    .reference-tabs:not(.js-enhanced):has(#v2-drawing:target) .tab-link[href='#v2-drawing'],
-    .reference-tabs:not(.js-enhanced):has(#v2-fursuit:target) .tab-link[href='#v2-fursuit'],
-    .reference-tabs:not(.js-enhanced):has(#v1:target) .tab-link[href='#v1'],
-    /* Default first tab when no hash */
-    .reference-tabs:not(.js-enhanced):not(:has(:target)) .tab-link:first-child {
-        border-bottom-color: var(--primary);
-        color: var(--primary);
-    }
-
+    .reference-tabs:not(.js-enhanced) .tab-panel:target,
+    .reference-tabs:not(.js-enhanced) .tab-container:not(:has(:target)) .tab-panel:first-child,
     /* JS mode: .active controls everything */
     .reference-tabs.js-enhanced .tab-panel.active {
         display: block;
     }
-    .reference-tabs.js-enhanced .tab-link.active {
-        border-bottom-color: var(--primary);
-        color: var(--primary);
+
+    .tab-li {
+        transform: translateY(2px);
+        &:before {
+            content: "";
+            height: 4px;
+            width: 100%;
+            display: block;
+            background: var(--background);
+        }
+    }
+
+    /* No-JS mode: :target controls active tab styling */
+    .reference-tabs:not(.js-enhanced):has(#v2-drawing:target) .tab-li:has(a[href='#v2-drawing']),
+    .reference-tabs:not(.js-enhanced):has(#v2-fursuit:target) .tab-li:has(a[href='#v2-fursuit']),
+    .reference-tabs:not(.js-enhanced):has(#v1:target) .tab-li:has(a[href='#v1']),
+    /* Default first tab when no hash */
+    .reference-tabs:not(.js-enhanced):not(:has(:target)) .tab-li:first-child,
+    /* JS mode: .active controls everything */
+    .reference-tabs.js-enhanced .tab-li.active {
+        background: var(--background);
+        &:before {
+            background: var(--primary);
+        }
+        >* {
+            border-inline: 1px solid var(--border);
+        }
     }
 
     /* CSS-only shade toggle using :has() - works without JS */
@@ -261,14 +274,14 @@ const tabs = [
     const container = document.querySelector('.reference-tabs');
     if (container) {
         container.classList.add('js-enhanced');
-        const firstTabHref = document.querySelector('.tab-link')?.getAttribute('href');
+        const firstTabHref = document.querySelector('.tab-li a')?.getAttribute('href');
         function activateTab(link: HTMLAnchorElement) {
             // Remove active from all
-            document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.tab-li').forEach(l => l.classList.remove('active'));
             document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
 
             // Add active to target
-            link.classList.add('active');
+            link.parentElement?.classList.add('active');
             const panelId = link.getAttribute('href')!.substring(1);
             document.getElementById(panelId)?.classList.add('active');
 
@@ -280,7 +293,7 @@ const tabs = [
         }
 
         // Set up click handlers
-        document.querySelectorAll('.tab-link').forEach(link => {
+        document.querySelectorAll('.tab-li a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
                 activateTab(link as HTMLAnchorElement);
@@ -289,7 +302,7 @@ const tabs = [
 
         // Initialize from URL hash or default to first
         const hash = window.location.hash.substring(1);
-        const targetLink = hash ? document.querySelector(`[href="#${hash}"]`) : document.querySelector('.tab-link');
+        const targetLink = hash ? document.querySelector(`[href="#${hash}"]`) : document.querySelector('.tab-li a');
         if (targetLink) activateTab(targetLink as HTMLAnchorElement);
     }
 </script>
