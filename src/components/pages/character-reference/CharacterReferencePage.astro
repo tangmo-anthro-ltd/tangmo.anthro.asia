@@ -76,11 +76,11 @@ const tabs = [
     <h1 class="text-3xl font-bold mb-4">{t(locale, 'reference.title')}</h1>
     <!-- Tab Navigation -->
     <nav class="" role="tablist">
-        <menu class="no-list flex gap-2 mb-6 border-b border-border">
+        <menu class="no-list flex gap-2 mb-6 border-b-2">
             {
                 tabs.map(tab => (
                     <li class="flex flex-col bg-accent hover:bg-input rounded-t-base transition-colors tab-li">
-                        <a href={`#${tab.id}`} class="px-6 py-2 no-underline" role="tab" aria-controls={tab.id}>
+                        <a href={`#${tab.id}`} class="py-2 no-underline" role="tab" aria-controls={tab.id}>
                             {tab.label}
                         </a>
                     </li>
@@ -226,6 +226,16 @@ const tabs = [
             display: block;
             background: var(--background);
         }
+        &:after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            display: block;
+            background: var(--border);
+        }
+        > * {
+            padding-inline: calc(var(--spacing) * 6);
+        }
     }
 
     /* No-JS mode: :target controls active tab styling */
@@ -240,8 +250,13 @@ const tabs = [
         &:before {
             background: var(--primary);
         }
+        &:after {
+            background: unset;
+            border-inline: 2px solid var(--border);
+        }
         > * {
-            border-inline: 1px solid var(--border);
+            border-inline: 2px solid var(--border);
+            padding-inline: calc(var(--spacing) * 6 - 2px);
         }
     }
 
