@@ -4,6 +4,7 @@ import HomePageHead from '@/components/pages/home/HomePageHead.astro';
 import IntroSection from '@/components/pages/home/IntroSection.astro';
 import FursuitSection from '@/components/pages/home/FursuitSection.astro';
 import { getLocaleStaticPaths, localeFromParams, t } from '@/intl';
+import ContactSection from '@/components/pages/home/ContactSection.astro';
 
 export const getStaticPaths = getLocaleStaticPaths;
 const locale = localeFromParams(Astro.params);
@@ -15,5 +16,7 @@ const locale = localeFromParams(Astro.params);
         <IntroSection locale={locale} />
         <hr class="my-8 border-border" />
         <FursuitSection locale={locale} />
+        <hr class="my-4 border-border" />
+        <ContactSection locale={locale} />
     </div>
 </Layout>

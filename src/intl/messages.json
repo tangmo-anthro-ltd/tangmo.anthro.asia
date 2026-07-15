@@ -53,15 +53,19 @@
         "aboutFursuit": {
             "title": {
                 "th": "ชุดเฟอร์สูท",
-                "en": "The Fursuit"
+                "en": "Fursuits"
             },
             "madeBy": {
                 "th": "สร้างโดย {link}",
                 "en": "Built by {link}"
             },
             "imageAlt": {
-                "th": "ภาพถ่ายชุดเฟอร์สูท พาดผ้าขาวม้าบนศรีษะ ถ่ายภาพด้านข้าง ย้อนแสงอาทิตย์ยามเย็นสีอบอุ่น",
-                "en": "Photograph of a fursuit with a Thai checkered cloth draped over their head, photographed in profile against the warm backlight of the evening sun."
+                "th": "ภาพถ่ายชุดเฟอร์สูทหมาป่าสีน้ำเงิน พาดผ้าขาวม้าบนศรีษะ ถ่ายภาพด้านข้าง ย้อนแสงอาทิตย์ยามเย็นสีอบอุ่น",
+                "en": "Photo of a blue wolf fursuit with a Thai checkered cloth draped over their head, photographed in profile against the warm backlight of the evening sun."
+            },
+            "imageWhiteAlt": {
+                "th": "ภาพถ่ายชุดเฟอร์สูทบางส่วน หัวหมาป่าสิขาวแนวเหมือนจริง ถือร่มกระดาษ ถ่ายภาพครึ่งตัวริมคลอง มีเรือไม้ด้านหลัง ย้อนแสงอาทิตย์สีอบอุ่น",
+                "en": "Photo of a partial white wolf fursuit in realistic style, holding a paper umbrella, captured from the waist up beside a canal with a wooden boat in the background and warm backlit sunlight."
             }
         }
     },
