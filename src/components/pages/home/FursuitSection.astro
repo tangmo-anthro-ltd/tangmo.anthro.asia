@@ -16,7 +16,8 @@ const [madeBefore, madeAfter] = madeByText.split('{link}');
 const whiteMadeByText1 = t(locale, 'index.aboutFursuit.whiteMadeBy1');
 const [whiteMadeByText1Before, whiteMadeByText1After] = whiteMadeByText1.split('{link}');
 const whiteMadeByText2 = t(locale, 'index.aboutFursuit.whiteMadeBy2');
-const [whiteMadeByText2Before, whiteMadeByText2After] = whiteMadeByText2.split('{link}');
+const [whiteMadeByText2Before, whiteMadeByText2Middle, whiteMadeByText2After] = whiteMadeByText2.split(/\{product\}|\{link\}/);
+const whiteMadeByProduct = t(locale, 'index.aboutFursuit.whiteMadeBy2Product');
 
 const photoCreditText = t(locale, 'common.photoCredits');
 const [photoBefore, photoAfter] = photoCreditText.split('{link}');
@@ -111,6 +112,6 @@ const [photoBefore, photoAfter] = photoCreditText.split('{link}');
         <p class="mt-2">
             {whiteMadeByText1Before}<a href="https://twitter.com/tropictora" rel="noreferrer noopener">Tropictora</a>{whiteMadeByText1After}
         </p>
-        <p>{whiteMadeByText2Before}<a href="https://gentlefur.world.taobao.com" rel="noreferrer noopener">重庆仟鸟艺术发展有限公司</a>{whiteMadeByText2After}</p>
+        <p>{whiteMadeByText2Before}<a href="https://item.taobao.com/item.htm?id=605143405954" rel="noreferrer noopener">{whiteMadeByProduct}</a>{whiteMadeByText2Middle}<a href="https://www.gentlefur.cn" rel="noreferrer noopener" title="重庆仟鸟艺术发展有限公司">Chongqing Qianniao Art Development Co., Ltd.</a>{whiteMadeByText2After}</p>
     </div>
 </section>
