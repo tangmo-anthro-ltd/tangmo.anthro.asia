@@ -13,6 +13,11 @@ const { locale } = Astro.props;
 const madeByText = t(locale, 'index.aboutFursuit.madeBy');
 const [madeBefore, madeAfter] = madeByText.split('{link}');
 
+const whiteMadeByText1 = t(locale, 'index.aboutFursuit.whiteMadeBy1');
+const [whiteMadeByText1Before, whiteMadeByText1After] = whiteMadeByText1.split('{link}');
+const whiteMadeByText2 = t(locale, 'index.aboutFursuit.whiteMadeBy2');
+const [whiteMadeByText2Before, whiteMadeByText2After] = whiteMadeByText2.split('{link}');
+
 const photoCreditText = t(locale, 'common.photoCredits');
 const [photoBefore, photoAfter] = photoCreditText.split('{link}');
 ---
@@ -104,7 +109,8 @@ const [photoBefore, photoAfter] = photoCreditText.split('{link}');
             </figcaption>
         </figure>
         <p class="mt-2">
-            {madeBefore}<a href="https://twitter.com/tropictora" rel="noreferrer noopener">Tropictora</a>{madeAfter}
+            {whiteMadeByText1Before}<a href="https://twitter.com/tropictora" rel="noreferrer noopener">Tropictora</a>{whiteMadeByText1After}
         </p>
+        <p>{whiteMadeByText2Before}<a href="https://gentlefur.world.taobao.com" rel="noreferrer noopener">重庆仟鸟艺术发展有限公司</a>{whiteMadeByText2After}</p>
     </div>
 </section>

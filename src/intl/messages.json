@@ -59,6 +59,14 @@
                 "th": "สร้างโดย {link}",
                 "en": "Built by {link}"
             },
+            "whiteMadeBy1": {
+                "th": "หัว: งานต้นแบบทดลองโดย {link}",
+                "en": "Head: Prototype by {link}"
+            },
+            "whiteMadeBy2": {
+                "th": "อุ้งมือ: งานสำเร็จรูปโดย {link}",
+                "en": "Paws: Premade by {link}"
+            },
             "imageAlt": {
                 "th": "ภาพถ่ายชุดเฟอร์สูทหมาป่าสีน้ำเงิน พาดผ้าขาวม้าบนศรีษะ ถ่ายภาพด้านข้าง ย้อนแสงอาทิตย์ยามเย็นสีอบอุ่น",
                 "en": "Photo of a blue wolf fursuit with a Thai checkered cloth draped over their head, photographed in profile against the warm backlight of the evening sun."
