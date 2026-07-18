@@ -260,6 +260,11 @@ const tabs = [
         }
     }
 
+    .shade-layer {
+        /* So people can right click > Save Image as */
+        pointer-events: none;
+    }
+
     /* CSS-only shade toggle using :has() - works without JS */
     .refsheet-panel:has(input[type='checkbox']:checked) .shade-layer {
         opacity: 1;
