@@ -260,10 +260,13 @@ const tabs = [
         }
     }
 
+    /*
+    So people can right click > Save Image as and save the flat color layer below
+    Maybe better don't do this, so people use the download button
     .shade-layer {
-        /* So people can right click > Save Image as */
         pointer-events: none;
     }
+    */
 
     /* CSS-only shade toggle using :has() - works without JS */
     .refsheet-panel:has(input[type='checkbox']:checked) .shade-layer {
